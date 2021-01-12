@@ -1,20 +1,19 @@
 //
-//  MainViewController.swift
+//  DetailViewController.swift
 //  GermanTimeTravel
 //
-//  Created by Zachary Thacker on 12/3/20.
+//  Created by Zachary Thacker on 12/21/20.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-    
+class DetailViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-  
     
 
     /*

@@ -1,20 +1,23 @@
 //
-//  MainViewController.swift
+//  EnterRunTimeViewController.swift
 //  GermanTimeTravel
 //
-//  Created by Zachary Thacker on 12/3/20.
+//  Created by Zachary Thacker on 1/2/21.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
+class RunTimeViewController: UIViewController {
     
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.datePicker.setValue(UIColor.white, forKeyPath: "textColor")
 
         // Do any additional setup after loading the view.
     }
-  
     
 
     /*
