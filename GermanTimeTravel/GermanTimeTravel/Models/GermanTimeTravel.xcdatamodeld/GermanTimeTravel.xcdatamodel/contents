@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Active" representedClassName="Active" syncable="YES" codeGenerationType="class">
+        <attribute name="lastEventSeen" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="totalTime" attributeType="Double" usesScalarValueType="YES"/>
+        <relationship name="scenario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scenario" inverseName="active" inverseEntity="Scenario"/>
+    </entity>
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="license" optional="YES" attributeType="String"/>
+        <attribute name="major" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startDouble" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="textDe" attributeType="String"/>
+        <attribute name="textEn" attributeType="String"/>
+        <relationship name="scenario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scenario" inverseName="events" inverseEntity="Scenario"/>
+    </entity>
+    <entity name="Scenario" representedClassName="Scenario" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptionDe" attributeType="String"/>
+        <attribute name="descriptionEn" attributeType="String"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="endDouble" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="license" optional="YES" attributeType="String"/>
+        <attribute name="majorEvents" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nameDe" attributeType="String"/>
+        <attribute name="nameEn" attributeType="String"/>
+        <attribute name="nameId" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startDouble" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="totalEvents" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unit" attributeType="String"/>
+        <relationship name="active" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Active" inverseName="scenario" inverseEntity="Active"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Event" inverseName="scenario" inverseEntity="Event"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="-54" positionY="-9" width="128" height="164"/>
+        <element name="Scenario" positionX="-63" positionY="-18" width="128" height="284"/>
+        <element name="Active" positionX="-54" positionY="108" width="128" height="89"/>
+    </elements>
+</model>
