@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		460034732590491700C93499 /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460034722590491700C93499 /* Scenario.swift */; };
+		1A07372125AE0BB20072217A /* GermanTimeTravel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A07371F25AE0BB10072217A /* GermanTimeTravel.xcdatamodeld */; };
+		1A07372425AE12030072217A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07372325AE12030072217A /* CoreDataStack.swift */; };
+		1A07372825AE681A0072217A /* EventRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07372725AE681A0072217A /* EventRepresentation.swift */; };
+		1A07372F25AE77830072217A /* Scenario+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07372E25AE77830072217A /* Scenario+Convenience.swift */; };
+		1A07373225AE77970072217A /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07373125AE77970072217A /* Event+Convenience.swift */; };
+		1AA265FC25B0AB8D0000F874 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA265FB25B0AB8D0000F874 /* Summary.swift */; };
+		1AA265FF25B0B1130000F874 /* Active+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA265FE25B0B1130000F874 /* Active+Convenience.swift */; };
+		1AA2660225B0C7840000F874 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2660125B0C7840000F874 /* ModelController.swift */; };
+		1AB8F68F25B222EE0070A14C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F68E25B222EE0070A14C /* Cache.swift */; };
+		1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */; };
 		4600347C259103C000C93499 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600347B259103C000C93499 /* DetailViewController.swift */; };
 		4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678CE4C25A173B20010D625 /* RunTimeViewController.swift */; };
 		4678CE5425A179AA0010D625 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678CE5325A179AA0010D625 /* CustomNavController.swift */; };
@@ -24,7 +33,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		460034722590491700C93499 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario.swift; sourceTree = "<group>"; };
+		1A07372025AE0BB10072217A /* GermanTimeTravel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GermanTimeTravel.xcdatamodel; sourceTree = "<group>"; };
+		1A07372325AE12030072217A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1A07372725AE681A0072217A /* EventRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepresentation.swift; sourceTree = "<group>"; };
+		1A07372E25AE77830072217A /* Scenario+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scenario+Convenience.swift"; sourceTree = "<group>"; };
+		1A07373125AE77970072217A /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
+		1AA265FB25B0AB8D0000F874 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		1AA265FE25B0B1130000F874 /* Active+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Active+Convenience.swift"; sourceTree = "<group>"; };
+		1AA2660125B0C7840000F874 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		1AB8F68E25B222EE0070A14C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioRepresentation.swift; sourceTree = "<group>"; };
 		4600347B259103C000C93499 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4678CE4C25A173B20010D625 /* RunTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeViewController.swift; sourceTree = "<group>"; };
 		4678CE5325A179AA0010D625 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
@@ -53,13 +71,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		460034762590F5D900C93499 /* Model Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Model Controller";
-			sourceTree = "<group>";
-		};
 		469207B8257933D5001781E5 = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +90,9 @@
 		469207C3257933D5001781E5 /* GermanTimeTravel */ = {
 			isa = PBXGroup;
 			children = (
-				469207E8257EC1CC001781E5 /* Controllers */,
-				469207DB25797B3C001781E5 /* Views */,
+				469207E8257EC1CC001781E5 /* ModelControllers */,
+				469207DB25797B3C001781E5 /* ViewControllers */,
 				469207DA25797B35001781E5 /* Models */,
-				460034762590F5D900C93499 /* Model Controller */,
 				469207DC25797B45001781E5 /* Storyboards */,
 				469207DD25797B5D001781E5 /* Utilities */,
 				469207D2257933D8001781E5 /* Info.plist */,
@@ -93,21 +103,30 @@
 		469207DA25797B35001781E5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1A07371F25AE0BB10072217A /* GermanTimeTravel.xcdatamodeld */,
+				1A07372325AE12030072217A /* CoreDataStack.swift */,
 				469207F3257EE0AD001781E5 /* Bearer.swift */,
-				460034722590491700C93499 /* Scenario.swift */,
+				1A07372E25AE77830072217A /* Scenario+Convenience.swift */,
+				1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */,
+				1A07373125AE77970072217A /* Event+Convenience.swift */,
+				1A07372725AE681A0072217A /* EventRepresentation.swift */,
+				1AA265FE25B0B1130000F874 /* Active+Convenience.swift */,
+				1AA265FB25B0AB8D0000F874 /* Summary.swift */,
+				1AB8F68E25B222EE0070A14C /* Cache.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		469207DB25797B3C001781E5 /* Views */ = {
+		469207DB25797B3C001781E5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4678CE5325A179AA0010D625 /* CustomNavController.swift */,
 				469CEF532589773400827BB0 /* AllScenariosViewController.swift */,
 				4600347B259103C000C93499 /* DetailViewController.swift */,
 				469207DF25797BEC001781E5 /* MainViewController.swift */,
 				4678CE4C25A173B20010D625 /* RunTimeViewController.swift */,
 			);
-			path = Views;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		469207DC25797B45001781E5 /* Storyboards */ = {
@@ -130,13 +149,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		469207E8257EC1CC001781E5 /* Controllers */ = {
+		469207E8257EC1CC001781E5 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
 				469207E9257EC205001781E5 /* ApiController.swift */,
-				4678CE5325A179AA0010D625 /* CustomNavController.swift */,
+				1AA2660125B0C7840000F874 /* ModelController.swift */,
 			);
-			path = Controllers;
+			path = ModelControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,14 +228,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */,
 				469207E025797BEC001781E5 /* MainViewController.swift in Sources */,
 				469207C5257933D5001781E5 /* AppDelegate.swift in Sources */,
 				469207F4257EE0AD001781E5 /* Bearer.swift in Sources */,
+				1A07372825AE681A0072217A /* EventRepresentation.swift in Sources */,
 				469CEF542589773400827BB0 /* AllScenariosViewController.swift in Sources */,
 				4678CE5425A179AA0010D625 /* CustomNavController.swift in Sources */,
+				1AB8F68F25B222EE0070A14C /* Cache.swift in Sources */,
 				469207EA257EC205001781E5 /* ApiController.swift in Sources */,
-				460034732590491700C93499 /* Scenario.swift in Sources */,
+				1A07372F25AE77830072217A /* Scenario+Convenience.swift in Sources */,
+				1A07372425AE12030072217A /* CoreDataStack.swift in Sources */,
+				1AA265FF25B0B1130000F874 /* Active+Convenience.swift in Sources */,
+				1AA2660225B0C7840000F874 /* ModelController.swift in Sources */,
 				469207C7257933D5001781E5 /* SceneDelegate.swift in Sources */,
+				1AA265FC25B0AB8D0000F874 /* Summary.swift in Sources */,
+				1A07372125AE0BB20072217A /* GermanTimeTravel.xcdatamodeld in Sources */,
+				1A07373225AE77970072217A /* Event+Convenience.swift in Sources */,
 				4600347C259103C000C93499 /* DetailViewController.swift in Sources */,
 				469207E6257AD507001781E5 /* Countdown.swift in Sources */,
 				4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */,
@@ -423,6 +451,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1A07371F25AE0BB10072217A /* GermanTimeTravel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1A07372025AE0BB10072217A /* GermanTimeTravel.xcdatamodel */,
+			);
+			currentVersion = 1A07372025AE0BB10072217A /* GermanTimeTravel.xcdatamodel */;
+			path = GermanTimeTravel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 469207B9257933D5001781E5 /* Project object */;
 }

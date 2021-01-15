@@ -1,0 +1,53 @@
+//
+//  Summary.swift
+//  GermanTimeTravel
+//
+//  Created by Cora Jacobson on 1/14/21.
+//
+
+import Foundation
+
+struct Summary: Decodable {
+    let nameId: String
+    let nameEn: String
+    let nameDe: String
+    let descriptionEn: String
+    let descriptionDe: String
+    let totalEvents: Int
+    let majorEvents: Int
+    
+    enum Keys: String, CodingKey {
+        case nameId = "name_id"
+        case name
+        case description
+        
+        case majorEvents = "num_major_events"
+        case totalEvents = "num_events"
+                
+        enum nameKeys: String, CodingKey {
+            case nameEn = "en"
+            case nameDe = "de"
+        }
+        
+        enum descriptionKeys: String, CodingKey {
+            case descriptionEn = "en"
+            case descriptionDe = "de"
+        }
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: Keys.self)
+        
+        nameId = try container.decode(String.self, forKey: .nameId)
+        let nameContainer = try container.nestedContainer(keyedBy: Keys.nameKeys.self, forKey: .name)
+        nameEn = try nameContainer.decode(String.self, forKey: .nameEn)
+        nameDe = try nameContainer.decode(String.self, forKey: .nameDe)
+        
+        let descriptionContainer = try container.nestedContainer(keyedBy: Keys.descriptionKeys.self, forKey: .description)
+        descriptionEn = try descriptionContainer.decode(String.self, forKey: .descriptionEn)
+        descriptionDe = try descriptionContainer.decode(String.self, forKey: .descriptionDe)
+        
+        totalEvents = try container.decode(Int.self, forKey: .totalEvents)
+        majorEvents = try container.decode(Int.self, forKey: .majorEvents)
+    }
+}
