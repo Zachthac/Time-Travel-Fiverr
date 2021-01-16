@@ -17,9 +17,10 @@
 		1AA2660225B0C7840000F874 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2660125B0C7840000F874 /* ModelController.swift */; };
 		1AB8F68F25B222EE0070A14C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F68E25B222EE0070A14C /* Cache.swift */; };
 		1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */; };
-		1AB8F69825B2967A0070A14C /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F69725B2967A0070A14C /* OptionsViewController.swift */; };
-		4600347C259103C000C93499 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600347B259103C000C93499 /* DetailViewController.swift */; };
 		464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */; };
+		464CACC925B29E9900F37F79 /* ScenarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */; };
+		464CACCC25B2A04B00F37F79 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */; };
+		464CACCF25B2A20600F37F79 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACCE25B2A20600F37F79 /* OptionsViewController.swift */; };
 		4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678CE4C25A173B20010D625 /* RunTimeViewController.swift */; };
 		4678CE5425A179AA0010D625 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678CE5325A179AA0010D625 /* CustomNavController.swift */; };
 		469207C5257933D5001781E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207C4257933D5001781E5 /* AppDelegate.swift */; };
@@ -27,7 +28,7 @@
 		469207CC257933D5001781E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469207CA257933D5001781E5 /* Main.storyboard */; };
 		469207CE257933D8001781E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469207CD257933D8001781E5 /* Assets.xcassets */; };
 		469207D1257933D8001781E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469207CF257933D8001781E5 /* LaunchScreen.storyboard */; };
-		469207E025797BEC001781E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207DF25797BEC001781E5 /* MainViewController.swift */; };
+		469207E025797BEC001781E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207DF25797BEC001781E5 /* HomeViewController.swift */; };
 		469207E6257AD507001781E5 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207E5257AD507001781E5 /* Countdown.swift */; };
 		469207EA257EC205001781E5 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207E9257EC205001781E5 /* ApiController.swift */; };
 		469207F4257EE0AD001781E5 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207F3257EE0AD001781E5 /* Bearer.swift */; };
@@ -45,9 +46,10 @@
 		1AA2660125B0C7840000F874 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		1AB8F68E25B222EE0070A14C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioRepresentation.swift; sourceTree = "<group>"; };
-		1AB8F69725B2967A0070A14C /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
-		4600347B259103C000C93499 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunScenarioViewController.swift; sourceTree = "<group>"; };
+		464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewCell.swift; sourceTree = "<group>"; };
+		464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		464CACCE25B2A20600F37F79 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		4678CE4C25A173B20010D625 /* RunTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeViewController.swift; sourceTree = "<group>"; };
 		4678CE5325A179AA0010D625 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		469207C1257933D5001781E5 /* GermanTimeTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GermanTimeTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +59,7 @@
 		469207CD257933D8001781E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		469207D0257933D8001781E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		469207D2257933D8001781E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		469207DF25797BEC001781E5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		469207DF25797BEC001781E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		469207E5257AD507001781E5 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		469207E9257EC205001781E5 /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		469207F3257EE0AD001781E5 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
@@ -126,10 +128,12 @@
 			children = (
 				4678CE5325A179AA0010D625 /* CustomNavController.swift */,
 				469CEF532589773400827BB0 /* AllScenariosViewController.swift */,
-				4600347B259103C000C93499 /* DetailViewController.swift */,
-				469207DF25797BEC001781E5 /* MainViewController.swift */,
+				469207DF25797BEC001781E5 /* HomeViewController.swift */,
 				4678CE4C25A173B20010D625 /* RunTimeViewController.swift */,
 				464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */,
+				464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */,
+				464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */,
+				464CACCE25B2A20600F37F79 /* OptionsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -234,7 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */,
-				469207E025797BEC001781E5 /* MainViewController.swift in Sources */,
+				469207E025797BEC001781E5 /* HomeViewController.swift in Sources */,
+				464CACCF25B2A20600F37F79 /* OptionsViewController.swift in Sources */,
 				469207C5257933D5001781E5 /* AppDelegate.swift in Sources */,
 				1AB8F69825B2967A0070A14C /* OptionsViewController.swift in Sources */,
 				469207F4257EE0AD001781E5 /* Bearer.swift in Sources */,
@@ -246,12 +251,13 @@
 				1A07372F25AE77830072217A /* Scenario+Convenience.swift in Sources */,
 				1A07372425AE12030072217A /* CoreDataStack.swift in Sources */,
 				1AA265FF25B0B1130000F874 /* Active+Convenience.swift in Sources */,
+				464CACCC25B2A04B00F37F79 /* EventTableViewCell.swift in Sources */,
 				1AA2660225B0C7840000F874 /* ModelController.swift in Sources */,
 				469207C7257933D5001781E5 /* SceneDelegate.swift in Sources */,
 				1AA265FC25B0AB8D0000F874 /* Summary.swift in Sources */,
+				464CACC925B29E9900F37F79 /* ScenarioTableViewCell.swift in Sources */,
 				1A07372125AE0BB20072217A /* GermanTimeTravel.xcdatamodeld in Sources */,
 				1A07373225AE77970072217A /* Event+Convenience.swift in Sources */,
-				4600347C259103C000C93499 /* DetailViewController.swift in Sources */,
 				469207E6257AD507001781E5 /* Countdown.swift in Sources */,
 				464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */,
 				4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */,

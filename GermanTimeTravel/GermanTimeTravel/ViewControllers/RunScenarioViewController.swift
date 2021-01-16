@@ -9,6 +9,11 @@ import UIKit
 
 class RunScenarioViewController: UIViewController {
 
+    @IBOutlet weak var currentEventTitleLabel: UILabel!
+    @IBOutlet weak var currentEventDetailsLabel: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var eventsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
