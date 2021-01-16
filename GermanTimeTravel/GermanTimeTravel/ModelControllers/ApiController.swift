@@ -123,6 +123,7 @@ final class ApiController {
     
     /// fetches an image through the API using the scenario and optionally, an event
     /// generates the URL from the scenario's nameId, and either the scenario's or the event's image
+    /// called in modelController.loadImage
     /// - Parameters:
     ///   - scenario: accepts a Scenario
     ///   - event: Optional - accepts an event, use if image is not the main Scenario image
