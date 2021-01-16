@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        controller.setPreferences()
         controller.signInAndGetScenarioList()
     }
   

@@ -8,12 +8,40 @@
 import UIKit
 import CoreData
 
+enum Language {
+    case english
+    case german
+}
+
+enum Unit {
+    case imperial
+    case metric
+}
+
 class ModelController {
     
     let api = ApiController()
     let moc = CoreDataStack.shared.mainContext
     var summaries: [Summary]?
+    var language: Language = .english
+    var unit: Unit = .imperial
     private let cache = Cache<String, UIImage>()
+    
+    /// called in MainViewController to fetch preferences from UserDefaults
+    func setPreferences() {
+        let languageIndex = UserDefaults.standard.integer(forKey: .language)
+        if languageIndex == 0 {
+            language = .english
+        } else {
+            language = .german
+        }
+        let unitIndex = UserDefaults.standard.integer(forKey: .unit)
+        if unitIndex == 0 {
+            unit = .imperial
+        } else {
+            unit = .metric
+        }
+    }
     
     /// uses api.signIn to get a bearer token, then uses api.fetchSummaries to populate self.summaries
     /// to be called in AllScenariosViewController to populate tableView
