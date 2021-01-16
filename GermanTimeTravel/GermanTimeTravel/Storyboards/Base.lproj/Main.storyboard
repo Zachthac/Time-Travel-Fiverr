@@ -55,7 +55,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2W-Yi-Q4t">
                                                 <rect key="frame" x="0.0" y="11.5" width="370" height="34"/>
                                                 <connections>
-                                                    <segue destination="eEm-ON-iw7" kind="show" id="2EU-Ws-Wut"/>
+                                                    <segue destination="eEm-ON-iw7" kind="show" identifier="scenarioListSegue" id="2EU-Ws-Wut"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -385,7 +385,7 @@
                                 <rect key="frame" x="0.0" y="326" width="414" height="570"/>
                                 <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="211" id="ZWz-aN-9Oh" customClass="ScenarioTableViewCell" customModule="GermanTimeTravel" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scenarioCell" rowHeight="211" id="ZWz-aN-9Oh" customClass="ScenarioTableViewCell" customModule="GermanTimeTravel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZWz-aN-9Oh" id="Sb6-Bu-hrT">
@@ -463,9 +463,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="scenarioDetailsLabel" destination="pX9-sb-cpr" id="aF2-cp-hta"/>
-                                            <outlet property="scenarioTitleLabel" destination="Q9L-PB-Vjn" id="5cJ-Uq-0nP"/>
-                                            <outlet property="scenarioUnitEventsLabel" destination="gR6-7m-ahC" id="Yxb-1U-B8L"/>
+                                            <outlet property="descriptionLabel" destination="pX9-sb-cpr" id="P50-AD-L3z"/>
+                                            <outlet property="titleLabel" destination="Q9L-PB-Vjn" id="9tu-Wr-8en"/>
+                                            <outlet property="totalEventsLabel" destination="gR6-7m-ahC" id="GTx-iE-5kN"/>
                                             <segue destination="0w3-2I-u1s" kind="show" id="xt6-RB-YVl"/>
                                         </connections>
                                     </tableViewCell>
@@ -491,6 +491,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="VOM-h7-zps" id="XoB-GM-hZx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqK-ps-Zhd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -581,6 +584,9 @@
                                             <segment title="German"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.89631984200000003" green="0.65007068479999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="changeLanguage:" destination="ZcB-Ng-j8Z" eventType="valueChanged" id="ZPE-Lm-1Em"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASt-Sf-tWv">
                                         <rect key="frame" x="0.0" y="132" width="374" height="49"/>
@@ -602,6 +608,9 @@
                                             <segment title="Metric"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" red="0.89631984200000003" green="0.65007068479999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="changeUnit:" destination="ZcB-Ng-j8Z" eventType="valueChanged" id="Bdh-xn-GjE"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -627,8 +636,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ive-82-1qu"/>
                     <connections>
-                        <outlet property="languageSegmentedController" destination="2ym-JS-RQ8" id="DtC-P8-cBk"/>
-                        <outlet property="measurementSegmentedController" destination="z8e-bZ-xkr" id="Nzo-zb-6Rv"/>
+                        <outlet property="languageControl" destination="2ym-JS-RQ8" id="qXm-QM-sTy"/>
+                        <outlet property="unitControl" destination="z8e-bZ-xkr" id="e2m-I0-3DX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7h-ML-1Jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

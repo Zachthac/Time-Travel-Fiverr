@@ -17,6 +17,7 @@
 		1AA2660225B0C7840000F874 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2660125B0C7840000F874 /* ModelController.swift */; };
 		1AB8F68F25B222EE0070A14C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F68E25B222EE0070A14C /* Cache.swift */; };
 		1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */; };
+		1AB8F69C25B2B9440070A14C /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F69B25B2B9440070A14C /* OptionsViewController.swift */; };
 		464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */; };
 		464CACC925B29E9900F37F79 /* ScenarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */; };
 		464CACCC25B2A04B00F37F79 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */; };
@@ -45,6 +46,7 @@
 		1AA2660125B0C7840000F874 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		1AB8F68E25B222EE0070A14C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioRepresentation.swift; sourceTree = "<group>"; };
+		1AB8F69B25B2B9440070A14C /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunScenarioViewController.swift; sourceTree = "<group>"; };
 		464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewCell.swift; sourceTree = "<group>"; };
 		464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AB8F69E25B2B9CA0070A14C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */,
+				464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		469207B8257933D5001781E5 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				469207E8257EC1CC001781E5 /* ModelControllers */,
+				1AB8F69E25B2B9CA0070A14C /* Views */,
 				469207DB25797B3C001781E5 /* ViewControllers */,
 				469207DA25797B35001781E5 /* Models */,
 				469207DC25797B45001781E5 /* Storyboards */,
@@ -129,8 +141,7 @@
 				469207DF25797BEC001781E5 /* HomeViewController.swift */,
 				4678CE4C25A173B20010D625 /* RunTimeViewController.swift */,
 				464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */,
-				464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */,
-				464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */,
+				1AB8F69B25B2B9440070A14C /* OptionsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -236,8 +247,8 @@
 			files = (
 				1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */,
 				469207E025797BEC001781E5 /* HomeViewController.swift in Sources */,
+				1AB8F69C25B2B9440070A14C /* OptionsViewController.swift in Sources */,
 				469207C5257933D5001781E5 /* AppDelegate.swift in Sources */,
-				1AB8F69825B2967A0070A14C /* OptionsViewController.swift in Sources */,
 				469207F4257EE0AD001781E5 /* Bearer.swift in Sources */,
 				1A07372825AE681A0072217A /* EventRepresentation.swift in Sources */,
 				469CEF542589773400827BB0 /* AllScenariosViewController.swift in Sources */,
