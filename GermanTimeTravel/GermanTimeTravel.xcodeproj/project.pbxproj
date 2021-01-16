@@ -18,6 +18,7 @@
 		1AB8F68F25B222EE0070A14C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F68E25B222EE0070A14C /* Cache.swift */; };
 		1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */; };
 		4600347C259103C000C93499 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4600347B259103C000C93499 /* DetailViewController.swift */; };
+		464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */; };
 		4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678CE4C25A173B20010D625 /* RunTimeViewController.swift */; };
 		4678CE5425A179AA0010D625 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678CE5325A179AA0010D625 /* CustomNavController.swift */; };
 		469207C5257933D5001781E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207C4257933D5001781E5 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 		1AB8F68E25B222EE0070A14C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioRepresentation.swift; sourceTree = "<group>"; };
 		4600347B259103C000C93499 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunScenarioViewController.swift; sourceTree = "<group>"; };
 		4678CE4C25A173B20010D625 /* RunTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeViewController.swift; sourceTree = "<group>"; };
 		4678CE5325A179AA0010D625 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		469207C1257933D5001781E5 /* GermanTimeTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GermanTimeTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 				4600347B259103C000C93499 /* DetailViewController.swift */,
 				469207DF25797BEC001781E5 /* MainViewController.swift */,
 				4678CE4C25A173B20010D625 /* RunTimeViewController.swift */,
+				464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				1A07373225AE77970072217A /* Event+Convenience.swift in Sources */,
 				4600347C259103C000C93499 /* DetailViewController.swift in Sources */,
 				469207E6257AD507001781E5 /* Countdown.swift in Sources */,
+				464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */,
 				4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
