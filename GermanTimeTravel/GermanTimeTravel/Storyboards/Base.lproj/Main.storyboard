@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="Jyl-Jt-Ai1">
             <objects>
-                <viewController id="bfo-ri-OqH" customClass="MainViewController" customModule="GermanTimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bfo-ri-OqH" customClass="HomeViewController" customModule="GermanTimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZQe-s1-89m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -385,7 +385,7 @@
                                 <rect key="frame" x="0.0" y="326" width="414" height="570"/>
                                 <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="211" id="ZWz-aN-9Oh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="211" id="ZWz-aN-9Oh" customClass="ScenarioTableViewCell" customModule="GermanTimeTravel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="211"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZWz-aN-9Oh" id="Sb6-Bu-hrT">
@@ -463,6 +463,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="scenarioDetailsLabel" destination="pX9-sb-cpr" id="aF2-cp-hta"/>
+                                            <outlet property="scenarioTitleLabel" destination="Q9L-PB-Vjn" id="5cJ-Uq-0nP"/>
+                                            <outlet property="scenarioUnitEventsLabel" destination="gR6-7m-ahC" id="Yxb-1U-B8L"/>
                                             <segue destination="0w3-2I-u1s" kind="show" id="xt6-RB-YVl"/>
                                         </connections>
                                     </tableViewCell>
@@ -547,10 +550,10 @@
             </objects>
             <point key="canvasLocation" x="2305.7971014492755" y="640.84821428571422"/>
         </scene>
-        <!--View Controller-->
+        <!--Options View Controller-->
         <scene sceneID="EV6-bK-7cp">
             <objects>
-                <viewController id="ZcB-Ng-j8Z" sceneMemberID="viewController">
+                <viewController id="ZcB-Ng-j8Z" customClass="OptionsViewController" customModule="GermanTimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DEC-1Q-ope">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -623,6 +626,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ive-82-1qu"/>
+                    <connections>
+                        <outlet property="languageSegmentedController" destination="2ym-JS-RQ8" id="DtC-P8-cBk"/>
+                        <outlet property="measurementSegmentedController" destination="z8e-bZ-xkr" id="Nzo-zb-6Rv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7h-ML-1Jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -763,6 +770,9 @@
                     <connections>
                         <outlet property="pickerView" destination="tHe-0s-pXe" id="tmH-c7-qQi"/>
                         <outlet property="roundView" destination="Ds5-FG-HvO" id="lyq-bf-yTe"/>
+                        <outlet property="scenarioImage" destination="6kI-iv-K2o" id="fiA-WD-tOJ"/>
+                        <outlet property="scenarioTitleLabel" destination="fUP-Oq-bv3" id="Os1-4P-h5d"/>
+                        <outlet property="startButton" destination="dod-JU-et4" id="68a-FT-dTg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVG-R0-B7T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -852,7 +862,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="582.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="95" id="eGd-2j-pmZ">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="95" id="eGd-2j-pmZ" customClass="EventTableViewCell" customModule="GermanTimeTravel" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="95"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eGd-2j-pmZ" id="MWt-v7-mMp">
@@ -888,6 +898,10 @@
                                                         <constraint firstItem="WQm-QG-kKK" firstAttribute="leading" secondItem="MWt-v7-mMp" secondAttribute="leadingMargin" id="lQU-00-urJ"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="currentUnitLabel" destination="WMh-RE-wzg" id="rNV-cm-SIW"/>
+                                                    <outlet property="eventDetailsLabel" destination="xaN-BO-7m1" id="ATF-gQ-Amm"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -924,7 +938,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Scn-a2-GND"/>
                     <connections>
-                        <outlet property="roundView" destination="MWX-eb-kMs" id="i6q-nA-kZi"/>
+                        <outlet property="currentEventDetailsLabel" destination="SEF-80-sjx" id="RLz-ab-EYO"/>
+                        <outlet property="currentEventTitleLabel" destination="SAG-SK-wME" id="IaT-oq-4W7"/>
+                        <outlet property="eventImage" destination="zdu-tT-c2N" id="A82-3c-3yL"/>
+                        <outlet property="eventsTableView" destination="lo9-Vz-HQR" id="ZI4-iC-1CD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eI2-IZ-XWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
