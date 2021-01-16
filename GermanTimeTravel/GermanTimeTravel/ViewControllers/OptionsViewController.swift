@@ -1,21 +1,21 @@
 //
-//  MainViewController.swift
+//  OptionsViewController.swift
 //  GermanTimeTravel
 //
-//  Created by Zachary Thacker on 12/3/20.
+//  Created by Zachary Thacker on 1/15/21.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-    
-    let controller = ModelController()
+class OptionsViewController: UIViewController {
+    @IBOutlet weak var languageSegmentedController: UISegmentedControl!
+    @IBOutlet weak var measurementSegmentedController: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.signInAndGetScenarioList()
+
+        // Do any additional setup after loading the view.
     }
-  
     
 
     /*
