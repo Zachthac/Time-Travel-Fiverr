@@ -40,64 +40,76 @@ class RunTimeViewController: UIViewController {
 
 extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-             return 8
-         }
-
+        return 8
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-             switch component {
-             case 0:
-                return 1
-             case 0:
-                return 10
-             case 1:
-                 return 25
-             case 2, 3:
-                 return 60
-             default:
-                 return 0
-             }
-         }
-
+        switch component {
+        case 0:
+            return 1
+        case 1:
+            return 100
+        case 2:
+            return 1
+        case 3:
+            return 23
+        case 4:
+            return 1
+        case 5:
+            return 60
+        case 6:
+            return 1
+        case 7:
+            return 60
+        default:
+            return 0
+        }
+    }
+    
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-             return pickerView.frame.size.width/4
-         }
-
+        return pickerView.frame.size.width/4
+    }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-             switch component {
-             case 0:
-                return("days")
-             case 0:
-                return ("\(row)")
-             case 1:
-                return("Hours)
-             case 1:
-                 return "\(row)"
-                    case 2:
-                    
-             case 2:
-                 return "\(row)"
-             case 3:
-                 return "\(row)"
-             default:
-                 return ""
-             }
-         }
+        switch component {
+        case 0:
+            return "days"
+        case 1:
+            return ("\(row)")
+        case 2:
+            return "Hours"
+        case 3:
+            return "\(row)"
+        case 4:
+            return "Minutes"
+        case 5:
+            return "\(row)"
+        case 6:
+            return "Seconds"
+        case 7:
+            return "\(row)"
+        default:
+            return ""
+        }
+    }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-             switch component {
-             case 0:
-                days = row
-             case 1:
-                 hours = row
-             case 2:
-                 minutes = row
-             case 3:
-                 seconds = row
-             default:
-                 break;
-             }
-         }
-     }
+        switch component {
+        case 1:
+            days = row
+        case 3:
+            hours = row
+        case 5:
+            minutes = row
+        case 7:
+            seconds = row
+        default:
+            break;
+        }
+    }
+}
+
 
 extension UIView {
     func roundCorners(cornerRadius: Double) {
