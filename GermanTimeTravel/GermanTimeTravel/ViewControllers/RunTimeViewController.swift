@@ -8,26 +8,102 @@
 import UIKit
 
 class RunTimeViewController: UIViewController {
-    
-    @IBOutlet weak var datePicker: UIDatePicker!
-    
 
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var roundView: UIView!
+    
+    var days: Int = 0
+    var hours: Int = 0
+    var minutes: Int = 0
+    var seconds: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.datePicker.setValue(UIColor.white, forKeyPath: "textColor")
 
         // Do any additional setup after loading the view.
+        pickerView.delegate = self
+        setUpViews()
+    }
+
+    private func setUpViews() {
+        self.pickerView.setValue(UIColor.white, forKeyPath: "textColor")
+        self.roundView.roundCorners(cornerRadius: 25)
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = roundView.bounds
+        gradientLayer.colors = [UIColor(named: "DarkBlue"), UIColor(named: "LightBlue")]
+        gradientLayer.startPoint = CGPoint(x: 0.5,y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+        roundView.layer.addSublayer(gradientLayer)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
+extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+             return 8
+         }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+             switch component {
+             case 0:
+                return 1
+             case 0:
+                return 10
+             case 1:
+                 return 25
+             case 2, 3:
+                 return 60
+             default:
+                 return 0
+             }
+         }
+
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+             return pickerView.frame.size.width/4
+         }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+             switch component {
+             case 0:
+                return("days")
+             case 0:
+                return ("\(row)")
+             case 1:
+                return("Hours)
+             case 1:
+                 return "\(row)"
+                    case 2:
+                    
+             case 2:
+                 return "\(row)"
+             case 3:
+                 return "\(row)"
+             default:
+                 return ""
+             }
+         }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+             switch component {
+             case 0:
+                days = row
+             case 1:
+                 hours = row
+             case 2:
+                 minutes = row
+             case 3:
+                 seconds = row
+             default:
+                 break;
+             }
+         }
+     }
+
+extension UIView {
+    func roundCorners(cornerRadius: Double) {
+        self.layer.cornerRadius = CGFloat(cornerRadius)
+        self.clipsToBounds = true
     }
-    */
+    
 
 }
