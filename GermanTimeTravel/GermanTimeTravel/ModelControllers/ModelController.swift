@@ -44,13 +44,54 @@ class ModelController {
         api.fetchScenario(nameID: nameId) { result in
             switch result {
             case .success(let scenario):
-                Active(totalTime: totalTime, scenario: scenario)
+                let displayRatio = totalTime / (scenario.endDouble - scenario.startDouble)
+                Active(totalTime: totalTime, displayRatio: displayRatio, scenario: scenario)
+                if let events = scenario.events {
+                    let start = scenario.startDouble
+                    let eventArray = Array(events) as! [Event]
+                    for event in eventArray {
+                        event.displayTiming = (event.startDouble - start) * displayRatio
+                    }
+                }
                 let saveResult = self.saveMOC()
                 completion(saveResult)
             default:
                 completion(false)
             }
         }
+    }
+    
+    /// called to update event status while a scenario is active
+    /// if time elapsed is greater than each events start time, event.displayed is updated to True
+    /// - Parameter scenario: accepts the active scenario
+    /// - Parameter completion: completion provides a dictionary [Bool: Double]
+    ///     the Bool represents scenarioStillRunning, the Double is timeElapsed in seconds
+    func updateEventStatus(scenario: Scenario, completion: ([Bool: Double]) -> Void) {
+        guard let startTime = scenario.active?.startTime?.timeIntervalSince1970,
+              let totalTime = scenario.active?.totalTime,
+              let events = scenario.events,
+              let eventArray = Array(events) as? [Event] else {
+            completion([false: 0])
+            return
+        }
+        
+        let timeElapsed = Date().timeIntervalSince1970 - startTime
+        if timeElapsed > totalTime {
+            for event in eventArray {
+                event.displayed = true
+            }
+            saveMOC()
+            completion([false: totalTime])
+            return
+        }
+        
+        for event in eventArray {
+            if timeElapsed > event.displayTiming {
+                event.displayed = true
+            }
+        }
+        saveMOC()
+        completion([true: timeElapsed])
     }
     
     /// called when the user finishes experiencing a scenario

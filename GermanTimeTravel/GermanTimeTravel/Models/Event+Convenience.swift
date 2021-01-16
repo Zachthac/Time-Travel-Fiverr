@@ -14,6 +14,8 @@ extension Event {
                                         textDe: String,
                                         startDate: Date? = nil,
                                         startDouble: Double = 0,
+                                        displayTiming: Double = 0,
+                                        displayed: Bool = false,
                                         major: Bool,
                                         license: String? = nil,
                                         source: String? = nil,
@@ -24,6 +26,8 @@ extension Event {
         self.textDe = textDe
         self.startDate = startDate
         self.startDouble = startDouble
+        self.displayTiming = startDouble
+        self.displayed = displayed
         self.major = major
         self.license = license
         self.source = source

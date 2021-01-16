@@ -11,18 +11,18 @@ import CoreData
 extension Active {
     @discardableResult convenience init(startTime: Date,
                                         totalTime: Double,
-                                        lastEventSeen: Int,
+                                        displayRatio: Double,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.startTime = startTime
         self.totalTime = totalTime
-        self.lastEventSeen = Int16(lastEventSeen)
+        self.displayRatio = displayRatio
     }
     
-    @discardableResult convenience init(totalTime: Double, scenario: Scenario, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init(totalTime: Double, displayRatio: Double, scenario: Scenario, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(startTime: Date(),
                   totalTime: totalTime,
-                  lastEventSeen: 0,
+                  displayRatio: displayRatio,
                   context: context)
         
         scenario.active = self
