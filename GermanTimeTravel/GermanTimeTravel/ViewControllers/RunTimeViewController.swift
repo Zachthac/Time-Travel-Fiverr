@@ -14,6 +14,7 @@ class RunTimeViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var roundView: UIView!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
     
     var days: Int = 0
     var hours: Int = 0
@@ -23,22 +24,30 @@ class RunTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         pickerView.delegate = self
         setUpViews()
     }
 
     private func setUpViews() {
-        self.pickerView.setValue(UIColor.white, forKeyPath: "textColor")
-        self.roundView.roundCorners(cornerRadius: 25)
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = roundView.bounds
-//        gradientLayer.colors = [UIColor(named: "DarkBlue"), UIColor(named: "LightBlue")]
-//        gradientLayer.startPoint = CGPoint(x: 0.5,y: 0.0)
-//        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-//        roundView.layer.addSublayer(gradientLayer)
+        gradient.frame = roundView.bounds
+        roundView.layer.addSublayer(gradient)
+        pickerView.setValue(UIColor.white, forKeyPath: "textColor")
+        roundView.roundCorners(cornerRadius: 25)
+        roundView.bringSubviewToFront(stackView)
+        roundView.bringSubviewToFront(startButton)
+        
     }
     
+    lazy var gradient: CAGradientLayer = {
+        let gradient1 = CAGradientLayer()
+        gradient1.type = .axial
+        gradient1.colors = [
+            UIColor(named: "LightBlue")?.cgColor,
+            UIColor(named: "DarkBlue")?.cgColor
+        ]
+        gradient1.locations = [0, 1]
+        return gradient1
+    }()
 }
 
 extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {

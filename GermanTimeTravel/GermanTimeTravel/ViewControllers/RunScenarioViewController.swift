@@ -9,8 +9,8 @@ import UIKit
 
 class RunScenarioViewController: UIViewController {
 
-    @IBOutlet weak var currentEventTitleLabel: UILabel!
-    @IBOutlet weak var currentEventDetailsLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventsTableView: UITableView!
     

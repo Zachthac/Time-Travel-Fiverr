@@ -12,6 +12,7 @@ class ScenarioTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var totalEventsLabel: UILabel!
+    @IBOutlet weak var roundView: UIView!
     
     var scenario: Summary? {
         didSet {
@@ -35,5 +36,8 @@ class ScenarioTableViewCell: UITableViewCell {
         titleLabel.text = scenario.nameEn
         descriptionLabel.text = scenario.descriptionEn
         totalEventsLabel.text = "\(scenario.totalEvents) events"
+        self.roundView.roundCorners(cornerRadius: 25)
     }
+    
+
 }
