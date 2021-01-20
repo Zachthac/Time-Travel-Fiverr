@@ -19,23 +19,26 @@ class ScenarioTableViewCell: UITableViewCell {
             updateViews()
         }
     }
+    var language: Language?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        titleLabel.text = ""
+        descriptionLabel.text = ""
+        totalEventsLabel.text = ""
+        language = nil
+        scenario = nil
     }
     
     private func updateViews() {
         guard let scenario = scenario else { return }
-        titleLabel.text = scenario.nameEn
-        descriptionLabel.text = scenario.descriptionEn
-        totalEventsLabel.text = "\(scenario.totalEvents) events"
+        if language == .english {
+            titleLabel.text = scenario.nameEn
+            descriptionLabel.text = scenario.descriptionEn
+        } else {
+            titleLabel.text = scenario.nameDe
+            descriptionLabel.text = scenario.descriptionDe
+        }
+        totalEventsLabel.text = "\(scenario.totalEvents) events      \(scenario.majorEvents) major events"
         self.roundView.roundCorners(cornerRadius: 25)
     }
     
