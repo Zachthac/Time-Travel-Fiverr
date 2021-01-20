@@ -21,13 +21,31 @@ class RunTimeViewController: UIViewController {
     var minutes: Int = 0
     var seconds: Int = 0
     
+    weak var controller: ModelController?
+    var scenario: Summary?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         pickerView.delegate = self
         setUpViews()
     }
-
+    
+    @IBAction func startScenario(_ sender: UIButton) {
+        guard let scenario = scenario else { return }
+        controller?.startScenario(nameId: scenario.nameId, totalTime: runTime(), completion: { result in
+            switch result {
+            case true:
+                DispatchQueue.main.async {
+                    self.navigationController?.popToRootViewController(animated: false)
+                }
+            case false:
+                // alert to user
+                NSLog("Failed to start scenario")
+            }
+        })
+    }
+    
     private func setUpViews() {
         gradient.frame = roundView.bounds
         roundView.layer.addSublayer(gradient)
@@ -36,14 +54,27 @@ class RunTimeViewController: UIViewController {
         roundView.bringSubviewToFront(stackView)
         roundView.bringSubviewToFront(startButton)
         
+        guard let scenario = scenario else { return }
+        if controller?.language == .english {
+            scenarioTitleLabel.text = scenario.nameEn
+        } else {
+            scenarioTitleLabel.text = scenario.nameDe
+        }
+    }
+    
+    private func runTime() -> Double {
+        let daySeconds = Double(days) * 60 * 60 * 24
+        let hourSeconds = Double(hours) * 60 * 60
+        let minuteSeconds = Double(minutes) * 60
+        return daySeconds + hourSeconds + minuteSeconds + Double(seconds)
     }
     
     lazy var gradient: CAGradientLayer = {
         let gradient1 = CAGradientLayer()
         gradient1.type = .axial
         gradient1.colors = [
-            UIColor(named: "LightBlue")?.cgColor,
-            UIColor(named: "DarkBlue")?.cgColor
+            UIColor.lightBlue.cgColor,
+            UIColor.darkBlue.cgColor
         ]
         gradient1.locations = [0, 1]
         return gradient1

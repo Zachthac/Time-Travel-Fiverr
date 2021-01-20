@@ -22,7 +22,11 @@ class ModelController {
     
     let api = ApiController()
     let moc = CoreDataStack.shared.mainContext
-    var summaries: [Summary]?
+    var summaries: [Summary]? {
+        didSet {
+            // delegate method to reload table view
+        }
+    }
     var language: Language = .english
     var unit: Unit = .imperial
     private let cache = Cache<String, UIImage>()
@@ -154,15 +158,19 @@ class ModelController {
             return cachedImage
         }
         
-        api.fetchImage(scenario: scenario, event: event) { result in
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        self.api.fetchImage(scenario: scenario, event: event) { result in
             switch result {
             case .success(let fetchedImage):
                 self.cache.cache(value: fetchedImage, for: imageReference)
                 image = fetchedImage
+                dispatchGroup.leave()
             default:
-                break
+                dispatchGroup.leave()
             }
         }
+        dispatchGroup.wait()
         return image
     }
     

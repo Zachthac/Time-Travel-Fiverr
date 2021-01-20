@@ -26,6 +26,17 @@
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.016917392609999998" green="0.056360714139999997" blue="0.22774863240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23G-uJ-1XC">
+                                        <rect key="frame" x="128" y="204" width="161" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Active Scenario">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="xbf-Zu-GSV" kind="show" identifier="activeScenarioSegue" id="fDG-Hz-cPz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.026615977289999999" green="0.086280651390000004" blue="0.29939711089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -300,7 +311,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-TE-Iz1">
                                                         <rect key="frame" x="0.0" y="0.0" width="370" height="57.5"/>
                                                         <connections>
-                                                            <segue destination="ZcB-Ng-j8Z" kind="show" id="nMC-eI-7Yz"/>
+                                                            <segue destination="ZcB-Ng-j8Z" kind="show" identifier="optionsSegue" id="nMC-eI-7Yz"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -501,7 +512,7 @@
                                             <outlet property="roundView" destination="Vdh-cS-ogb" id="iwW-xR-Nyo"/>
                                             <outlet property="titleLabel" destination="Q9L-PB-Vjn" id="9tu-Wr-8en"/>
                                             <outlet property="totalEventsLabel" destination="gR6-7m-ahC" id="GTx-iE-5kN"/>
-                                            <segue destination="0w3-2I-u1s" kind="show" id="xt6-RB-YVl"/>
+                                            <segue destination="0w3-2I-u1s" kind="show" identifier="runTimeSegue" id="xt6-RB-YVl"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -686,7 +697,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7h-ML-1Jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3121.739130434783" y="640.84821428571422"/>
+            <point key="canvasLocation" x="3249" y="759"/>
         </scene>
         <!--Run Time View Controller-->
         <scene sceneID="CSd-SH-hTl">
@@ -752,7 +763,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="xbf-Zu-GSV" kind="show" id="owE-Rp-dSQ"/>
+                                            <action selector="startScenario:" destination="0w3-2I-u1s" eventType="touchUpInside" id="8hc-Xs-Uq4"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="ITs-cF-tYB">
@@ -862,7 +873,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skJ-jR-6KB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iu" translatesAutoresizingMaskIntoConstraints="NO" id="zdu-tT-c2N">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdu-tT-c2N">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Xw-y2-jlW">
@@ -886,6 +897,16 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4M-pW-O9R">
+                                        <rect key="frame" x="317" y="261" width="48" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelScenario:" destination="xbf-Zu-GSV" eventType="touchUpInside" id="4gE-Pc-f3k"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1110,7 +1131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eI2-IZ-XWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5695.652173913044" y="-18.080357142857142"/>
+            <point key="canvasLocation" x="4052" y="-735"/>
         </scene>
     </scenes>
     <resources>

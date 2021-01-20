@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
     
@@ -16,11 +17,27 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var activeScenario: Scenario?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.setPreferences()
         controller.signInAndGetScenarioList()
         setUpViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let fetchRequest: NSFetchRequest<Scenario> = Scenario.fetchRequest()
+        do {
+            let scenarios = try CoreDataStack.shared.mainContext.fetch(fetchRequest)
+            guard let scenario = scenarios.first,
+                  scenario.active != nil else { return }
+            activeScenario = scenario
+            self.performSegue(withIdentifier: "activeScenarioSegue", sender: self)
+        } catch {
+            NSLog("No active scenario")
+        }
     }
     
     private func setUpViews() {
@@ -39,8 +56,8 @@ class HomeViewController: UIViewController {
         let gradient1 = CAGradientLayer()
         gradient1.type = .axial
         gradient1.colors = [
-            UIColor(named: "LightBlue")?.cgColor,
-            UIColor(named: "DarkBlue")?.cgColor
+            UIColor.lightBlue.cgColor,
+            UIColor.darkBlue.cgColor
         ]
         gradient1.locations = [0, 1]
         return gradient1
@@ -49,8 +66,8 @@ class HomeViewController: UIViewController {
         let gradient2 = CAGradientLayer()
         gradient2.type = .radial
         gradient2.colors = [
-            UIColor(named: "LightBlue")?.cgColor,
-            UIColor(named: "DarkBlue")?.cgColor
+            UIColor.lightBlue.cgColor,
+            UIColor.darkBlue.cgColor
         ]
         gradient2.startPoint = CGPoint(x: 0.5, y: 0.75)
         let endY = 1 + view.frame.size.width / view.frame.size.height
@@ -64,6 +81,13 @@ class HomeViewController: UIViewController {
         if segue.identifier == "scenarioListSegue" {
             let allScenariosVC = segue.destination as! AllScenariosViewController
             allScenariosVC.controller = controller
+        } else if segue.identifier == "activeScenarioSegue" {
+            let runScenarioVC = segue.destination as! RunScenarioViewController
+            runScenarioVC.controller = controller
+            runScenarioVC.scenario = activeScenario
+        } else if segue.identifier == "optionsSegue" {
+            let optionsVC = segue.destination as! OptionsViewController
+            optionsVC.controller = controller
         }
     }
 
