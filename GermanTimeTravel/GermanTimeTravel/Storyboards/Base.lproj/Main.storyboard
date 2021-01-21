@@ -980,6 +980,10 @@
                                                         <constraint firstItem="aaY-ku-u7A" firstAttribute="leading" secondItem="awA-ND-3AF" secondAttribute="leading" constant="18" id="cUC-fe-MPI"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="currentUnitLabel" destination="WMh-RE-wzg" id="wY5-pb-cM5"/>
+                                                    <outlet property="eventDetailsLabel" destination="xaN-BO-7m1" id="Mgr-EX-Djf"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>

@@ -18,18 +18,27 @@ enum Unit {
     case metric
 }
 
+protocol ScenarioDelegate: AnyObject {
+    func summariesUpdated()
+}
+
 class ModelController {
+    
+    // MARK: - Properties
     
     let api = ApiController()
     let moc = CoreDataStack.shared.mainContext
     var summaries: [Summary]? {
         didSet {
-            // delegate method to reload table view
+            delegate?.summariesUpdated()
         }
     }
     var language: Language = .english
     var unit: Unit = .imperial
     private let cache = Cache<String, UIImage>()
+    weak var delegate: ScenarioDelegate?
+    
+    // MARK: - Public Functions
     
     /// called in MainViewController to fetch preferences from UserDefaults
     func setPreferences() {
@@ -130,10 +139,11 @@ class ModelController {
     /// automatically deletes the Active object and all Events associated with the scenario through CoreData's delete rules
     /// clears the image cache
     /// - Parameter scenario: accepts a scenario to be deleted
-    func endScenario(scenario: Scenario) {
+    func endScenario(scenario: Scenario, completion: @escaping (Bool) -> Void) {
         moc.delete(scenario)
         cache.clear()
-        saveMOC()
+        let result = saveMOC()
+        completion(result)
     }
     
     /// checks the image cache before making a network call to fetch an image
