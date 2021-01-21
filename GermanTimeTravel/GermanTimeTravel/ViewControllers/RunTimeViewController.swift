@@ -40,8 +40,10 @@ class RunTimeViewController: UIViewController {
                     self.navigationController?.popToRootViewController(animated: false)
                 }
             case false:
-                // alert to user
-                NSLog("Failed to start scenario")
+                let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
+                let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(button)
+                self.present(alert, animated: true)
             }
         })
     }
@@ -83,7 +85,6 @@ class RunTimeViewController: UIViewController {
 
 extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
     }
@@ -121,6 +122,7 @@ extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             return ""
         }
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
@@ -137,12 +139,9 @@ extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-
 extension UIView {
     func roundCorners(cornerRadius: Double) {
         self.layer.cornerRadius = CGFloat(cornerRadius)
         self.clipsToBounds = true
     }
-    
-
 }

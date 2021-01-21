@@ -29,8 +29,11 @@ class EventTableViewCell: UITableViewCell {
         }
         if let time = event.startDate {
             let formatter = DateFormatter()
-            formatter.dateStyle = .short
-            formatter.timeStyle = .short
+            formatter.dateStyle = .long
+            if event.scenario?.unit == "datetime" {
+                formatter.timeZone = TimeZone(abbreviation: "UTC")
+                formatter.timeStyle = .short
+            }
             currentUnitLabel.text = formatter.string(from: time)
         } else {
             if unit == .imperial {

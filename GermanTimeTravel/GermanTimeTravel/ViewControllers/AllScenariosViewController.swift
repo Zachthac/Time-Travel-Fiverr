@@ -28,6 +28,7 @@ class AllScenariosViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        controller?.delegate = self
         setUpViews()
     }
     
@@ -91,5 +92,13 @@ extension AllScenariosViewController: UITableViewDataSource, UITableViewDelegate
         cell.scenario = controller?.summaries?[indexPath.row]
         cell.layer.backgroundColor = UIColor.clear.cgColor
         return cell
+    }
+}
+
+extension AllScenariosViewController: ScenarioDelegate {
+    func summariesUpdated() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
