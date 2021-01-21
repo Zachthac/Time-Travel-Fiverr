@@ -12,6 +12,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var currentUnitLabel: UILabel!
     @IBOutlet weak var eventDetailsLabel: UILabel!
     @IBOutlet weak var roundView: UIView!
+    @IBOutlet weak var cameraImageView: UIImageView!
     
     var event: Event? {
         didSet {
@@ -30,6 +31,13 @@ class EventTableViewCell: UITableViewCell {
         selectedBackgroundView?.backgroundColor = UIColor.darkYellow
 
         guard let event = event else { return }
+        if let image = event.image {
+            cameraImageView.tintColor = UIColor.darkYellow
+        } else {
+            cameraImageView.tintColor = UIColor.clear
+
+        }
+        
         if language == .english {
             eventDetailsLabel.text = event.textEn
         } else {
