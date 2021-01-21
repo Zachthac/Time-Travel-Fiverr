@@ -108,6 +108,7 @@ class RunScenarioViewController: UIViewController {
     }
     
     private func setUpTimer() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
         guard let scenario = scenario else { return }
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { _ in
             self.controller?.updateTime(scenario: scenario, completion: { result in
