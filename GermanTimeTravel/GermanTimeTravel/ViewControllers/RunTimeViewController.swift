@@ -37,7 +37,7 @@ class RunTimeViewController: UIViewController {
             switch result {
             case true:
                 DispatchQueue.main.async {
-                    self.navigationController?.popToRootViewController(animated: false)
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
             case false:
                 let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
@@ -50,7 +50,9 @@ class RunTimeViewController: UIViewController {
     
     private func setUpViews() {
         gradient.frame = roundView.bounds
+        gradient2.frame = scenarioImage.bounds
         roundView.layer.addSublayer(gradient)
+        scenarioImage.layer.addSublayer(gradient2)
         pickerView.setValue(UIColor.white, forKeyPath: "textColor")
         roundView.roundCorners(cornerRadius: 25)
         roundView.bringSubviewToFront(stackView)
@@ -80,6 +82,18 @@ class RunTimeViewController: UIViewController {
         ]
         gradient1.locations = [0, 1]
         return gradient1
+    }()
+    lazy var gradient2: CAGradientLayer = {
+        let gradient2 = CAGradientLayer()
+        gradient2.type = .radial
+        gradient2.colors = [
+            UIColor.lightBlue.cgColor,
+            UIColor.darkBlue.cgColor
+        ]
+        gradient2.startPoint = CGPoint(x: 0.5, y: 0.75)
+        let endY = 1 + view.frame.size.width / view.frame.size.height
+        gradient2.endPoint = CGPoint(x: 1.1, y: endY)
+            return gradient2
     }()
 }
 

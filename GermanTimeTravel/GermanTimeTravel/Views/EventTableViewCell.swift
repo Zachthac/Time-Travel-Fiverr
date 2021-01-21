@@ -11,6 +11,7 @@ class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var currentUnitLabel: UILabel!
     @IBOutlet weak var eventDetailsLabel: UILabel!
+    @IBOutlet weak var roundView: UIView!
     
     var event: Event? {
         didSet {
@@ -20,7 +21,12 @@ class EventTableViewCell: UITableViewCell {
     var language: Language?
     var unit: Unit?
     
+    
+    
     private func updateViews() {
+        
+        selectedBackgroundView?.backgroundColor = UIColor.yellowColor
+
         guard let event = event else { return }
         if language == .english {
             eventDetailsLabel.text = event.textEn
