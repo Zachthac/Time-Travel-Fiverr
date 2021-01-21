@@ -13,9 +13,10 @@ class RunScenarioViewController: UIViewController {
     // MARK: - Outlets
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventsTableView: UITableView!
+    @IBOutlet weak var timePassedLabel: UILabel!
+    @IBOutlet weak var currentEventDateLabel: UILabel!
     
     // MARK: - Properties
     
@@ -40,7 +41,7 @@ class RunScenarioViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func cancelScenario(_ sender: UIButton) {
+    @IBAction func cancelScenario(_ sender: UIBarButtonItem) {
         guard let scenario = scenario else { return }
         controller?.endScenario(scenario: scenario, completion: { result in
             switch result {
@@ -103,12 +104,12 @@ class RunScenarioViewController: UIViewController {
                 if let time = result[true] {
                     self.updateViews()
                     let timeString = self.timeString(timeElapsed: time)
-                    print(timeString)
+                    self.timePassedLabel.text = timeString
                 } else if let time = result[false] {
                     self.timer?.invalidate()
                     self.setUpViews()
                     let timeString = self.timeString(timeElapsed: time)
-                    print(timeString)
+                    self.timePassedLabel.text = timeString
                     let alert = UIAlertController(title: "Finished!", message: "Use the cancel button to clear this scenario.", preferredStyle: .alert)
                     let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alert.addAction(button)
@@ -188,6 +189,10 @@ extension RunScenarioViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let scenario = scenario else { return }
         let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
+//        tableView.allowsMultipleSelection = false
+//        cell.selectionStyle = .gray
+//        cell.roundView.layer.borderWidth = 3
+//        cell.roundView.layer.borderColor = UIColor.yellowColor?.cgColor
         let event = cell.event
         if let image = controller?.loadImage(scenario: scenario, event: event) {
             DispatchQueue.main.async {
