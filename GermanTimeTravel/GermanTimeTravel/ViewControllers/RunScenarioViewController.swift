@@ -11,7 +11,7 @@ import CoreData
 class RunScenarioViewController: UIViewController {
     
     // MARK: - Outlets
-
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventsTableView: UITableView!
@@ -25,6 +25,7 @@ class RunScenarioViewController: UIViewController {
     private var datasource: UITableViewDiffableDataSource<Int, Event>!
     private var fetchedResultsController: NSFetchedResultsController<Event>!
     private let moc = CoreDataStack.shared.mainContext
+
     var timer: Timer?
     var eventTimer: Timer?
     var currentEvent: Event?
@@ -202,6 +203,8 @@ class RunScenarioViewController: UIViewController {
         }
     }
     
+
+    
     private func timeString(timeElapsed: Double) -> String {
         let days = Int(floor(timeElapsed / 86400))
         var timeLeft = timeElapsed - (Double(days) * 86400)
@@ -246,7 +249,7 @@ class RunScenarioViewController: UIViewController {
         eventTimer?.invalidate()
         eventTimer = nil
     }
-
+    
 }
 
 extension RunScenarioViewController: NSFetchedResultsControllerDelegate {
