@@ -34,6 +34,7 @@
 		469207EA257EC205001781E5 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207E9257EC205001781E5 /* ApiController.swift */; };
 		469207F4257EE0AD001781E5 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207F3257EE0AD001781E5 /* Bearer.swift */; };
 		469CEF542589773400827BB0 /* AllScenariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469CEF532589773400827BB0 /* AllScenariosViewController.swift */; };
+		469D6BEF25BAB2750043FE91 /* NotificationPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469D6BEE25BAB2750043FE91 /* NotificationPublisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		469CEF532589773400827BB0 /* AllScenariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllScenariosViewController.swift; sourceTree = "<group>"; };
 		469D6BE525BA3E1E0043FE91 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		469D6BE625BA3E1F0043FE91 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		469D6BEE25BAB2750043FE91 /* NotificationPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				469207CD257933D8001781E5 /* Assets.xcassets */,
 				469207E5257AD507001781E5 /* Countdown.swift */,
 				1A28293225B8D093005961D6 /* UIColorExtension.swift */,
+				469D6BEE25BAB2750043FE91 /* NotificationPublisher.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */,
 				469207E025797BEC001781E5 /* HomeViewController.swift in Sources */,
 				1AB8F69C25B2B9440070A14C /* OptionsViewController.swift in Sources */,
+				469D6BEF25BAB2750043FE91 /* NotificationPublisher.swift in Sources */,
 				469207C5257933D5001781E5 /* AppDelegate.swift in Sources */,
 				469207F4257EE0AD001781E5 /* Bearer.swift in Sources */,
 				1A07372825AE681A0072217A /* EventRepresentation.swift in Sources */,
@@ -428,7 +432,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T9X472M6U2;
 				INFOPLIST_FILE = GermanTimeTravel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T9X472M6U2;
 				INFOPLIST_FILE = GermanTimeTravel/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

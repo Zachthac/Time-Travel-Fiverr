@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import NotificationCenter
 
 enum Language {
     case english
@@ -37,6 +38,7 @@ class ModelController {
     var unit: Unit = .imperial
     private let cache = Cache<String, UIImage>()
     weak var delegate: ScenarioDelegate?
+    let notificationPublisher = NotificationPublisher()
     
     // MARK: - Public Functions
     
@@ -93,6 +95,9 @@ class ModelController {
                     let eventArray = Array(events) as! [Event]
                     for event in eventArray {
                         event.displayTiming = (event.startDouble - start) * displayRatio
+                        if event.major == true {
+                            self.sendNotification(scenario: scenario, event: event)
+                        }
                     }
                 }
                 let saveResult = self.saveMOC()
@@ -102,6 +107,7 @@ class ModelController {
             }
         }
     }
+    
     
     /// called to update event status while a scenario is active
     /// if time elapsed is greater than each events start time, event.displayed is updated to True
@@ -160,6 +166,8 @@ class ModelController {
     /// - Parameter scenario: accepts a scenario to be deleted
     func endScenario(scenario: Scenario, completion: @escaping (Bool) -> Void) {
         moc.delete(scenario)
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
         cache.clear()
         let result = saveMOC()
         completion(result)
@@ -236,5 +244,24 @@ class ModelController {
             return false
         }
     }
+    
+    private func sendNotification(scenario: Scenario, event: Event) {
+        
+        var subtitleText = ""
+        var bodyText = ""
+        if language == .english {
+            subtitleText = scenario.nameEn!
+            bodyText = event.textEn!
+        } else {
+            subtitleText = scenario.nameDe!
+            bodyText = event.textDe!
+        }
+        notificationPublisher.sendNotification(title: "Time Translator",
+                                               subtitle: subtitleText,
+                                               body: bodyText,
+                                               badge: 1,
+                                               delayInterval: event.displayTiming)
+    }
+    
     
 }
