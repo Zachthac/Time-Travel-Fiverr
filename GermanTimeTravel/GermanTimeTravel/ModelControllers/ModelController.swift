@@ -85,6 +85,7 @@ class ModelController {
         api.fetchScenario(nameID: nameId) { result in
             switch result {
             case .success(let scenario):
+                self.preloadImages(scenario: scenario)
                 let displayRatio = totalTime / (scenario.endDouble - scenario.startDouble)
                 Active(totalTime: totalTime, displayRatio: displayRatio, scenario: scenario)
                 if let events = scenario.events {
@@ -105,14 +106,13 @@ class ModelController {
     /// called to update event status while a scenario is active
     /// if time elapsed is greater than each events start time, event.displayed is updated to True
     /// - Parameter scenario: accepts the active scenario
-    /// - Parameter completion: completion provides a dictionary [Bool: Double]
-    ///     the Bool represents scenarioStillRunning, the Double is timeElapsed in seconds
-    func updateEventStatus(scenario: Scenario, completion: ([Bool: Double]) -> Void) {
+    /// - Parameter completion: completion provides a Bool, representing scenarioStillRunning
+    func updateEventStatus(scenario: Scenario, completion: (Bool) -> Void) {
         guard let startTime = scenario.active?.startTime?.timeIntervalSince1970,
               let totalTime = scenario.active?.totalTime,
               let events = scenario.events,
               let eventArray = Array(events) as? [Event] else {
-            completion([false: 0])
+            completion(false)
             return
         }
         
@@ -122,7 +122,7 @@ class ModelController {
                 event.displayed = true
             }
             saveMOC()
-            completion([false: totalTime])
+            completion(false)
             return
         }
         
@@ -132,6 +132,25 @@ class ModelController {
             }
         }
         saveMOC()
+        completion(true)
+    }
+    
+    /// called to update elapsed time while a scenario is active
+    /// - Parameters:
+    ///   - scenario: accepts the active scenario
+    ///   - completion: completion provides a dictionary [Bool: Double]
+    ///     the Bool represents scenarioStillRunning, and the Double is time elapsed
+    func updateTime(scenario: Scenario, completion: ([Bool: Double]) -> Void) {
+        guard let startTime = scenario.active?.startTime?.timeIntervalSince1970,
+              let totalTime = scenario.active?.totalTime else {
+            completion([false: 0])
+            return
+        }
+        let timeElapsed = Date().timeIntervalSince1970 - startTime
+        if timeElapsed > totalTime {
+            completion([false: totalTime])
+            return
+        }
         completion([true: timeElapsed])
     }
     
@@ -151,37 +170,55 @@ class ModelController {
     /// - Parameters:
     ///   - scenario: accepts a scenario
     ///   - event: Optional - accepts an event, event is nil if image is the main image for a scenario
-    /// - Returns: returns UIImage, or nil if no image was available
-    func loadImage(scenario: Scenario, event: Event?) -> UIImage? {
+    ///   - completion: completion provides a UIImage, or nil if no image is available for that scenario or event
+    func loadImage(scenario: Scenario, event: Event?, completion: @escaping (UIImage?) -> Void) {
         var imageReference: String
         var image: UIImage?
         
         if let event = event {
-            guard let imageName = event.image else { return nil }
+            guard let imageName = event.image else {
+                completion(nil)
+                return
+            }
             imageReference = imageName
         } else {
-            guard let imageName = scenario.image else { return nil }
+            guard let imageName = scenario.image else {
+                completion(nil)
+                return
+            }
             imageReference = imageName
         }
         
         if let cachedImage = cache.value(for: imageReference) {
-            return cachedImage
+            completion(cachedImage)
+            return
         }
-        
-        let dispatchGroup = DispatchGroup()
-        dispatchGroup.enter()
         self.api.fetchImage(scenario: scenario, event: event) { result in
             switch result {
             case .success(let fetchedImage):
                 self.cache.cache(value: fetchedImage, for: imageReference)
                 image = fetchedImage
-                dispatchGroup.leave()
+                completion(image)
+                return
             default:
-                dispatchGroup.leave()
+                completion(nil)
+                return
             }
         }
-        dispatchGroup.wait()
-        return image
+    }
+    
+    /// called when a scenario is started to load images for all events into the cache for smoother performance
+    /// - Parameter scenario: accepts a scenario
+    func preloadImages(scenario: Scenario) {
+        let bgQueue = DispatchQueue(label: "bgQueue")
+        bgQueue.async {
+            guard let eventSet = scenario.events,
+                  let events = Array(eventSet) as? [Event] else { return }
+            for event in events {
+                self.loadImage(scenario: scenario, event: event) { _ in
+                }
+            }
+        }
     }
     
     // MARK: - Private Functions

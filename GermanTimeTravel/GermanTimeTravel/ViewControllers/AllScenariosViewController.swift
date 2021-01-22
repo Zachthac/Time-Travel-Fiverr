@@ -91,8 +91,23 @@ extension AllScenariosViewController: UITableViewDataSource, UITableViewDelegate
         cell.language = controller?.language
         cell.scenario = controller?.summaries?[indexPath.row]
         cell.layer.backgroundColor = UIColor.clear.cgColor
+        cell.roundView.layer.borderWidth = 3
+        cell.roundView.layer.borderColor = UIColor.clear.cgColor
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ScenarioTableViewCell {
+            cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ScenarioTableViewCell {
+            cell.roundView.layer.borderColor = UIColor.clear.cgColor
+        }
+    }
+
 }
 
 extension AllScenariosViewController: ScenarioDelegate {

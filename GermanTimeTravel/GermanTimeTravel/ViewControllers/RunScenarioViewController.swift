@@ -26,6 +26,7 @@ class RunScenarioViewController: UIViewController {
     private var fetchedResultsController: NSFetchedResultsController<Event>!
     private let moc = CoreDataStack.shared.mainContext
     var timer: Timer?
+    var eventTimer: Timer?
     var currentEvent: Event?
     
     // MARK: - View Lifecycle
@@ -37,6 +38,7 @@ class RunScenarioViewController: UIViewController {
         configureDatasource()
         initFetchedResultsController()
         setUpTimer()
+        setUpEventTimer()
     }
     
     // MARK: - Actions
@@ -46,6 +48,8 @@ class RunScenarioViewController: UIViewController {
         controller?.endScenario(scenario: scenario, completion: { result in
             switch result {
             case true:
+                self.timer?.invalidate()
+                self.eventTimer?.invalidate()
                 self.navigationController?.popViewController(animated: true)
             case false:
                 let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
@@ -59,22 +63,28 @@ class RunScenarioViewController: UIViewController {
     // MARK: - Private Functions
     
     private func setUpViews() {
+        timePassedLabel.text = ""
+        currentEventDateLabel.text = ""
+        timePassedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timePassedLabel.font.pointSize, weight: .medium)
+        currentEventDateLabel.font = UIFont.monospacedDigitSystemFont(ofSize: currentEventDateLabel.font.pointSize, weight: .medium)
         guard let scenario = scenario else { return }
         if controller?.language == .english {
             titleLabel.text = scenario.nameEn
         } else {
             titleLabel.text = scenario.nameDe
         }
-        if let image = controller?.loadImage(scenario: scenario, event: nil) {
+        controller?.loadImage(scenario: scenario, event: nil, completion: { image in
             DispatchQueue.main.async {
                 self.eventImage.image = image
             }
-        }
+        })
     }
     
     private func configureDatasource() {
         datasource = UITableViewDiffableDataSource(tableView: eventsTableView, cellProvider: { (tableView, indexPath, event) -> UITableViewCell? in
             guard let cell = self.eventsTableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell else { fatalError("Cannot create cell") }
+            cell.roundView.layer.borderWidth = 3
+            cell.roundView.layer.borderColor = UIColor.clear.cgColor
             cell.language = self.controller?.language
             cell.unit = self.controller?.unit
             cell.event = event
@@ -99,17 +109,35 @@ class RunScenarioViewController: UIViewController {
     
     private func setUpTimer() {
         guard let scenario = scenario else { return }
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            self.controller?.updateEventStatus(scenario: scenario, completion: { result in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { _ in
+            self.controller?.updateTime(scenario: scenario, completion: { result in
                 if let time = result[true] {
-                    self.updateViews()
                     let timeString = self.timeString(timeElapsed: time)
                     self.timePassedLabel.text = timeString
+                    self.currentEventDateLabel.text = self.currentDateString(timeElapsed: time)
                 } else if let time = result[false] {
                     self.timer?.invalidate()
-                    self.setUpViews()
                     let timeString = self.timeString(timeElapsed: time)
                     self.timePassedLabel.text = timeString
+                    self.currentEventDateLabel.text = self.endDateString()
+                }
+            })
+        })
+    }
+    
+    private func setUpEventTimer() {
+        guard let scenario = scenario else { return }
+        eventTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { _ in
+            self.controller?.updateEventStatus(scenario: scenario, completion: { result in
+                if result == true {
+                    self.updateViews()
+                } else {
+                    self.eventTimer?.invalidate()
+                    self.controller?.loadImage(scenario: scenario, event: nil, completion: { image in
+                        DispatchQueue.main.async {
+                            self.eventImage.image = image
+                        }
+                    })
                     let alert = UIAlertController(title: "Finished!", message: "Use the cancel button to clear this scenario.", preferredStyle: .alert)
                     let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alert.addAction(button)
@@ -119,14 +147,57 @@ class RunScenarioViewController: UIViewController {
         })
     }
     
+    private func currentDateString(timeElapsed: Double) -> String {
+        guard let scenario = scenario,
+              let ratio = scenario.active?.displayRatio else { return "" }
+        let timeDouble = scenario.startDouble + (timeElapsed / ratio)
+        if scenario.unit == "date" {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            return formatter.string(from: Date(timeIntervalSince1970: timeDouble))
+        } else if scenario.unit == "datetime" {
+            let formatter = DateFormatter()
+            formatter.timeZone = TimeZone(abbreviation: "UTC")
+            formatter.timeStyle = .short
+            return formatter.string(from: Date(timeIntervalSince1970: timeDouble))
+        } else {
+            if controller?.unit == .imperial {
+                return String("\(Int(timeDouble * 92.955807)) M m")
+            } else {
+                return String("\(Int(timeDouble * 149.597871)) M km")
+            }
+        }
+    }
+    
+    private func endDateString() -> String {
+        guard let scenario = scenario else { return "" }
+        if let time = scenario.endDate {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            if scenario.unit == "datetime" {
+                formatter.dateStyle = .none
+                formatter.timeZone = TimeZone(abbreviation: "UTC")
+                formatter.timeStyle = .short
+            }
+            return formatter.string(from: time)
+        } else {
+            if controller?.unit == .imperial {
+                return String("\(Int(scenario.endDouble * 92.955807)) M m")
+            } else {
+                return String("\(Int(scenario.endDouble * 149.597871)) M km")
+            }
+        }
+    }
+    
     private func updateViews() {
         guard let scenario = scenario,
               let currentEvent = currentEvent else { return }
         if currentEvent.image != nil {
-            let image = controller?.loadImage(scenario: scenario, event: currentEvent)
-            DispatchQueue.main.async {
-                self.eventImage.image = image
-            }
+            controller?.loadImage(scenario: scenario, event: currentEvent, completion: { image in
+                DispatchQueue.main.async {
+                    self.eventImage.image = image
+                }
+            })
         }
     }
     
@@ -171,6 +242,8 @@ class RunScenarioViewController: UIViewController {
     deinit {
         timer?.invalidate()
         timer = nil
+        eventTimer?.invalidate()
+        eventTimer = nil
     }
 
 }
@@ -189,15 +262,18 @@ extension RunScenarioViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let scenario = scenario else { return }
         let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
-//        tableView.allowsMultipleSelection = false
-//        cell.selectionStyle = .gray
-//        cell.roundView.layer.borderWidth = 3
-//        cell.roundView.layer.borderColor = UIColor.yellowColor?.cgColor
+        cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
         let event = cell.event
-        if let image = controller?.loadImage(scenario: scenario, event: event) {
+        controller?.loadImage(scenario: scenario, event: event, completion: { image in
             DispatchQueue.main.async {
                 self.eventImage.image = image
             }
+        })
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? EventTableViewCell {
+            cell.roundView.layer.borderColor = UIColor.clear.cgColor
         }
     }
 }
