@@ -66,6 +66,8 @@
 		469207E9257EC205001781E5 /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		469207F3257EE0AD001781E5 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		469CEF532589773400827BB0 /* AllScenariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllScenariosViewController.swift; sourceTree = "<group>"; };
+		469D6BE525BA3E1E0043FE91 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		469D6BE625BA3E1F0043FE91 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 469207B8257933D5001781E5;
 			productRefGroup = 469207C2257933D5001781E5 /* Products */;
@@ -282,6 +285,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				469207CB257933D5001781E5 /* Base */,
+				469D6BE625BA3E1F0043FE91 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -290,6 +294,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				469207D0257933D8001781E5 /* Base */,
+				469D6BE525BA3E1E0043FE91 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -362,6 +368,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
