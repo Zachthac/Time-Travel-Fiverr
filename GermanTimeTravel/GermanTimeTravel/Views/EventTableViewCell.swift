@@ -8,7 +8,7 @@
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var currentUnitLabel: UILabel!
     @IBOutlet weak var eventDetailsLabel: UILabel!
     @IBOutlet weak var roundView: UIView!
@@ -29,13 +29,12 @@ class EventTableViewCell: UITableViewCell {
     private func updateViews() {
         
         selectedBackgroundView?.backgroundColor = UIColor.darkYellow
-
+        
         guard let event = event else { return }
-        if let image = event.image {
+        if event.image != nil {
             cameraImageView.tintColor = UIColor.darkYellow
         } else {
             cameraImageView.tintColor = UIColor.clear
-
         }
         
         if language == .english {
@@ -53,11 +52,11 @@ class EventTableViewCell: UITableViewCell {
             currentUnitLabel.text = formatter.string(from: time)
         } else {
             if unit == .imperial {
-                currentUnitLabel.text = String("\(event.startDouble) million miles")
+                currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) million miles")
             } else {
-                currentUnitLabel.text = String("\(event.startDouble * 1.609344) million kilometers")
+                currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) million kilometers")
             }
         }
     }
-
+    
 }
