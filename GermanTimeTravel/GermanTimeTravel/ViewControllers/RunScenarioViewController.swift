@@ -74,7 +74,7 @@ class RunScenarioViewController: UIViewController {
         } else {
             titleLabel.text = scenario.nameDe
         }
-        controller?.loadImage(scenario: scenario, event: nil, completion: { image in
+        controller?.loadImage(summary: nil, scenario: scenario, event: nil, completion: { image in
             DispatchQueue.main.async {
                 self.eventImage.image = image
             }
@@ -135,7 +135,7 @@ class RunScenarioViewController: UIViewController {
                     self.updateViews()
                 } else {
                     self.eventTimer?.invalidate()
-                    self.controller?.loadImage(scenario: scenario, event: nil, completion: { image in
+                    self.controller?.loadImage(summary: nil, scenario: scenario, event: nil, completion: { image in
                         DispatchQueue.main.async {
                             self.eventImage.image = image
                         }
@@ -195,7 +195,7 @@ class RunScenarioViewController: UIViewController {
         guard let scenario = scenario,
               let currentEvent = currentEvent else { return }
         if currentEvent.image != nil {
-            controller?.loadImage(scenario: scenario, event: currentEvent, completion: { image in
+            controller?.loadImage(summary: nil, scenario: scenario, event: currentEvent, completion: { image in
                 DispatchQueue.main.async {
                     self.eventImage.image = image
                 }
@@ -268,7 +268,7 @@ extension RunScenarioViewController: UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
         cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
         let event = cell.event
-        controller?.loadImage(scenario: scenario, event: event, completion: { image in
+        controller?.loadImage(summary: nil, scenario: scenario, event: event, completion: { image in
             DispatchQueue.main.async {
                 self.eventImage.image = image
             }

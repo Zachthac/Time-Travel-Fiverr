@@ -128,22 +128,31 @@ final class ApiController {
     /// generates the URL from the scenario's nameId, and either the scenario's or the event's image
     /// called in modelController.loadImage
     /// - Parameters:
-    ///   - scenario: accepts a Scenario
+    ///   - summary: use a Summary for loading the image in RunTimeViewController, else set to nil
+    ///   - scenario: use a Scenario for loading images everywhere except RunTimeViewController, where it is set to nil
     ///   - event: Optional - accepts an event, use if image is not the main Scenario image
     ///   - completion: returns UIImage
-    func fetchImage(scenario: Scenario, event: Event?, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+    func fetchImage(summary: Summary?, scenario: Scenario?, event: Event?, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
         guard let bearer = bearer else {
             completion(.failure(.noToken))
             return
         }
-        guard let nameId = scenario.nameId else { return }
-        var imageString = "\(nameId)_"
+        var imageString = ""
+        if let summary = summary,
+           let image = summary.image {
+            imageString = "\(summary.nameId)_\(image)"
+        }
+        if let scenario = scenario,
+           let nameId = scenario.nameId {
+            imageString = "\(nameId)_"
+        }
         if let event = event {
             guard let image = event.image else { return }
             imageString.append(image)
         } else {
-            guard let image = scenario.image else { return }
-            imageString.append(image)
+            if let image = scenario?.image {
+                imageString.append(image)
+            }
         }
         let url = imageURL.appendingPathComponent(imageString)
         var request = URLRequest(url: url)

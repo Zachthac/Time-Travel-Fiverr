@@ -176,21 +176,29 @@ class ModelController {
     /// checks the image cache before making a network call to fetch an image
     /// saves a newly fetched image in the cache
     /// - Parameters:
-    ///   - scenario: accepts a scenario
-    ///   - event: Optional - accepts an event, event is nil if image is the main image for a scenario
+    ///   - summary: use a Summary for loading the image in RunTimeViewController, else set to nil
+    ///   - scenario: use a Scenario for loading images everywhere except RunTimeViewController, where it is set to nil
+    ///   - event: Optional - accepts an event, use if image is not the main Scenario image
     ///   - completion: completion provides a UIImage, or nil if no image is available for that scenario or event
-    func loadImage(scenario: Scenario, event: Event?, completion: @escaping (UIImage?) -> Void) {
-        var imageReference: String
+    func loadImage(summary: Summary?, scenario: Scenario?, event: Event?, completion: @escaping (UIImage?) -> Void) {
+        var imageReference = ""
         var image: UIImage?
         
+        if let summary = summary {
+            guard let imageName = summary.image else {
+                completion(nil)
+                return
+            }
+            imageReference = imageName
+        }
         if let event = event {
             guard let imageName = event.image else {
                 completion(nil)
                 return
             }
             imageReference = imageName
-        } else {
-            guard let imageName = scenario.image else {
+        } else if summary == nil {
+            guard let imageName = scenario?.image else {
                 completion(nil)
                 return
             }
@@ -201,7 +209,7 @@ class ModelController {
             completion(cachedImage)
             return
         }
-        self.api.fetchImage(scenario: scenario, event: event) { result in
+        self.api.fetchImage(summary: summary, scenario: scenario, event: event) { result in
             switch result {
             case .success(let fetchedImage):
                 self.cache.cache(value: fetchedImage, for: imageReference)
@@ -223,7 +231,7 @@ class ModelController {
             guard let eventSet = scenario.events,
                   let events = Array(eventSet) as? [Event] else { return }
             for event in events {
-                self.loadImage(scenario: scenario, event: event) { _ in
+                self.loadImage(summary: nil, scenario: scenario, event: event) { _ in
                 }
             }
         }
@@ -245,8 +253,11 @@ class ModelController {
         }
     }
     
+    /// called in startScenario to set up local notifications for major events
+    /// - Parameters:
+    ///   - scenario: accepts a Scenario
+    ///   - event: accepts an Event
     private func sendNotification(scenario: Scenario, event: Event) {
-        
         var subtitleText = ""
         var bodyText = ""
         if language == .english {
@@ -262,6 +273,5 @@ class ModelController {
                                                badge: 1,
                                                delayInterval: event.displayTiming)
     }
-    
     
 }

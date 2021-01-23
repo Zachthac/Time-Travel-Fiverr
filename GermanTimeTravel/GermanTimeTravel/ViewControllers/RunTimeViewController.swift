@@ -64,6 +64,11 @@ class RunTimeViewController: UIViewController {
         } else {
             scenarioTitleLabel.text = scenario.nameDe
         }
+        controller?.loadImage(summary: scenario, scenario: nil, event: nil, completion: { image in
+            DispatchQueue.main.async {
+                self.scenarioImage.image = image
+            }
+        })
     }
     
     private func runTime() -> Double {
