@@ -15,6 +15,9 @@ struct Summary: Decodable {
     let descriptionDe: String
     let totalEvents: Int
     let majorEvents: Int
+    var license: String? = nil
+    var source: String? = nil
+    var image: String? = nil
     
     enum Keys: String, CodingKey {
         case nameId = "name_id"
@@ -23,6 +26,7 @@ struct Summary: Decodable {
         
         case majorEvents = "num_major_events"
         case totalEvents = "num_events"
+        case fancy
                 
         enum nameKeys: String, CodingKey {
             case nameEn = "en"
@@ -32,6 +36,12 @@ struct Summary: Decodable {
         enum descriptionKeys: String, CodingKey {
             case descriptionEn = "en"
             case descriptionDe = "de"
+        }
+        
+        enum fancyKeys: String, CodingKey {
+            case license
+            case source
+            case image
         }
     }
     
@@ -49,5 +59,10 @@ struct Summary: Decodable {
         
         totalEvents = try container.decode(Int.self, forKey: .totalEvents)
         majorEvents = try container.decode(Int.self, forKey: .majorEvents)
+        
+        let fancyContainer = try container.nestedContainer(keyedBy: Keys.fancyKeys.self, forKey: .fancy)
+        license = try? fancyContainer.decode(String.self, forKey: .license)
+        source = try? fancyContainer.decode(String.self, forKey: .source)
+        image = try? fancyContainer.decode(String.self, forKey: .image)
     }
 }
