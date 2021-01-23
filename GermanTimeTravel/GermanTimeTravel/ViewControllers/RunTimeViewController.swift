@@ -49,6 +49,10 @@ class RunTimeViewController: UIViewController {
     }
     
     private func setUpViews() {
+        scenarioTitleLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
+        scenarioTitleLabel.layer.shadowOpacity = 1
+        scenarioTitleLabel.layer.shadowRadius = 2.4
+        scenarioTitleLabel.layer.shadowColor = UIColor.black.cgColor
         gradient.frame = roundView.bounds
         gradient2.frame = scenarioImage.bounds
         roundView.layer.addSublayer(gradient)
@@ -92,12 +96,12 @@ class RunTimeViewController: UIViewController {
         let gradient2 = CAGradientLayer()
         gradient2.type = .radial
         gradient2.colors = [
-            UIColor.lightBlue.cgColor,
-            UIColor.darkBlue.cgColor
+            UIColor.clear.cgColor,
+            UIColor.black.cgColor
         ]
-        gradient2.startPoint = CGPoint(x: 0.5, y: 0.75)
+        gradient2.startPoint = CGPoint(x: 0.5, y: 0.5)
         let endY = 1 + view.frame.size.width / view.frame.size.height
-        gradient2.endPoint = CGPoint(x: 1.1, y: endY)
+        gradient2.endPoint = CGPoint(x: 1.25, y: endY)
             return gradient2
     }()
 }
@@ -124,7 +128,7 @@ extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return pickerView.frame.size.width/4
+        return pickerView.frame.size.width/4 - 10
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
