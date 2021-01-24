@@ -22,13 +22,7 @@ class EventTableViewCell: UITableViewCell {
     var language: Language?
     var unit: Unit?
     
-    override func prepareForReuse() {
-        roundView.layer.borderColor = UIColor.clear.cgColor
-    }
-    
     private func updateViews() {
-        
-        selectedBackgroundView?.backgroundColor = UIColor.darkYellow
         
         guard let event = event else { return }
         if event.image != nil {
