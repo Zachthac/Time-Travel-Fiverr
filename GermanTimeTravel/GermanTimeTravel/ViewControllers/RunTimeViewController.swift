@@ -40,10 +40,12 @@ class RunTimeViewController: UIViewController {
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             case false:
-                let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(button)
-                self.present(alert, animated: true)
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
+                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(button)
+                    self.present(alert, animated: true)
+                }
             }
         })
     }

@@ -28,7 +28,8 @@ class RunScenarioViewController: UIViewController {
 
     var timer: Timer?
     var eventTimer: Timer?
-    var currentEvent: Event?
+    var selectedEvent: Event?
+    var currentImage: String = ""
     
     // MARK: - View Lifecycle
     
@@ -36,6 +37,7 @@ class RunScenarioViewController: UIViewController {
         super.viewDidLoad()
         setUpViews()
         eventsTableView.delegate = self
+        eventsTableView.allowsMultipleSelection = false
         configureDatasource()
         initFetchedResultsController()
         setUpTimer()
@@ -85,7 +87,11 @@ class RunScenarioViewController: UIViewController {
         datasource = UITableViewDiffableDataSource(tableView: eventsTableView, cellProvider: { (tableView, indexPath, event) -> UITableViewCell? in
             guard let cell = self.eventsTableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventTableViewCell else { fatalError("Cannot create cell") }
             cell.roundView.layer.borderWidth = 3
-            cell.roundView.layer.borderColor = UIColor.clear.cgColor
+            if event == self.selectedEvent {
+                cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
+            } else {
+                cell.roundView.layer.borderColor = UIColor.clear.cgColor
+            }
             cell.language = self.controller?.language
             cell.unit = self.controller?.unit
             cell.event = event
@@ -192,14 +198,23 @@ class RunScenarioViewController: UIViewController {
     }
     
     private func updateViews() {
-        guard let scenario = scenario,
-              let currentEvent = currentEvent else { return }
-        if currentEvent.image != nil {
-            controller?.loadImage(summary: nil, scenario: scenario, event: currentEvent, completion: { image in
-                DispatchQueue.main.async {
-                    self.eventImage.image = image
+        guard let scenario = scenario else { return }
+        let eventIndex = ((fetchedResultsController.fetchedObjects?.count ?? 1) - 1)
+        for index in 0...eventIndex {
+            if let imageString = fetchedResultsController.fetchedObjects?[index].image {
+                if currentImage == imageString {
+                    return
+                } else {
+                    let event = fetchedResultsController.fetchedObjects?[index]
+                    controller?.loadImage(summary: nil, scenario: scenario, event: event, completion: { image in
+                        DispatchQueue.main.async {
+                            self.eventImage.image = image
+                            self.currentImage = imageString
+                        }
+                    })
+                    return
                 }
-            })
+            }
         }
     }
     
@@ -257,7 +272,6 @@ extension RunScenarioViewController: NSFetchedResultsControllerDelegate {
         var diffableDataSourceSnapshot = NSDiffableDataSourceSnapshot<Int, Event>()
         diffableDataSourceSnapshot.appendSections([0])
         diffableDataSourceSnapshot.appendItems(fetchedResultsController.fetchedObjects ?? [])
-        currentEvent = fetchedResultsController.fetchedObjects?.first
         datasource?.apply(diffableDataSourceSnapshot, animatingDifferences: view.window != nil)
     }
 }
@@ -268,6 +282,7 @@ extension RunScenarioViewController: UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
         cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
         let event = cell.event
+        selectedEvent = event
         controller?.loadImage(summary: nil, scenario: scenario, event: event, completion: { image in
             DispatchQueue.main.async {
                 self.eventImage.image = image
