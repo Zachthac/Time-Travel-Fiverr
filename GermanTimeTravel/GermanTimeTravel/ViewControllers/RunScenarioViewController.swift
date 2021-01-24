@@ -210,6 +210,11 @@ class RunScenarioViewController: UIViewController {
                         DispatchQueue.main.async {
                             self.eventImage.image = image
                             self.currentImage = imageString
+                            self.selectedEvent = nil
+                            let cells = self.eventsTableView.visibleCells as! [EventTableViewCell]
+                            for cell in cells {
+                                cell.roundView.layer.borderColor = UIColor.clear.cgColor
+                            }
                         }
                     })
                     return
@@ -217,8 +222,6 @@ class RunScenarioViewController: UIViewController {
             }
         }
     }
-    
-
     
     private func timeString(timeElapsed: Double) -> String {
         let days = Int(floor(timeElapsed / 86400))
@@ -278,16 +281,19 @@ extension RunScenarioViewController: NSFetchedResultsControllerDelegate {
 
 extension RunScenarioViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let scenario = scenario else { return }
         let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
-        cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
         let event = cell.event
-        selectedEvent = event
-        controller?.loadImage(summary: nil, scenario: scenario, event: event, completion: { image in
-            DispatchQueue.main.async {
-                self.eventImage.image = image
+        if let imageName = event?.image,
+           let cachedImage = controller?.cache.value(for: imageName) {
+            cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
+            selectedEvent = event
+            eventImage.image = cachedImage
+        } else {
+            if let cachedImage = controller?.cache.value(for: currentImage) {
+                eventImage.image = cachedImage
+                selectedEvent = nil
             }
-        })
+        }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

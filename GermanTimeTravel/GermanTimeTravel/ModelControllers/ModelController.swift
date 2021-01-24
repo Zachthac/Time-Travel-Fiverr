@@ -36,7 +36,7 @@ class ModelController {
     }
     var language: Language = .english
     var unit: Unit = .imperial
-    private let cache = Cache<String, UIImage>()
+    let cache = Cache<String, UIImage>()
     weak var delegate: ScenarioDelegate?
     let notificationPublisher = NotificationPublisher()
     
