@@ -17,6 +17,8 @@ class RunScenarioViewController: UIViewController {
     @IBOutlet weak var eventsTableView: UITableView!
     @IBOutlet weak var timePassedLabel: UILabel!
     @IBOutlet weak var currentEventDateLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIView!
+    @IBOutlet weak var noPhotoLabel: UILabel!
     
     // MARK: - Properties
     
@@ -66,6 +68,10 @@ class RunScenarioViewController: UIViewController {
     // MARK: - Private Functions
     
     private func setUpViews() {
+        gradient.frame = photoImageView.bounds
+        photoImageView.layer.addSublayer(gradient)
+        photoImageView.bringSubviewToFront(noPhotoLabel)
+        photoImageView.bringSubviewToFront(eventImage)
         timePassedLabel.text = ""
         currentEventDateLabel.text = ""
         timePassedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timePassedLabel.font.pointSize, weight: .medium)
@@ -267,6 +273,19 @@ class RunScenarioViewController: UIViewController {
         eventTimer?.invalidate()
         eventTimer = nil
     }
+    
+    lazy var gradient: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.type = .radial
+        gradient.colors = [
+            UIColor.lightBlue.cgColor,
+            UIColor.darkBlue.cgColor
+        ]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.75)
+        let endY = 1 + view.frame.size.width / view.frame.size.height
+        gradient.endPoint = CGPoint(x: 1.1, y: endY)
+            return gradient
+    }()
     
 }
 

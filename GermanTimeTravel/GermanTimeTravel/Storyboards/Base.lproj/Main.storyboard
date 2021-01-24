@@ -910,9 +910,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="313.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No photo for this event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXY-XL-btj">
-                                        <rect key="frame" x="110.5" y="145.5" width="193.5" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                        <color key="textColor" white="1" alpha="0.82521387736002605" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="107.5" y="145" width="199.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="0.91550470987955734" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdu-tT-c2N">
@@ -1183,6 +1183,8 @@
                         <outlet property="currentEventDateLabel" destination="IkD-XX-Nfn" id="M2v-AA-CUv"/>
                         <outlet property="eventImage" destination="zdu-tT-c2N" id="A82-3c-3yL"/>
                         <outlet property="eventsTableView" destination="lo9-Vz-HQR" id="ZI4-iC-1CD"/>
+                        <outlet property="noPhotoLabel" destination="TXY-XL-btj" id="u3q-F5-Uaw"/>
+                        <outlet property="photoImageView" destination="skJ-jR-6KB" id="4Qp-WY-lw1"/>
                         <outlet property="timePassedLabel" destination="lfL-Eh-s7B" id="fmt-to-Jxx"/>
                         <outlet property="titleLabel" destination="WKv-d2-MDG" id="nWd-4N-NLs"/>
                     </connections>
