@@ -282,17 +282,14 @@ extension RunScenarioViewController: NSFetchedResultsControllerDelegate {
 extension RunScenarioViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
+        cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
         let event = cell.event
+        selectedEvent = event
         if let imageName = event?.image,
            let cachedImage = controller?.cache.value(for: imageName) {
-            cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
-            selectedEvent = event
             eventImage.image = cachedImage
         } else {
-            if let cachedImage = controller?.cache.value(for: currentImage) {
-                eventImage.image = cachedImage
-                selectedEvent = nil
-            }
+            eventImage.image = nil
         }
     }
     
