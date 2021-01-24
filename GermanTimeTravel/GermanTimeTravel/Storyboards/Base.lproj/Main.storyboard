@@ -909,6 +909,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skJ-jR-6KB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="313.5"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No photo for this event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXY-XL-btj">
+                                        <rect key="frame" x="110.5" y="145.5" width="193.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="0.82521387736002605" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdu-tT-c2N">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="313.5"/>
                                     </imageView>
@@ -916,8 +922,10 @@
                                 <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="zdu-tT-c2N" firstAttribute="top" secondItem="skJ-jR-6KB" secondAttribute="top" id="501-2Y-646"/>
+                                    <constraint firstItem="TXY-XL-btj" firstAttribute="centerY" secondItem="skJ-jR-6KB" secondAttribute="centerY" id="5Fs-H6-RR3"/>
                                     <constraint firstAttribute="bottom" secondItem="zdu-tT-c2N" secondAttribute="bottom" id="5gb-7h-Sgz"/>
                                     <constraint firstItem="zdu-tT-c2N" firstAttribute="leading" secondItem="skJ-jR-6KB" secondAttribute="leading" id="6TR-ki-lXO"/>
+                                    <constraint firstItem="TXY-XL-btj" firstAttribute="centerX" secondItem="skJ-jR-6KB" secondAttribute="centerX" id="KNP-Oo-bUE"/>
                                     <constraint firstAttribute="trailing" secondItem="zdu-tT-c2N" secondAttribute="trailing" id="nZ6-jv-5Uc"/>
                                 </constraints>
                             </view>
