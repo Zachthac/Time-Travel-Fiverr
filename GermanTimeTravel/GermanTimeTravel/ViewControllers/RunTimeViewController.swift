@@ -15,6 +15,7 @@ class RunTimeViewController: UIViewController {
     @IBOutlet weak var roundView: UIView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var suggestedRTLabel: UILabel!
     
     var days: Int = 0
     var hours: Int = 0
