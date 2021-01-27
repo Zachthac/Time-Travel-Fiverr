@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func requestNotificationAuthorization(application: UIApplication){
         
         let center = UNUserNotificationCenter.current()
-        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+        let options: UNAuthorizationOptions = [.alert, .sound]
         
         center.requestAuthorization(options: options) { (granted, error) in
             if let error = error {
@@ -24,8 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
         requestNotificationAuthorization(application: application)
-        // Override point for customization after application launch.
+        hasAppLaunchedBefore()
         return true
     }
 
@@ -45,8 +46,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
-
     
+    private func hasAppLaunchedBefore() {
+        if UserDefaults.standard.bool(forKey: "hasAppLaunchedBefore") {
+            return
+        } else {
+            UserDefaults.standard.setValue(true, forKey: "hasAppLaunchedBefore")
+            checkDeviceLanguage()
+        }
+    }
+
+    private func checkDeviceLanguage() {
+        if let languageCode = Locale.current.languageCode {
+            if languageCode == "de" {
+                UserDefaults.standard.set(1, forKey: .language)
+                UserDefaults.standard.set(1, forKey: .unit)
+            }
+        }
+    }
     
 }
 

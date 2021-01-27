@@ -270,7 +270,6 @@ class ModelController {
         notificationPublisher.sendNotification(title: "Time Translator",
                                                subtitle: subtitleText,
                                                body: bodyText,
-                                               badge: 1,
                                                delayInterval: event.displayTiming)
     }
     
