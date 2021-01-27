@@ -48,8 +48,6 @@ class HomeViewController: UIViewController {
         titleView.bringSubviewToFront(titleLabel)
         roundView.roundCorners(cornerRadius: 25)
         roundView.bringSubviewToFront(stackView)
-        
-        
     }
     
     lazy var gradient1: CAGradientLayer = {

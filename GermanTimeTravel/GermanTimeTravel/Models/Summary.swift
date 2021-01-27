@@ -18,6 +18,9 @@ struct Summary: Decodable {
     var license: String? = nil
     var source: String? = nil
     var image: String? = nil
+    // var runtime: Double? = 0
+    // var suggestionEn: String? = nil
+    // var suggestionDe: String? = nil
     
     enum Keys: String, CodingKey {
         case nameId = "name_id"
@@ -27,6 +30,7 @@ struct Summary: Decodable {
         case majorEvents = "num_major_events"
         case totalEvents = "num_events"
         case fancy
+        case suggestion // edit after api is updated with correct container name
                 
         enum nameKeys: String, CodingKey {
             case nameEn = "en"
@@ -42,6 +46,12 @@ struct Summary: Decodable {
             case license
             case source
             case image
+        }
+        
+        enum suggestionKeys: String, CodingKey { // edit after api is updated with correct keys
+            case runtime
+            case suggestionEn = "en"
+            case suggestionDe = "de"
         }
     }
     
@@ -64,5 +74,11 @@ struct Summary: Decodable {
         license = try? fancyContainer.decode(String.self, forKey: .license)
         source = try? fancyContainer.decode(String.self, forKey: .source)
         image = try? fancyContainer.decode(String.self, forKey: .image)
+
+// Edit after api is updated with correct key and container names
+//        let suggestionContainer = try container.nestedContainer(keyedBy: Keys.suggestionKeys.self, forKey: .suggestion)
+//        runtime = try? suggestionContainer.decode(Double.self, forKey: .runtime)
+//        suggestionEn = try? suggestionContainer.decode(String.self, forKey: .suggestionEn)
+//        suggestionDe = try? suggestionContainer.decode(String.self, forKey: .suggestionDe)
     }
 }

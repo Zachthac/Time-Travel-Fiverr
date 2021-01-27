@@ -13,7 +13,6 @@ class NotificationPublisher: NSObject {
     func sendNotification(title: String,
                           subtitle: String,
                           body: String,
-                          badge: Int?,
                           delayInterval: Double?) {
         
         let notificationContent = UNMutableNotificationContent()
@@ -27,18 +26,9 @@ class NotificationPublisher: NSObject {
            delayInterval != 0 {
             delayTimeTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(delayInterval), repeats: false)
         }
-        if let badge = badge {
-            DispatchQueue.main.async {
-                var currentBadgeCount = UIApplication.shared.applicationIconBadgeNumber
-                currentBadgeCount += badge
-                notificationContent.badge = NSNumber(integerLiteral: currentBadgeCount)
-            }
-        }
         
         notificationContent.sound = UNNotificationSound.default
-        
-        UNUserNotificationCenter.current().delegate = self
-        
+                
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notificationContent, trigger: delayTimeTrigger)
         
         UNUserNotificationCenter.current().add(request) { error in
@@ -49,8 +39,8 @@ class NotificationPublisher: NSObject {
     }
 }
 
-extension NotificationPublisher: UNUserNotificationCenterDelegate{
-
+// extension NotificationPublisher: UNUserNotificationCenterDelegate {
+extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let state = UIApplication.shared.applicationState
         if state == .active {
@@ -61,9 +51,8 @@ extension NotificationPublisher: UNUserNotificationCenterDelegate{
         
         print("Notification is about to be presented")
         completionHandler([.sound, .banner])
-        
     }
-    
+        
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         let identifier = response.actionIdentifier
