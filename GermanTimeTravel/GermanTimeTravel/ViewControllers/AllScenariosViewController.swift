@@ -93,6 +93,7 @@ extension AllScenariosViewController: UITableViewDataSource, UITableViewDelegate
         cell.layer.backgroundColor = UIColor.clear.cgColor
         cell.roundView.layer.borderWidth = 3
         cell.roundView.layer.borderColor = UIColor.clear.cgColor
+        cell.delegate = self
         return cell
     }
     
@@ -115,5 +116,12 @@ extension AllScenariosViewController: ScenarioDelegate {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+    }
+}
+
+extension AllScenariosViewController: LabelDelegate {
+    func didChangeLabelHeight() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
