@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LabelDelegate: AnyObject {
+    func didChangeLabelHeight()
+}
+
 class ScenarioTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,6 +25,7 @@ class ScenarioTableViewCell: UITableViewCell {
         }
     }
     var language: Language?
+    weak var delegate: LabelDelegate?
     
     override func prepareForReuse() {
         titleLabel.text = ""
@@ -48,8 +53,12 @@ class ScenarioTableViewCell: UITableViewCell {
     }
     
     @IBAction func moreInfoTapped(_ sender: UIButton) {
-      
+        if descriptionLabel.numberOfLines == 3 {
+            descriptionLabel.numberOfLines = 0
+        } else {
+            descriptionLabel.numberOfLines = 3
+        }
+        delegate?.didChangeLabelHeight()
     }
-    
     
 }
