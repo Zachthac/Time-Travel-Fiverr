@@ -18,12 +18,16 @@ enum NetworkError: Error {
 
 final class ApiController {
     
+    // MARK: - Properties
+    
     var bearer: Bearer?
 
     private let baseURL = URL(string: "https://development-290808.ew.r.appspot.com")!
     private lazy var tokenURL = baseURL.appendingPathComponent("/token")
     private lazy var scenarioURL = baseURL.appendingPathComponent("/scenario/")
     private lazy var imageURL = baseURL.appendingPathComponent("/image/bytes/")
+    
+    // MARK: - Public Functions
     
     /// called in modelController.signInAndGetScenarioList
     /// submits the api username and password to receive a bearer token
@@ -169,6 +173,8 @@ final class ApiController {
         }
         task.resume()
     }
+    
+    // MARK: - Private Functions
     
     /// a helper function that checks data, response, and error from a data task
     /// - Parameters:

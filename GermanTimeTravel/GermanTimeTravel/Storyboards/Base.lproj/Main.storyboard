@@ -28,17 +28,6 @@
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.016917392609999998" green="0.056360714139999997" blue="0.22774863240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23G-uJ-1XC">
-                                        <rect key="frame" x="128" y="204" width="161" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Active Scenario">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="xbf-Zu-GSV" kind="show" identifier="activeScenarioSegue" id="fDG-Hz-cPz"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.026615977289999999" green="0.086280651390000004" blue="0.29939711089999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -379,6 +368,7 @@
                         <outlet property="stackView" destination="xd6-bA-dma" id="sUU-Vt-FK5"/>
                         <outlet property="titleLabel" destination="LU7-TO-l0K" id="VdC-zd-k6l"/>
                         <outlet property="titleView" destination="vHT-0k-dhU" id="oZA-11-Jpa"/>
+                        <segue destination="xbf-Zu-GSV" kind="show" identifier="activeScenarioSegue" id="tU6-hx-dxq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wu7-Hf-Dry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1127,7 +1117,7 @@
                                                     <constraint firstItem="Nhc-1J-Kn3" firstAttribute="leading" secondItem="rEW-EY-QaM" secondAttribute="leading" id="vca-GR-B2t"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1940-06-14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-XX-Nfn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1940-06-14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-XX-Nfn">
                                                 <rect key="frame" x="14.5" y="32.5" width="136" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -10,14 +10,19 @@ import CoreData
 
 class HomeViewController: UIViewController {
     
-    let controller = ModelController()
-    
+    // MARK: - Outlets
+
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var roundView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    // MARK: - Properties
+    
+    let controller = ModelController()
     var activeScenario: Scenario?
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +44,27 @@ class HomeViewController: UIViewController {
             NSLog("No active scenario")
         }
     }
+  
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "scenarioListSegue" {
+            let allScenariosVC = segue.destination as! AllScenariosViewController
+            allScenariosVC.controller = controller
+        } else if segue.identifier == "activeScenarioSegue" {
+            let runScenarioVC = segue.destination as! RunScenarioViewController
+            runScenarioVC.controller = controller
+            runScenarioVC.scenario = activeScenario
+        } else if segue.identifier == "optionsSegue" {
+            let optionsVC = segue.destination as! OptionsViewController
+            optionsVC.controller = controller
+        } else if segue.identifier == "aboutSegue" {
+            let aboutVC = segue.destination as! AboutViewController
+            aboutVC.controller = controller
+        }
+    }
+    
+    // MARK: - Private Functions
     
     private func setUpViews() {
         gradient1.frame = roundView.bounds
@@ -60,6 +86,7 @@ class HomeViewController: UIViewController {
         gradient1.locations = [0, 1]
         return gradient1
     }()
+    
     lazy var gradient2: CAGradientLayer = {
         let gradient2 = CAGradientLayer()
         gradient2.type = .radial
@@ -72,24 +99,5 @@ class HomeViewController: UIViewController {
         gradient2.endPoint = CGPoint(x: 1.1, y: endY)
             return gradient2
     }()
-  
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "scenarioListSegue" {
-            let allScenariosVC = segue.destination as! AllScenariosViewController
-            allScenariosVC.controller = controller
-        } else if segue.identifier == "activeScenarioSegue" {
-            let runScenarioVC = segue.destination as! RunScenarioViewController
-            runScenarioVC.controller = controller
-            runScenarioVC.scenario = activeScenario
-        } else if segue.identifier == "optionsSegue" {
-            let optionsVC = segue.destination as! OptionsViewController
-            optionsVC.controller = controller
-        } else if segue.identifier == "aboutSegue" {
-            let aboutVC = segue.destination as! AboutViewController
-            aboutVC.controller = controller
-        }
-    }
 
 }

@@ -31,7 +31,6 @@
 		469207CE257933D8001781E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469207CD257933D8001781E5 /* Assets.xcassets */; };
 		469207D1257933D8001781E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469207CF257933D8001781E5 /* LaunchScreen.storyboard */; };
 		469207E025797BEC001781E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207DF25797BEC001781E5 /* HomeViewController.swift */; };
-		469207E6257AD507001781E5 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207E5257AD507001781E5 /* Countdown.swift */; };
 		469207EA257EC205001781E5 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207E9257EC205001781E5 /* ApiController.swift */; };
 		469207F4257EE0AD001781E5 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207F3257EE0AD001781E5 /* Bearer.swift */; };
 		469CEF542589773400827BB0 /* AllScenariosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469CEF532589773400827BB0 /* AllScenariosViewController.swift */; };
@@ -65,7 +64,6 @@
 		469207D0257933D8001781E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		469207D2257933D8001781E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		469207DF25797BEC001781E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		469207E5257AD507001781E5 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		469207E9257EC205001781E5 /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		469207F3257EE0AD001781E5 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		469CEF532589773400827BB0 /* AllScenariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllScenariosViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 				469207C6257933D5001781E5 /* SceneDelegate.swift */,
 				469207C4257933D5001781E5 /* AppDelegate.swift */,
 				469207CD257933D8001781E5 /* Assets.xcassets */,
-				469207E5257AD507001781E5 /* Countdown.swift */,
 				1A28293225B8D093005961D6 /* UIColorExtension.swift */,
 				469D6BEE25BAB2750043FE91 /* NotificationPublisher.swift */,
 			);
@@ -279,7 +276,6 @@
 				464CACC925B29E9900F37F79 /* ScenarioTableViewCell.swift in Sources */,
 				1A07372125AE0BB20072217A /* GermanTimeTravel.xcdatamodeld in Sources */,
 				1A07373225AE77970072217A /* Event+Convenience.swift in Sources */,
-				469207E6257AD507001781E5 /* Countdown.swift in Sources */,
 				464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */,
 				1A28293A25C3527D005961D6 /* AboutViewController.swift in Sources */,
 				4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */,
