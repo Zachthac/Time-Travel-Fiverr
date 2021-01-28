@@ -46,6 +46,19 @@ class RunScenarioViewController: UIViewController {
         setUpEventTimer()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if eventImage.image == nil {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.controller?.loadImage(summary: nil, scenario: self.scenario, event: nil, completion: { image in
+                    DispatchQueue.main.async {
+                        self.eventImage.image = image
+                    }
+                })
+            }
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func cancelScenario(_ sender: UIBarButtonItem) {
@@ -57,10 +70,17 @@ class RunScenarioViewController: UIViewController {
                 self.eventTimer?.invalidate()
                 self.navigationController?.popViewController(animated: true)
             case false:
-                let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
-                let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(button)
-                self.present(alert, animated: true)
+                if self.controller?.language == .english {
+                    let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
+                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(button)
+                    self.present(alert, animated: true)
+                } else {
+                    let alert = UIAlertController(title: "Fehler", message: "Es ist etwas schief gegangen - Bitte versuche es erneut.", preferredStyle: .alert)
+                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(button)
+                    self.present(alert, animated: true)
+                }
             }
         })
     }
@@ -152,10 +172,17 @@ class RunScenarioViewController: UIViewController {
                             self.eventImage.image = image
                         }
                     })
-                    let alert = UIAlertController(title: "Finished!", message: "Use the cancel button to clear this scenario.", preferredStyle: .alert)
-                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alert.addAction(button)
-                    self.present(alert, animated: true)
+                    if self.controller?.language == .english {
+                        let alert = UIAlertController(title: "Finished!", message: "Use the cancel button to clear this scenario.", preferredStyle: .alert)
+                        let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alert.addAction(button)
+                        self.present(alert, animated: true)
+                    } else {
+                        let alert = UIAlertController(title: "Fertig!", message: "Nutze den Abbrechen-Button, um das Szenario zu beenden.", preferredStyle: .alert)
+                        let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alert.addAction(button)
+                        self.present(alert, animated: true)
+                    }
                 }
             })
         })
@@ -304,9 +331,12 @@ extension RunScenarioViewController: UITableViewDelegate {
         cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
         let event = cell.event
         selectedEvent = event
-        if let imageName = event?.image,
-           let cachedImage = controller?.cache.value(for: imageName) {
-            eventImage.image = cachedImage
+        if event?.image != nil {
+            controller?.loadImage(summary: nil, scenario: scenario, event: event, completion: { image in
+                DispatchQueue.main.async {
+                    self.eventImage.image = image
+                }
+            })
         } else {
             eventImage.image = nil
         }

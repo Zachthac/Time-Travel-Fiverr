@@ -18,9 +18,9 @@ struct Summary: Decodable {
     var license: String? = nil
     var source: String? = nil
     var image: String? = nil
-    // var runtime: Double? = 0
-    // var suggestionEn: String? = nil
-    // var suggestionDe: String? = nil
+    var runtime: Double? = 0 // change default value to nil after api is set up
+    var suggestionEn: String? = nil
+    var suggestionDe: String? = nil
     
     enum Keys: String, CodingKey {
         case nameId = "name_id"
