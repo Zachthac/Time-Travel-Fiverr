@@ -84,18 +84,17 @@ class RunTimeViewController: UIViewController {
         })
         
         if let runtime = scenario.runtime {
-            setSuggestionOnPicker(runtime: 9960) // replace 9960 with runtime when api is set up
+            setSuggestionOnPicker(runtime: runtime)
             if controller?.language == .english {
                 suggestedRTLabel.text = scenario.suggestionEn
             } else {
                 suggestedRTLabel.text = scenario.suggestionDe
             }
-            suggestedRTLabel.text = "(sample suggested run-time for demo purposes)" // remove when api is set up
         } else {
             if controller?.language == .english {
                 suggestedRTLabel.text = "No suggested run-time for this scenario."
             } else {
-                suggestedRTLabel.text = "Keine vorgeschlagene Laufzeit für dieses Szenario."
+                suggestedRTLabel.text = "Keine empfohlene Laufzeit für dieses Szenario."
             }
         }
     }

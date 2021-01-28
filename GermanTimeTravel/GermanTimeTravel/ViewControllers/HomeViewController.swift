@@ -86,6 +86,9 @@ class HomeViewController: UIViewController {
         } else if segue.identifier == "optionsSegue" {
             let optionsVC = segue.destination as! OptionsViewController
             optionsVC.controller = controller
+        } else if segue.identifier == "aboutSegue" {
+            let aboutVC = segue.destination as! AboutViewController
+            aboutVC.controller = controller
         }
     }
 

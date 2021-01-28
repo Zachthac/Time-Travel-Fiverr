@@ -254,7 +254,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJk-oV-XYm">
                                                         <rect key="frame" x="0.0" y="18.5" width="370" height="34"/>
                                                         <connections>
-                                                            <segue destination="7rV-h2-0ju" kind="show" id="XYh-dx-OIU"/>
+                                                            <segue destination="7rV-h2-0ju" kind="show" identifier="aboutSegue" id="XYh-dx-OIU"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -600,10 +600,10 @@
             </objects>
             <point key="canvasLocation" x="1507" y="638"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="FdI-1W-4C0">
             <objects>
-                <viewController id="7rV-h2-0ju" sceneMemberID="viewController">
+                <viewController id="7rV-h2-0ju" customClass="AboutViewController" customModule="GermanTimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="spc-At-DOo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -625,6 +625,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="chx-0h-B6i"/>
+                    <connections>
+                        <outlet property="aboutLabel" destination="bCr-Fo-BRT" id="dsc-MM-YTd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdR-PE-tsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
