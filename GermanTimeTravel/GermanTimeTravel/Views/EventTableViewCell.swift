@@ -46,9 +46,17 @@ class EventTableViewCell: UITableViewCell {
             currentUnitLabel.text = formatter.string(from: time)
         } else {
             if unit == .imperial {
-                currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) million miles")
+                if language == .english {
+                    currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) million miles")
+                } else {
+                    currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) millionen meilen")
+                }
             } else {
-                currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) million kilometers")
+                if language == .english {
+                    currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) million kilometers")
+                } else {
+                    currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) millionen kilometer")
+                }
             }
         }
     }

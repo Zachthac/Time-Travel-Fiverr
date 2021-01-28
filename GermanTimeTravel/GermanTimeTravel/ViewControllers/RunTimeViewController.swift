@@ -27,7 +27,6 @@ class RunTimeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         pickerView.delegate = self
         setUpViews()
     }
@@ -42,10 +41,17 @@ class RunTimeViewController: UIViewController {
                 }
             case false:
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
-                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alert.addAction(button)
-                    self.present(alert, animated: true)
+                    if self.controller?.language == .english {
+                        let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
+                        let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alert.addAction(button)
+                        self.present(alert, animated: true)
+                    } else {
+                        let alert = UIAlertController(title: "Fehler", message: "Es ist etwas schief gegangen - Bitte versuche es erneut.", preferredStyle: .alert)
+                        let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alert.addAction(button)
+                        self.present(alert, animated: true)
+                    }
                 }
             }
         })
@@ -76,6 +82,36 @@ class RunTimeViewController: UIViewController {
                 self.scenarioImage.image = image
             }
         })
+        
+        if let runtime = scenario.runtime {
+            setSuggestionOnPicker(runtime: 9960) // replace 9960 with runtime when api is set up
+            if controller?.language == .english {
+                suggestedRTLabel.text = scenario.suggestionEn
+            } else {
+                suggestedRTLabel.text = scenario.suggestionDe
+            }
+            suggestedRTLabel.text = "(sample suggested run-time for demo purposes)" // remove when api is set up
+        } else {
+            if controller?.language == .english {
+                suggestedRTLabel.text = "No suggested run-time for this scenario."
+            } else {
+                suggestedRTLabel.text = "Keine vorgeschlagene Laufzeit für dieses Szenario."
+            }
+        }
+    }
+    
+    private func setSuggestionOnPicker(runtime: Double) {
+        let days = Int(floor(runtime / 86400))
+        var timeLeft = runtime - (Double(days) * 86400)
+        let hours = Int(floor(timeLeft / 3600))
+        timeLeft = timeLeft - (Double(hours) * 3600)
+        let minutes = Int(floor(timeLeft / 60))
+        timeLeft = timeLeft - (Double(minutes) * 60)
+        let seconds = Int(floor(timeLeft))
+        pickerView.selectRow(days, inComponent: 0, animated: false)
+        pickerView.selectRow(hours, inComponent: 1, animated: false)
+        pickerView.selectRow(minutes, inComponent: 2, animated: false)
+        pickerView.selectRow(seconds, inComponent: 3, animated: false)
     }
     
     private func runTime() -> Double {

@@ -42,13 +42,14 @@ class ScenarioTableViewCell: UITableViewCell {
         if language == .english {
             titleLabel.text = scenario.nameEn
             descriptionLabel.text = scenario.descriptionEn
+            totalEventsLabel.text = "Events: \(scenario.totalEvents)"
+            unitsLabel.text = "Major Events: \(scenario.majorEvents)"
         } else {
             titleLabel.text = scenario.nameDe
             descriptionLabel.text = scenario.descriptionDe
+            totalEventsLabel.text = "Ereignisse: \(scenario.totalEvents)"
+            unitsLabel.text = "Zentrale Ereignisse: \(scenario.majorEvents)"
         }
-        
-        totalEventsLabel.text = "TOTAL EVENTS: \(scenario.totalEvents)"
-        unitsLabel.text = "MAJOR EVENTS: \(scenario.majorEvents)"
         self.roundView.roundCorners(cornerRadius: 25)
     }
     

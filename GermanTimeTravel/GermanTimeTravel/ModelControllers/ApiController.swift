@@ -7,9 +7,6 @@
 
 import UIKit
 
-
-import UIKit
-
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
