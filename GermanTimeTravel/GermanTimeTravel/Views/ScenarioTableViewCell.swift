@@ -13,11 +13,15 @@ protocol LabelDelegate: AnyObject {
 
 class ScenarioTableViewCell: UITableViewCell {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var totalEventsLabel: UILabel!
     @IBOutlet weak var unitsLabel: UILabel!
     @IBOutlet weak var roundView: UIView!
+    
+    // MARK: Properties
     
     var scenario: Summary? {
         didSet {
@@ -27,17 +31,20 @@ class ScenarioTableViewCell: UITableViewCell {
     var language: Language?
     weak var delegate: LabelDelegate?
     
-    override func prepareForReuse() {
-        titleLabel.text = ""
-        descriptionLabel.text = ""
-        totalEventsLabel.text = ""
-        unitsLabel.text = ""
-        language = nil
-        scenario = nil
+    // MARK: - Actions
+    
+    @IBAction func moreInfoTapped(_ sender: UIButton) {
+        if descriptionLabel.numberOfLines == 3 {
+            descriptionLabel.numberOfLines = 0
+        } else {
+            descriptionLabel.numberOfLines = 3
+        }
+        delegate?.didChangeLabelHeight()
     }
     
+    // MARK: Private Functions
+    
     private func updateViews() {
-        
         guard let scenario = scenario else { return }
         if language == .english {
             titleLabel.text = scenario.nameEn
@@ -51,15 +58,6 @@ class ScenarioTableViewCell: UITableViewCell {
             unitsLabel.text = "Zentrale Ereignisse: \(scenario.majorEvents)"
         }
         self.roundView.roundCorners(cornerRadius: 25)
-    }
-    
-    @IBAction func moreInfoTapped(_ sender: UIButton) {
-        if descriptionLabel.numberOfLines == 3 {
-            descriptionLabel.numberOfLines = 0
-        } else {
-            descriptionLabel.numberOfLines = 3
-        }
-        delegate?.didChangeLabelHeight()
     }
     
 }

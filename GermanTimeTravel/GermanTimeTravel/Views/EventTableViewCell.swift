@@ -9,10 +9,14 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var currentUnitLabel: UILabel!
     @IBOutlet weak var eventDetailsLabel: UILabel!
     @IBOutlet weak var roundView: UIView!
     @IBOutlet weak var cameraImageView: UIImageView!
+    
+    // MARK: - Properties
     
     var event: Event? {
         didSet {
@@ -21,6 +25,8 @@ class EventTableViewCell: UITableViewCell {
     }
     var language: Language?
     var unit: Unit?
+    
+    // MARK: - Private Functions
     
     private func updateViews() {
         

@@ -9,14 +9,22 @@ import UIKit
 
 class AboutViewController: UIViewController {
     
+    // MARK: - Outlets
+    
     @IBOutlet private var aboutLabel: UILabel!
     
+    // MARK: - Properties
+    
     weak var controller: ModelController?
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
     }
+    
+    // MARK: - Private Functions
     
     private func updateView() {
         if controller?.language == .english {

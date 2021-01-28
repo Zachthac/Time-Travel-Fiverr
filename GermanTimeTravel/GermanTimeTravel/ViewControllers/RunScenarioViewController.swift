@@ -48,8 +48,8 @@ class RunScenarioViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if eventImage.image == nil {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            if self.eventImage.image == nil {
                 self.controller?.loadImage(summary: nil, scenario: self.scenario, event: nil, completion: { image in
                     DispatchQueue.main.async {
                         self.eventImage.image = image

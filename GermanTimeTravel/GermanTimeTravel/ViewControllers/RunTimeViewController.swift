@@ -8,6 +8,8 @@
 import UIKit
 
 class RunTimeViewController: UIViewController {
+    
+    // MARK: - Outlets
 
     @IBOutlet weak var scenarioTitleLabel: UILabel!
     @IBOutlet weak var scenarioImage: UIImageView!
@@ -17,6 +19,8 @@ class RunTimeViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var suggestedRTLabel: UILabel!
     
+    // MARK: - Properties
+    
     var days: Int = 0
     var hours: Int = 0
     var minutes: Int = 0
@@ -25,11 +29,15 @@ class RunTimeViewController: UIViewController {
     weak var controller: ModelController?
     var scenario: Summary?
     
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
         setUpViews()
     }
+    
+    // MARK: - Actions
     
     @IBAction func startScenario(_ sender: UIButton) {
         guard let scenario = scenario else { return }
@@ -56,6 +64,8 @@ class RunTimeViewController: UIViewController {
             }
         })
     }
+    
+    // MARK: - Private Functions
     
     private func setUpViews() {
         scenarioTitleLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -111,6 +121,10 @@ class RunTimeViewController: UIViewController {
         pickerView.selectRow(hours, inComponent: 1, animated: false)
         pickerView.selectRow(minutes, inComponent: 2, animated: false)
         pickerView.selectRow(seconds, inComponent: 3, animated: false)
+        self.days = days
+        self.hours = hours
+        self.minutes = minutes
+        self.seconds = seconds
     }
     
     private func runTime() -> Double {
@@ -130,6 +144,7 @@ class RunTimeViewController: UIViewController {
         gradient1.locations = [0, 1]
         return gradient1
     }()
+    
     lazy var gradient2: CAGradientLayer = {
         let gradient2 = CAGradientLayer()
         gradient2.type = .radial
@@ -153,9 +168,9 @@ extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
-            return 10
+            return 11
         case 1:
-            return 23
+            return 24
         case 2:
             return 60
         case 3:
