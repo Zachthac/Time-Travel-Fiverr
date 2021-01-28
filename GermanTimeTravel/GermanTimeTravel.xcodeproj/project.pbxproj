@@ -13,6 +13,7 @@
 		1A07372F25AE77830072217A /* Scenario+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07372E25AE77830072217A /* Scenario+Convenience.swift */; };
 		1A07373225AE77970072217A /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07373125AE77970072217A /* Event+Convenience.swift */; };
 		1A28293325B8D093005961D6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28293225B8D093005961D6 /* UIColorExtension.swift */; };
+		1A28293A25C3527D005961D6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28293925C3527D005961D6 /* AboutViewController.swift */; };
 		1AA265FC25B0AB8D0000F874 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA265FB25B0AB8D0000F874 /* Summary.swift */; };
 		1AA265FF25B0B1130000F874 /* Active+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA265FE25B0B1130000F874 /* Active+Convenience.swift */; };
 		1AA2660225B0C7840000F874 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2660125B0C7840000F874 /* ModelController.swift */; };
@@ -44,6 +45,7 @@
 		1A07372E25AE77830072217A /* Scenario+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scenario+Convenience.swift"; sourceTree = "<group>"; };
 		1A07373125AE77970072217A /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
 		1A28293225B8D093005961D6 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		1A28293925C3527D005961D6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		1AA265FB25B0AB8D0000F874 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		1AA265FE25B0B1130000F874 /* Active+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Active+Convenience.swift"; sourceTree = "<group>"; };
 		1AA2660125B0C7840000F874 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				4678CE4C25A173B20010D625 /* RunTimeViewController.swift */,
 				464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */,
 				1AB8F69B25B2B9440070A14C /* OptionsViewController.swift */,
+				1A28293925C3527D005961D6 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				1A07373225AE77970072217A /* Event+Convenience.swift in Sources */,
 				469207E6257AD507001781E5 /* Countdown.swift in Sources */,
 				464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */,
+				1A28293A25C3527D005961D6 /* AboutViewController.swift in Sources */,
 				4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
