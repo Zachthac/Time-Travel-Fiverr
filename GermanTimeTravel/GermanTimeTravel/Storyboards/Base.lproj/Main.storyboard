@@ -758,8 +758,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ds5-FG-HvO">
                                 <rect key="frame" x="0.0" y="313.5" width="414" height="582.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="ITs-cF-tYB">
-                                        <rect key="frame" x="33" y="28" width="348" height="478"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="ITs-cF-tYB">
+                                        <rect key="frame" x="33" y="29" width="348" height="478"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Run-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pks-aw-vTT">
                                                 <rect key="frame" x="46.5" y="0.0" width="255" height="39.5"/>
@@ -854,7 +854,6 @@
                                 <constraints>
                                     <constraint firstItem="ITs-cF-tYB" firstAttribute="leading" secondItem="Ds5-FG-HvO" secondAttribute="leading" constant="33" id="D0e-ge-BnK"/>
                                     <constraint firstAttribute="trailing" secondItem="ITs-cF-tYB" secondAttribute="trailing" constant="33" id="nVU-eS-lY1"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ITs-cF-tYB" secondAttribute="bottom" constant="29" id="rR9-qC-tKq"/>
                                     <constraint firstItem="ITs-cF-tYB" firstAttribute="top" secondItem="Ds5-FG-HvO" secondAttribute="top" constant="29" id="teG-EH-MbN"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -891,7 +890,6 @@
                     <connections>
                         <outlet property="pickerView" destination="tHe-0s-pXe" id="tmH-c7-qQi"/>
                         <outlet property="roundView" destination="Ds5-FG-HvO" id="lyq-bf-yTe"/>
-                        <outlet property="runTimeTitleLabel" destination="LI8-eh-sXH" id="lTy-OT-IwA"/>
                         <outlet property="scenarioImage" destination="6kI-iv-K2o" id="fiA-WD-tOJ"/>
                         <outlet property="scenarioTitleLabel" destination="fUP-Oq-bv3" id="Os1-4P-h5d"/>
                         <outlet property="stackView" destination="ITs-cF-tYB" id="sbc-l8-PeO"/>
