@@ -57,7 +57,7 @@ class ScenarioTableViewCell: UITableViewCell {
             totalEventsLabel.text = "Ereignisse: \(scenario.totalEvents)"
             unitsLabel.text = "Zentrale Ereignisse: \(scenario.majorEvents)"
         }
-        self.roundView.roundCorners(cornerRadius: 25)
+        self.roundView.roundCorners(cornerRadius: 15)
     }
     
 }
