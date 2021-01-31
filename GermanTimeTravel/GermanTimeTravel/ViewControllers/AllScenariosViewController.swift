@@ -29,6 +29,8 @@ class AllScenariosViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         controller?.delegate = self
+    }
+    override func viewDidLayoutSubviews() {
         setUpViews()
     }
     

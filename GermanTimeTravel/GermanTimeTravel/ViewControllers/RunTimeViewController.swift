@@ -34,6 +34,9 @@ class RunTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
+    }
+    
+    override func viewDidLayoutSubviews() {
         setUpViews()
     }
     

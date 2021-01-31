@@ -28,6 +28,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         controller.setPreferences()
         controller.signInAndGetScenarioList()
+    }
+    
+    override func viewDidLayoutSubviews() {
         setUpViews()
     }
     
