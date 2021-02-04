@@ -19,6 +19,7 @@ class RunScenarioViewController: UIViewController {
     @IBOutlet weak var currentEventDateLabel: UILabel!
     @IBOutlet weak var photoImageView: UIView!
     @IBOutlet weak var noPhotoLabel: UILabel!
+    @IBOutlet weak var imageInfoButton: UIButton!
     
     // MARK: - Properties
     
@@ -44,6 +45,9 @@ class RunScenarioViewController: UIViewController {
         initFetchedResultsController()
         setUpTimer()
         setUpEventTimer()
+    }
+    override func viewDidLayoutSubviews() {
+        setUpGradient()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,13 +89,25 @@ class RunScenarioViewController: UIViewController {
         })
     }
     
-    // MARK: - Private Functions
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        guard let event = selectedEvent else { return }
+        if event.image != nil {
+            let alert = UIAlertController(title: event.license, message: event.source, preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(button)
+            self.present(alert, animated: true)
+        }
+    }
     
-    private func setUpViews() {
+    // MARK: - Private Functions
+    private func setUpGradient() {
         gradient.frame = photoImageView.bounds
         photoImageView.layer.addSublayer(gradient)
         photoImageView.bringSubviewToFront(noPhotoLabel)
         photoImageView.bringSubviewToFront(eventImage)
+        photoImageView.bringSubviewToFront(imageInfoButton)
+    }
+    private func setUpViews() {
         timePassedLabel.text = ""
         currentEventDateLabel.text = ""
         timePassedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timePassedLabel.font.pointSize, weight: .medium)
@@ -243,7 +259,7 @@ class RunScenarioViewController: UIViewController {
                         DispatchQueue.main.async {
                             self.eventImage.image = image
                             self.currentImage = imageString
-                            self.selectedEvent = nil
+                            self.selectedEvent = event
                             let cells = self.eventsTableView.visibleCells as! [EventTableViewCell]
                             for cell in cells {
                                 cell.roundView.layer.borderColor = UIColor.clear.cgColor
@@ -335,10 +351,12 @@ extension RunScenarioViewController: UITableViewDelegate {
             controller?.loadImage(summary: nil, scenario: scenario, event: event, completion: { image in
                 DispatchQueue.main.async {
                     self.eventImage.image = image
+                    self.imageInfoButton.tintColor = UIColor(named: "YellowColor")
                 }
             })
         } else {
             eventImage.image = nil
+            self.imageInfoButton.tintColor = .clear
         }
     }
     

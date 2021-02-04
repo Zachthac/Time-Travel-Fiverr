@@ -1,39 +1,48 @@
 
 /* Class = "UILabel"; text = "Choose Scenario"; ObjectID = "1bh-SZ-mV4"; */
-"1bh-SZ-mV4.text" = "Wählen Sie Szenario";
+"1bh-SZ-mV4.text" = "Szenariowahl";
 
 /* Class = "UILabel"; text = "Coming Soon!"; ObjectID = "1hQ-NP-9xS"; */
-"1hQ-NP-9xS.text" = "Demnächst!";
-
-/* Class = "UIButton"; normalTitle = "Active Scenario"; ObjectID = "23G-uJ-1XC"; */
-"23G-uJ-1XC.normalTitle" = "Aktives Szenario";
+"1hQ-NP-9xS.text" = "Demnächst...";
 
 /* Class = "UISegmentedControl"; 2ym-JS-RQ8.segmentTitles[0] = "English"; ObjectID = "2ym-JS-RQ8"; */
-"2ym-JS-RQ8.segmentTitles[0]" = "Englisch";
+"2ym-JS-RQ8.segmentTitles[0]" = "English";
 
 /* Class = "UISegmentedControl"; 2ym-JS-RQ8.segmentTitles[1] = "German"; ObjectID = "2ym-JS-RQ8"; */
-"2ym-JS-RQ8.segmentTitles[1]" = "Deutsche";
+"2ym-JS-RQ8.segmentTitles[1]" = "Deutsch";
+
+/* Class = "UILabel"; text = "SEC"; ObjectID = "4kS-Cc-iO2"; */
+"4kS-Cc-iO2.text" = "SEK";
 
 /* Class = "UILabel"; text = "Measurement"; ObjectID = "ASt-Sf-tWv"; */
-"ASt-Sf-tWv.text" = "Messung";
+"ASt-Sf-tWv.text" = "Einheiten";
 
 /* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Eo5-eG-kwi"; */
-"Eo5-eG-kwi.title" = "Artikel";
+"Eo5-eG-kwi.title" = "Item";
+
+/* Class = "UILabel"; text = "The recommended run time for this event is for this event because the speed of light is 122322 and that is why blah blah blah"; ObjectID = "G9F-mh-Dxv"; */
+"G9F-mh-Dxv.text" = "The recommended run time for this event is for this event because the speed of light is 122322 and that is why blah blah blah";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "GQG-jY-gE1"; */
 "GQG-jY-gE1.text" = "Über";
 
 /* Class = "UILabel"; text = "Free Conversion"; ObjectID = "GT1-o4-66D"; */
-"GT1-o4-66D.text" = "Kostenlose Konvertierung";
+"GT1-o4-66D.text" = "Individuell";
 
 /* Class = "UILabel"; text = "1940-06-14"; ObjectID = "IkD-XX-Nfn"; */
 "IkD-XX-Nfn.text" = "1940-06-14";
 
+/* Class = "UILabel"; text = "Suggested Run-Time"; ObjectID = "LI8-eh-sXH"; */
+"LI8-eh-sXH.text" = "Empfohlene Dauer";
+
 /* Class = "UILabel"; text = "Time Translator"; ObjectID = "LU7-TO-l0K"; */
-"LU7-TO-l0K.text" = "Zeitübersetzer";
+"LU7-TO-l0K.text" = "Time Translator";
 
 /* Class = "UILabel"; text = "Enter Run-Time"; ObjectID = "Pks-aw-vTT"; */
-"Pks-aw-vTT.text" = "Laufzeit eingeben";
+"Pks-aw-vTT.text" = "Laufzeit";
+
+/* Class = "UILabel"; text = "  HR"; ObjectID = "Q8c-IJ-M4R"; */
+"Q8c-IJ-M4R.text" = "  STD";
 
 /* Class = "UILabel"; text = "History: WW2"; ObjectID = "Q9L-PB-Vjn"; */
 "Q9L-PB-Vjn.text" = "History: WW2";
@@ -41,11 +50,11 @@
 /* Class = "UILabel"; text = "Options"; ObjectID = "TO1-3v-YC9"; */
 "TO1-3v-YC9.text" = "Optionen";
 
+/* Class = "UILabel"; text = "No photo for this event"; ObjectID = "TXY-XL-btj"; */
+"TXY-XL-btj.text" = "Kein Bild für dieses Event vorhanden";
+
 /* Class = "UILabel"; text = "Language"; ObjectID = "Unw-0v-4B0"; */
 "Unw-0v-4B0.text" = "Sprache";
-
-/* Class = "UILabel"; text = "History: WW2"; ObjectID = "WKv-d2-MDG"; */
-"WKv-d2-MDG.text" = "History: WW2";
 
 /* Class = "UILabel"; text = "1993-03-10"; ObjectID = "WMh-RE-wzg"; */
 "WMh-RE-wzg.text" = "1993-03-10";
@@ -59,35 +68,38 @@
 /* Class = "UIButton"; normalTitle = "START"; ObjectID = "dod-JU-et4"; */
 "dod-JU-et4.normalTitle" = "START";
 
-/* Class = "UILabel"; text = "DAYS           HR                 MIN              SEC"; ObjectID = "eqa-2r-3AL"; */
-"eqa-2r-3AL.text" = "TAGE           HR                 MIN              SEC";
-
-/* Class = "UILabel"; text = "History: WW2"; ObjectID = "fUP-Oq-bv3"; */
-"fUP-Oq-bv3.text" = "History: WW2";
+/* Class = "UILabel"; text = "DAYS"; ObjectID = "eqa-2r-3AL"; */
+"eqa-2r-3AL.text" = "TAGE";
 
 /* Class = "UILabel"; text = "Choose Scenario"; ObjectID = "g1y-R3-kqr"; */
-"g1y-R3-kqr.text" = "Wählen Sie Szenario";
+"g1y-R3-kqr.text" = "Szenariowahl";
 
-/* Class = "UILabel"; text = "UNITS: KM Number of Events: 35"; ObjectID = "gR6-7m-ahC"; */
-"gR6-7m-ahC.text" = "UNITS: KM Number of Events: 35";
+/* Class = "UILabel"; text = "TOTAL EVENTS:"; ObjectID = "gR6-7m-ahC"; */
+"gR6-7m-ahC.text" = "TOTAL EVENTS:";
 
 /* Class = "UILabel"; text = "Point in Scenario"; ObjectID = "gva-oV-DPc"; */
-"gva-oV-DPc.text" = "Punkt im Szenario";
+"gva-oV-DPc.text" = "Im Szenario";
+
+/* Class = "UILabel"; text = "UNITS:"; ObjectID = "iqO-hc-mBv"; */
+"iqO-hc-mBv.text" = "UNITS:";
 
 /* Class = "UILabel"; text = "57:03"; ObjectID = "lfL-Eh-s7B"; */
 "lfL-Eh-s7B.text" = "57:03";
 
 /* Class = "UILabel"; text = "Time Passed"; ObjectID = "mBk-WW-6d7"; */
-"mBk-WW-6d7.text" = "Zeit verging";
+"mBk-WW-6d7.text" = "Zeit";
 
 /* Class = "UILabel"; text = "Immense yourself into exciting and thrilling world war 2 events that lead to one of the biggest and scariest incident of all time."; ObjectID = "pX9-sb-cpr"; */
 "pX9-sb-cpr.text" = "Immense yourself into exciting and thrilling world war 2 events that lead to one of the biggest and scariest incident of all time.";
+
+/* Class = "UILabel"; text = "MIN"; ObjectID = "tb4-yf-RoY"; */
+"tb4-yf-RoY.text" = "MIN";
 
 /* Class = "UILabel"; text = "Today Was the day that Zach was born"; ObjectID = "xaN-BO-7m1"; */
 "xaN-BO-7m1.text" = "Today Was the day that Zach was born";
 
 /* Class = "UISegmentedControl"; z8e-bZ-xkr.segmentTitles[0] = "Imperial"; ObjectID = "z8e-bZ-xkr"; */
-"z8e-bZ-xkr.segmentTitles[0]" = "Kaiserliche";
+"z8e-bZ-xkr.segmentTitles[0]" = "Imperial";
 
 /* Class = "UISegmentedControl"; z8e-bZ-xkr.segmentTitles[1] = "Metric"; ObjectID = "z8e-bZ-xkr"; */
 "z8e-bZ-xkr.segmentTitles[1]" = "Metrisch";
