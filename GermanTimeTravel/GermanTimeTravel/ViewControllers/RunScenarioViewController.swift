@@ -173,6 +173,8 @@ class RunScenarioViewController: UIViewController {
                 }
             })
         })
+        guard let timer = timer else { return }
+        RunLoop.main.add(timer, forMode: .common)
     }
     
     private func setUpEventTimer() {
@@ -202,6 +204,8 @@ class RunScenarioViewController: UIViewController {
                 }
             })
         })
+        guard let eventTimer = eventTimer else { return }
+        RunLoop.main.add(eventTimer, forMode: .common)
     }
     
     private func currentDateString(timeElapsed: Double) -> String {
