@@ -36,6 +36,7 @@ class OptionsViewController: UIViewController {
         }
         let userDefaults = UserDefaults.standard
         userDefaults.set(languageIndex, forKey: .language)
+        languageAlert(languageIndex: languageIndex)
     }
     
     @IBAction func changeUnit(_ sender: UISegmentedControl) {
@@ -56,6 +57,22 @@ class OptionsViewController: UIViewController {
         languageControl.selectedSegmentIndex = language
         let unit = UserDefaults.standard.integer(forKey: .unit)
         unitControl.selectedSegmentIndex = unit
+    }
+    
+    private func languageAlert(languageIndex: Int) {
+        if let languageCode = Locale.current.languageCode {
+            if languageCode == "de" && languageIndex == 0 {
+                let alert = UIAlertController(title: nil, message: "Ändern der Sprache in der App beeinflusst ausschließlich die Sprache der Szenario- und Ereignistexte. Um die Sprache der Menüpunkte zu ändern, ändere die Sprache in den Systemeinstellungen deines iPhones.", preferredStyle: .alert)
+                let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(button)
+                self.present(alert, animated: true)
+            } else if languageCode != "de" && languageIndex == 1 {
+                let alert = UIAlertController(title: nil, message: "Setting the language preference for this app will only change the Scenario and Event text. To view the app's labels and buttons in German, change your device's language preference to German.", preferredStyle: .alert)
+                let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(button)
+                self.present(alert, animated: true)
+            }
+        }
     }
 
 }
