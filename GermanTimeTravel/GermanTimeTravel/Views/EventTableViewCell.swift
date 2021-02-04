@@ -53,15 +53,15 @@ class EventTableViewCell: UITableViewCell {
         } else {
             if unit == .imperial {
                 if language == .english {
-                    currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) million miles")
+                    currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) Million Miles")
                 } else {
-                    currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) millionen meilen")
+                    currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) Millionen Meilen")
                 }
             } else {
                 if language == .english {
-                    currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) million kilometers")
+                    currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) Million Kilometers")
                 } else {
-                    currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) millionen kilometer")
+                    currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) Millionen Kilometer")
                 }
             }
         }
