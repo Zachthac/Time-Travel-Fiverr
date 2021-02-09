@@ -12,6 +12,7 @@ class AboutViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private var aboutLabel: UILabel!
+    @IBOutlet weak var imprintButton: UIButton!
     
     // MARK: - Properties
     
@@ -21,17 +22,21 @@ class AboutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
     }
     
-    // MARK: - Private Functions
+    //MARK: - IBActions
     
-    private func updateView() {
+    @IBAction func imprintButtonTapped(_ sender: Any) {
         if controller?.language == .english {
-            aboutLabel.text = "Imprint\n\nNikos Sauer\nMeinekestraße 2\n10719 Berlin, Germany\n\nContact: timetranslator-info@gmx.de"
+            let alert = UIAlertController(title: "Imprint", message: "Nikos Sauer\nMeinekestraße 2\n10719 Berlin, Germany\n\nContact: timetranslator-info@gmx.de", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(button)
+            self.present(alert, animated: true)
         } else {
-            aboutLabel.text = "Impressum\n\nNikos Sauer\nMeinekestraße 2\n10719 Berlin\n\nE-Mail: timetranslator-info@gmx.de"
+            let alert = UIAlertController(title: "Impressum", message: "Nikos Sauer\nMeinekestraße 2\n10719 Berlin\n\nE-Mail: timetranslator-info@gmx.de", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(button)
+            self.present(alert, animated: true)
         }
     }
-
 }

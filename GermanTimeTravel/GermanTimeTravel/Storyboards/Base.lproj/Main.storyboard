@@ -74,7 +74,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2W-Yi-Q4t">
-                                                        <rect key="frame" x="0.0" y="19" width="370" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="370" height="72"/>
                                                         <connections>
                                                             <segue destination="eEm-ON-iw7" kind="show" identifier="scenarioListSegue" id="2EU-Ws-Wut"/>
                                                         </connections>
@@ -83,6 +83,7 @@
                                                 <color key="backgroundColor" red="0.1451833844" green="0.25130918619999998" blue="0.60944885019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="B7p-pl-0fp" firstAttribute="leading" secondItem="tnO-lX-SCp" secondAttribute="leading" constant="12" id="1ht-2C-eSN"/>
+                                                    <constraint firstItem="Y2W-Yi-Q4t" firstAttribute="height" secondItem="tnO-lX-SCp" secondAttribute="height" id="HGy-QN-7At"/>
                                                     <constraint firstItem="Y2W-Yi-Q4t" firstAttribute="centerX" secondItem="tnO-lX-SCp" secondAttribute="centerX" id="XaT-8Q-4Oa"/>
                                                     <constraint firstItem="Y2W-Yi-Q4t" firstAttribute="width" secondItem="tnO-lX-SCp" secondAttribute="width" id="cao-yL-Bvk"/>
                                                     <constraint firstItem="Y2W-Yi-Q4t" firstAttribute="centerY" secondItem="tnO-lX-SCp" secondAttribute="centerY" id="dWF-Z6-R1l"/>
@@ -130,13 +131,17 @@
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snO-kD-nYQ">
-                                                        <rect key="frame" x="0.0" y="18.5" width="370" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="370" height="71.5"/>
+                                                        <connections>
+                                                            <segue destination="gqQ-Tl-eFs" kind="show" id="Nys-jI-JJJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.1451833844" green="0.25130918619999998" blue="0.60944885019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="snO-kD-nYQ" firstAttribute="centerX" secondItem="kFq-Wg-VS3" secondAttribute="centerX" id="3rY-pg-5a2"/>
                                                     <constraint firstItem="fOE-Qg-7W4" firstAttribute="top" secondItem="kFq-Wg-VS3" secondAttribute="top" constant="12" id="95H-01-rmn"/>
+                                                    <constraint firstItem="snO-kD-nYQ" firstAttribute="height" secondItem="kFq-Wg-VS3" secondAttribute="height" id="Dz9-ZJ-38B"/>
                                                     <constraint firstItem="snO-kD-nYQ" firstAttribute="width" secondItem="kFq-Wg-VS3" secondAttribute="width" id="Ivt-3v-lzJ"/>
                                                     <constraint firstItem="fOE-Qg-7W4" firstAttribute="leading" secondItem="kFq-Wg-VS3" secondAttribute="leading" constant="12" id="Jyb-vy-7kD"/>
                                                     <constraint firstItem="snO-kD-nYQ" firstAttribute="centerY" secondItem="kFq-Wg-VS3" secondAttribute="centerY" id="TLs-PY-kgE"/>
@@ -182,7 +187,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suy-VV-vCe">
-                                                        <rect key="frame" x="0.0" y="18" width="370" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="370" height="70"/>
                                                         <connections>
                                                             <segue destination="gqQ-Tl-eFs" kind="show" id="gJv-um-yH4"/>
                                                         </connections>
@@ -190,6 +195,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.1451833844" green="0.25130918619999998" blue="0.60944885019999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="suy-VV-vCe" firstAttribute="height" secondItem="EEs-iw-T3p" secondAttribute="height" id="3PU-Hi-Bks"/>
                                                     <constraint firstItem="suy-VV-vCe" firstAttribute="centerY" secondItem="EEs-iw-T3p" secondAttribute="centerY" id="EY0-4Z-1fz"/>
                                                     <constraint firstItem="suy-VV-vCe" firstAttribute="width" secondItem="EEs-iw-T3p" secondAttribute="width" id="MmW-Vz-rNc"/>
                                                     <constraint firstAttribute="trailing" secondItem="w0g-Uw-uif" secondAttribute="trailing" constant="12" id="NXP-eZ-Gkr"/>
@@ -237,7 +243,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJk-oV-XYm">
-                                                        <rect key="frame" x="0.0" y="18.5" width="370" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="370" height="71.5"/>
                                                         <connections>
                                                             <segue destination="7rV-h2-0ju" kind="show" identifier="aboutSegue" id="XYh-dx-OIU"/>
                                                         </connections>
@@ -252,6 +258,7 @@
                                                     <constraint firstItem="wIA-fQ-FYt" firstAttribute="leading" secondItem="OF1-Pe-c1V" secondAttribute="leading" constant="12" id="XCY-E5-6lN"/>
                                                     <constraint firstItem="wIA-fQ-FYt" firstAttribute="top" secondItem="OF1-Pe-c1V" secondAttribute="top" constant="12" id="XdJ-bU-aFZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="wIA-fQ-FYt" secondAttribute="trailing" constant="12" id="ceT-NV-nMQ"/>
+                                                    <constraint firstItem="iJk-oV-XYm" firstAttribute="height" secondItem="OF1-Pe-c1V" secondAttribute="height" id="spp-UD-GhD"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -292,7 +299,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-TE-Iz1">
-                                                        <rect key="frame" x="0.0" y="19" width="370" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="370" height="71.5"/>
                                                         <connections>
                                                             <segue destination="ZcB-Ng-j8Z" kind="show" identifier="optionsSegue" id="nMC-eI-7Yz"/>
                                                         </connections>
@@ -302,6 +309,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="1g9-S8-Qgb" secondAttribute="bottom" constant="12" id="0VL-VR-S0J"/>
                                                     <constraint firstAttribute="trailing" secondItem="1g9-S8-Qgb" secondAttribute="trailing" constant="12" id="8XE-Zl-K5p"/>
+                                                    <constraint firstItem="zvB-TE-Iz1" firstAttribute="height" secondItem="B0o-93-VPd" secondAttribute="height" id="9Xx-FN-8ZW"/>
                                                     <constraint firstItem="1g9-S8-Qgb" firstAttribute="top" secondItem="B0o-93-VPd" secondAttribute="top" constant="12" id="Irb-qf-wWX"/>
                                                     <constraint firstItem="1g9-S8-Qgb" firstAttribute="leading" secondItem="B0o-93-VPd" secondAttribute="leading" constant="12" id="T7l-Is-k4v"/>
                                                     <constraint firstItem="zvB-TE-Iz1" firstAttribute="centerY" secondItem="B0o-93-VPd" secondAttribute="centerY" id="Wkr-vS-lgU"/>
@@ -559,16 +567,16 @@
             </objects>
             <point key="canvasLocation" x="4052.1739130434785" y="-18.080357142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--More View Controller-->
         <scene sceneID="gV4-v7-w5u">
             <objects>
-                <viewController id="gqQ-Tl-eFs" sceneMemberID="viewController">
+                <viewController id="gqQ-Tl-eFs" customClass="MoreViewController" customModule="GermanTimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tNL-55-Za4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hQ-NP-9xS">
-                                <rect key="frame" x="73" y="423.5" width="268" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We’ll update TimeTranslator continuously with new scenarios and features!" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hQ-NP-9xS">
+                                <rect key="frame" x="33" y="325.5" width="348" height="245"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -577,8 +585,9 @@
                         <viewLayoutGuide key="safeArea" id="hba-QP-rzt"/>
                         <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="hba-QP-rzt" firstAttribute="trailing" secondItem="1hQ-NP-9xS" secondAttribute="trailing" constant="33" id="033-su-gj1"/>
+                            <constraint firstItem="1hQ-NP-9xS" firstAttribute="leading" secondItem="hba-QP-rzt" secondAttribute="leading" constant="33" id="7n5-UG-Zrx"/>
                             <constraint firstItem="1hQ-NP-9xS" firstAttribute="centerY" secondItem="tNL-55-Za4" secondAttribute="centerY" id="Djv-LO-WUw"/>
-                            <constraint firstItem="1hQ-NP-9xS" firstAttribute="centerX" secondItem="tNL-55-Za4" secondAttribute="centerX" id="Km2-eE-nmJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dpb-zG-EuG"/>
@@ -595,25 +604,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-Fo-BRT">
-                                <rect key="frame" x="23" y="111" width="368" height="217.5"/>
-                                <string key="text">Impressum Nikos SauerMeinekestraße 210719 BerlinE-Mail: timetranslator-info@gmx.deImprintNikos SauerMeinekestraße 210719 Berlin, GermanyContact: timetranslator-info@gmx.de</string>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-Fo-BRT">
+                                <rect key="frame" x="23" y="111" width="368" height="450"/>
+                                <string key="text">With TimeTranslator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. New scenarios and features will be added in spring/summer 2021!</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTU-bj-o6z">
+                                <rect key="frame" x="33" y="798" width="348" height="47.5"/>
+                                <color key="backgroundColor" red="0.87133896349999995" green="0.63226991889999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="IMPRINT">
+                                    <color key="titleColor" red="0.052426226440000001" green="0.073071263730000002" blue="0.24617102739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="imprintButtonTapped:" destination="7rV-h2-0ju" eventType="touchUpInside" id="4Fm-1G-hO9"/>
+                                    <action selector="startScenario:" destination="0w3-2I-u1s" eventType="touchUpInside" id="kWH-E0-djF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ouQ-bP-pso"/>
                         <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ouQ-bP-pso" firstAttribute="trailing" secondItem="bCr-Fo-BRT" secondAttribute="trailing" constant="23" id="COo-9G-HoX"/>
                             <constraint firstItem="bCr-Fo-BRT" firstAttribute="top" secondItem="ouQ-bP-pso" secondAttribute="top" constant="23" id="YBN-Qm-sCb"/>
+                            <constraint firstItem="HTU-bj-o6z" firstAttribute="leading" secondItem="ouQ-bP-pso" secondAttribute="leading" constant="33" id="cTK-gK-vvf"/>
                             <constraint firstItem="bCr-Fo-BRT" firstAttribute="leading" secondItem="ouQ-bP-pso" secondAttribute="leading" constant="23" id="gfD-Xs-RV4"/>
+                            <constraint firstItem="ouQ-bP-pso" firstAttribute="bottom" secondItem="HTU-bj-o6z" secondAttribute="bottom" constant="16.5" id="nnI-2l-mdU"/>
+                            <constraint firstItem="ouQ-bP-pso" firstAttribute="trailing" secondItem="HTU-bj-o6z" secondAttribute="trailing" constant="33" id="ulS-Fd-j0O"/>
+                            <constraint firstItem="HTU-bj-o6z" firstAttribute="height" secondItem="spc-At-DOo" secondAttribute="height" multiplier="0.053" id="zei-oC-Esu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="chx-0h-B6i"/>
                     <connections>
                         <outlet property="aboutLabel" destination="bCr-Fo-BRT" id="dsc-MM-YTd"/>
+                        <outlet property="imprintButton" destination="HTU-bj-o6z" id="o3V-OP-m41"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdR-PE-tsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -906,9 +937,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UIl-wB-RWV" customClass="CustomNavController" customModule="GermanTimeTravel" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5NT-6f-VtW">
+                    <navigationBar key="navigationBar" contentMode="center" id="5NT-6f-VtW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="YellowColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1230,6 +1264,9 @@
             <point key="canvasLocation" x="4050.7246376811599" y="-735.26785714285711"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gJv-um-yH4"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.left.arrow.right.circle" catalog="system" width="128" height="121"/>
         <image name="book" catalog="system" width="128" height="102"/>
