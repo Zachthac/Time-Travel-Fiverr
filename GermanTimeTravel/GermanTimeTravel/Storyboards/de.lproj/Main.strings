@@ -103,3 +103,12 @@
 
 /* Class = "UISegmentedControl"; z8e-bZ-xkr.segmentTitles[1] = "Metric"; ObjectID = "z8e-bZ-xkr"; */
 "z8e-bZ-xkr.segmentTitles[1]" = "Metrisch";
+
+/* Class = "UILabel"; text = "We’ll update TimeTranslator continuously with new scenarios and features!"; ObjectID = "1hQ-NP-9xS"; */
+"1hQ-NP-9xS.text" = "Wir werden TimeTranslator kontinuierlich um weitere Szenarien und Features erweitern!";
+
+/* Class = "UILabel"; text = "With TimeTranslator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. New scenarios and features will be added in spring/summer 2021!"; ObjectID = "bCr-Fo-BRT"; */
+"bCr-Fo-BRT.text" = "Mit TimeTranslator kannst du Echtzeit in andere zeitliche oder räumliche Periodenkonvertieren. Wähle ein Szenario und den Zeitraum, in den es konvertiert werdensoll. So kannst du Szenarien, ihre spannenden Events und die relativen Abstände zwischen ihnen in der Dauer erleben, die dir gefällt.Weitere Szenarien und Features folgen im Frühjahr/Sommer 2021!";
+
+/* Class = "UIButton"; normalTitle = "IMPRINT"; ObjectID = "HTU-bj-o6z"; */
+"HTU-bj-o6z.normalTitle" = "IMPRESSUM";
