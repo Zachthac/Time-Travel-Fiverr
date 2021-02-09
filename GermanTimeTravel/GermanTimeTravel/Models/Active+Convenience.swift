@@ -20,7 +20,7 @@ extension Active {
     }
     
     @discardableResult convenience init(totalTime: Double, displayRatio: Double, scenario: Scenario, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        self.init(startTime: Date(),
+        self.init(startTime: Date(timeIntervalSinceNow: 4),
                   totalTime: totalTime,
                   displayRatio: displayRatio,
                   context: context)

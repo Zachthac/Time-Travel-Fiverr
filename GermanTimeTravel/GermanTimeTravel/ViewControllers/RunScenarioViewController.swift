@@ -53,6 +53,7 @@ class RunScenarioViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        startAnimation()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             if self.eventImage.image == nil {
                 self.controller?.loadImage(summary: nil, scenario: self.scenario, event: nil, completion: { image in
@@ -162,6 +163,8 @@ class RunScenarioViewController: UIViewController {
         guard let scenario = scenario else { return }
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { _ in
             self.controller?.updateTime(scenario: scenario, completion: { result in
+                guard let start = scenario.active?.startTime?.timeIntervalSince1970,
+                    start < Date().timeIntervalSince1970 else { return }
                 if let time = result[true] {
                     let timeString = self.timeString(timeElapsed: time)
                     self.timePassedLabel.text = timeString
@@ -258,6 +261,7 @@ class RunScenarioViewController: UIViewController {
     private func updateViews() {
         guard let scenario = scenario else { return }
         let eventIndex = ((fetchedResultsController.fetchedObjects?.count ?? 1) - 1)
+        guard eventIndex >= 0 else { return }
         for index in 0...eventIndex {
             if let imageString = fetchedResultsController.fetchedObjects?[index].image {
                 if currentImage == imageString {
@@ -322,6 +326,44 @@ class RunScenarioViewController: UIViewController {
             string += "00"
         }
         return string
+    }
+    
+    private func startAnimation() {
+        guard let scenario = scenario,
+           let start = scenario.active?.startTime?.timeIntervalSince1970,
+           start > Date().timeIntervalSince1970 else { return }
+        let countdown = UILabel()
+        countdown.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(countdown)
+        countdown.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(view.bounds.height * 0.20)).isActive = true
+        countdown.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        countdown.font = UIFont.monospacedDigitSystemFont(ofSize: 80, weight: .bold)
+        countdown.textColor = UIColor.darkYellow
+        countdown.text = ""
+        countdown.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            countdown.alpha = 1
+        }) { (_) in
+            countdown.text = "Ready..."
+            countdown.alpha = 1
+            UIView.animate(withDuration: 1, animations: {
+                countdown.alpha = 0
+            }) { (_) in
+                countdown.text = "Set..."
+                countdown.alpha = 1
+                UIView.animate(withDuration: 1, animations: {
+                    countdown.alpha = 0
+                }) { (_) in
+                    countdown.text = "Go!"
+                    countdown.alpha = 1
+                    UIView.animate(withDuration: 1) {
+                        countdown.alpha = 0
+                    } completion: { (_) in
+                        countdown.removeFromSuperview()
+                    }
+                }
+            }
+        }
     }
     
     deinit {
