@@ -46,6 +46,7 @@ class RunScenarioViewController: UIViewController {
         setUpTimer()
         setUpEventTimer()
     }
+    
     override func viewDidLayoutSubviews() {
         setUpGradient()
     }
@@ -188,6 +189,10 @@ class RunScenarioViewController: UIViewController {
                     self.controller?.loadImage(summary: nil, scenario: scenario, event: nil, completion: { image in
                         DispatchQueue.main.async {
                             self.eventImage.image = image
+                            self.selectedEvent = nil
+//                            self.selectedEvent = self.fetchedResultsController.fetchedObjects?.last
+//                            replace self.selectedEvent = nil with the line above
+//                            after event ordering issue is resolved
                         }
                     })
                     if self.controller?.language == .english {
@@ -219,7 +224,7 @@ class RunScenarioViewController: UIViewController {
         } else if scenario.unit == "datetime" {
             let formatter = DateFormatter()
             formatter.timeZone = TimeZone(abbreviation: "UTC")
-            formatter.timeStyle = .short
+            formatter.timeStyle = .medium
             return formatter.string(from: Date(timeIntervalSince1970: timeDouble))
         } else {
             if controller?.unit == .imperial {
@@ -261,12 +266,17 @@ class RunScenarioViewController: UIViewController {
                     let event = fetchedResultsController.fetchedObjects?[index]
                     controller?.loadImage(summary: nil, scenario: scenario, event: event, completion: { image in
                         DispatchQueue.main.async {
+                            self.imageInfoButton.tintColor = UIColor.darkYellow
                             self.eventImage.image = image
                             self.currentImage = imageString
                             self.selectedEvent = event
                             let cells = self.eventsTableView.visibleCells as! [EventTableViewCell]
                             for cell in cells {
-                                cell.roundView.layer.borderColor = UIColor.clear.cgColor
+                                if cell.event?.image == self.currentImage {
+                                    cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
+                                } else {
+                                    cell.roundView.layer.borderColor = UIColor.clear.cgColor
+                                }
                             }
                         }
                     })
@@ -347,15 +357,20 @@ extension RunScenarioViewController: NSFetchedResultsControllerDelegate {
 
 extension RunScenarioViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cells = self.eventsTableView.visibleCells as! [EventTableViewCell]
+        for cell in cells {
+            cell.roundView.layer.borderColor = UIColor.clear.cgColor
+        }
         let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
         cell.roundView.layer.borderColor = UIColor.darkYellow.cgColor
         let event = cell.event
         selectedEvent = event
+        eventsTableView.deselectRow(at: indexPath, animated: false)
         if event?.image != nil {
             controller?.loadImage(summary: nil, scenario: scenario, event: event, completion: { image in
                 DispatchQueue.main.async {
                     self.eventImage.image = image
-                    self.imageInfoButton.tintColor = UIColor(named: "YellowColor")
+                    self.imageInfoButton.tintColor = UIColor.darkYellow
                 }
             })
         } else {
@@ -363,10 +378,5 @@ extension RunScenarioViewController: UITableViewDelegate {
             self.imageInfoButton.tintColor = .clear
         }
     }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let cell = tableView.cellForRow(at: indexPath) as? EventTableViewCell {
-            cell.roundView.layer.borderColor = UIColor.clear.cgColor
-        }
-    }
+
 }

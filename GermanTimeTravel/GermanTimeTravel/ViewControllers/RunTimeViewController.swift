@@ -21,11 +21,6 @@ class RunTimeViewController: UIViewController {
     
     // MARK: - Properties
     
-    var days: Int = 0
-    var hours: Int = 0
-    var minutes: Int = 0
-    var seconds: Int = 0
-    
     weak var controller: ModelController?
     var scenario: Summary?
     
@@ -34,6 +29,7 @@ class RunTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
+        setUpPickerView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -79,7 +75,6 @@ class RunTimeViewController: UIViewController {
         gradient2.frame = scenarioImage.bounds
         roundView.layer.addSublayer(gradient)
         scenarioImage.layer.addSublayer(gradient2)
-        pickerView.setValue(UIColor.white, forKeyPath: "textColor")
         roundView.roundCorners(cornerRadius: 25)
         roundView.bringSubviewToFront(stackView)
         roundView.bringSubviewToFront(startButton)
@@ -95,13 +90,16 @@ class RunTimeViewController: UIViewController {
                 self.scenarioImage.image = image
             }
         })
-        
-        if let runtime = scenario.runtime {
+    }
+    
+    private func setUpPickerView() {
+        pickerView.setValue(UIColor.white, forKeyPath: "textColor")
+        if let runtime = scenario?.runtime {
             setSuggestionOnPicker(runtime: runtime)
             if controller?.language == .english {
-                suggestedRTLabel.text = scenario.suggestionEn
+                suggestedRTLabel.text = scenario?.suggestionEn
             } else {
-                suggestedRTLabel.text = scenario.suggestionDe
+                suggestedRTLabel.text = scenario?.suggestionDe
             }
         } else {
             if controller?.language == .english {
@@ -124,17 +122,13 @@ class RunTimeViewController: UIViewController {
         pickerView.selectRow(hours, inComponent: 1, animated: false)
         pickerView.selectRow(minutes, inComponent: 2, animated: false)
         pickerView.selectRow(seconds, inComponent: 3, animated: false)
-        self.days = days
-        self.hours = hours
-        self.minutes = minutes
-        self.seconds = seconds
     }
     
     private func runTime() -> Double {
-        let daySeconds = Double(days) * 60 * 60 * 24
-        let hourSeconds = Double(hours) * 60 * 60
-        let minuteSeconds = Double(minutes) * 60
-        return daySeconds + hourSeconds + minuteSeconds + Double(seconds)
+        let daySeconds = Double(pickerView.selectedRow(inComponent: 0)) * 60 * 60 * 24
+        let hourSeconds = Double(pickerView.selectedRow(inComponent: 1)) * 60 * 60
+        let minuteSeconds = Double(pickerView.selectedRow(inComponent: 2)) * 60
+        return daySeconds + hourSeconds + minuteSeconds + Double(pickerView.selectedRow(inComponent: 3))
     }
     
     lazy var gradient: CAGradientLayer = {
@@ -201,21 +195,7 @@ extension RunTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             return ""
         }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch component {
-        case 0:
-            days = row
-        case 1:
-            hours = row
-        case 2:
-            minutes = row
-        case 3:
-            seconds = row
-        default:
-            break;
-        }
-    }
+
 }
 
 extension UIView {
