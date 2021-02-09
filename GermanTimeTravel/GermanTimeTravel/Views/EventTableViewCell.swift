@@ -47,7 +47,7 @@ class EventTableViewCell: UITableViewCell {
             formatter.dateStyle = .long
             if event.scenario?.unit == "datetime" {
                 formatter.timeZone = TimeZone(abbreviation: "UTC")
-                formatter.timeStyle = .short
+                formatter.timeStyle = .medium
             }
             currentUnitLabel.text = formatter.string(from: time)
         } else {
