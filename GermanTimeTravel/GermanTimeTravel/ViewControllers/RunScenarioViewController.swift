@@ -28,6 +28,7 @@ class RunScenarioViewController: UIViewController {
     private var datasource: UITableViewDiffableDataSource<Int, Event>!
     private var fetchedResultsController: NSFetchedResultsController<Event>!
     private let moc = CoreDataStack.shared.mainContext
+    var unitHelper: UnitHelper?
 
     var timer: Timer?
     var eventTimer: Timer?
@@ -125,6 +126,10 @@ class RunScenarioViewController: UIViewController {
                 self.eventImage.image = image
             }
         })
+        guard let unitType = scenario.unit,
+              let language = controller?.language,
+              let unit = controller?.unit else { return }
+        unitHelper = UnitHelper(unitType: unitType, language: language, unit: unit)
     }
     
     private func configureDatasource() {
@@ -136,8 +141,7 @@ class RunScenarioViewController: UIViewController {
             } else {
                 cell.roundView.layer.borderColor = UIColor.clear.cgColor
             }
-            cell.language = self.controller?.language
-            cell.unit = self.controller?.unit
+            cell.unitHelper = self.unitHelper
             cell.event = event
             return cell
         })
@@ -218,44 +222,16 @@ class RunScenarioViewController: UIViewController {
     
     private func currentDateString(timeElapsed: Double) -> String {
         guard let scenario = scenario,
-              let ratio = scenario.active?.displayRatio else { return "" }
+              let ratio = scenario.active?.displayRatio,
+              let unitHelper = unitHelper else { return "" }
         let timeDouble = scenario.startDouble + (timeElapsed / ratio)
-        if scenario.unit == "date" {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            return formatter.string(from: Date(timeIntervalSince1970: timeDouble))
-        } else if scenario.unit == "datetime" {
-            let formatter = DateFormatter()
-            formatter.timeZone = TimeZone(abbreviation: "UTC")
-            formatter.timeStyle = .medium
-            return formatter.string(from: Date(timeIntervalSince1970: timeDouble))
-        } else {
-            if controller?.unit == .imperial {
-                return String("\(Int(timeDouble * 92.955807)) M m")
-            } else {
-                return String("\(Int(timeDouble * 149.597871)) M km")
-            }
-        }
+        return unitHelper.timePassedLabel(double: timeDouble)
     }
     
     private func endDateString() -> String {
-        guard let scenario = scenario else { return "" }
-        if let time = scenario.endDate {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            if scenario.unit == "datetime" {
-                formatter.dateStyle = .none
-                formatter.timeZone = TimeZone(abbreviation: "UTC")
-                formatter.timeStyle = .short
-            }
-            return formatter.string(from: time)
-        } else {
-            if controller?.unit == .imperial {
-                return String("\(Int(scenario.endDouble * 92.955807)) M m")
-            } else {
-                return String("\(Int(scenario.endDouble * 149.597871)) M km")
-            }
-        }
+        guard let scenario = scenario,
+              let unitHelper = unitHelper else { return "" }
+        return unitHelper.timePassedLabel(double: scenario.endDouble)
     }
     
     private func updateViews() {

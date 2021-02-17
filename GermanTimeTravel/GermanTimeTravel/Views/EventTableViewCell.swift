@@ -23,8 +23,8 @@ class EventTableViewCell: UITableViewCell {
             updateViews()
         }
     }
-    var language: Language?
-    var unit: Unit?
+    
+    weak var unitHelper: UnitHelper?
     
     // MARK: - Private Functions
     
@@ -37,34 +37,12 @@ class EventTableViewCell: UITableViewCell {
             cameraImageView.tintColor = UIColor.clear
         }
         
-        if language == .english {
+        if unitHelper?.language == .english {
             eventDetailsLabel.text = event.textEn
         } else {
             eventDetailsLabel.text = event.textDe
         }
-        if let time = event.startDate {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .long
-            if event.scenario?.unit == "datetime" {
-                formatter.timeZone = TimeZone(abbreviation: "UTC")
-                formatter.timeStyle = .medium
-            }
-            currentUnitLabel.text = formatter.string(from: time)
-        } else {
-            if unit == .imperial {
-                if language == .english {
-                    currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) Million Miles")
-                } else {
-                    currentUnitLabel.text = String("\(Int(event.startDouble * 92.955807)) Millionen Meilen")
-                }
-            } else {
-                if language == .english {
-                    currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) Million Kilometers")
-                } else {
-                    currentUnitLabel.text = String("\(Int(event.startDouble * 149.597871)) Millionen Kilometer")
-                }
-            }
-        }
+        currentUnitLabel.text = unitHelper?.eventCellLabel(date: event.startDate, double: event.startDouble)
     }
     
 }

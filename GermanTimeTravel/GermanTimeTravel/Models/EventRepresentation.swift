@@ -46,9 +46,8 @@ struct EventRepresentation: Decodable {
         if let double = try? container.decode(Double.self, forKey: .startTime) {
             startDouble = double
         } else if let string = try? container.decode(String.self, forKey: .startTime) {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-            startDate = formatter.date(from: string)
+            let unitHelper = UnitHelper(unitType: "date")
+            startDate = unitHelper.dateFromString(string: string)
             startDouble = startDate?.timeIntervalSince1970 ?? 0
         }
         
