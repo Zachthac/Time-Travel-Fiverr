@@ -74,6 +74,12 @@ class HomeViewController: UIViewController {
     }
     
     private func checkStatus() {
+        if let tokenDate = controller.api.bearer?.date.timeIntervalSince1970 {
+            let currentDate = Date().timeIntervalSince1970
+            if currentDate - tokenDate > 604800.0 {
+                controller.signInAndGetScenarioList()
+            }
+        }
         if UserDefaults.standard.bool(forKey: "hasSeenTutorial") {
             let fetchRequest: NSFetchRequest<Scenario> = Scenario.fetchRequest()
             do {
