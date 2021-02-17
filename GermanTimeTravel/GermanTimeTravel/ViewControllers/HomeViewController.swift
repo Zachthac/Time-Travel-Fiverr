@@ -36,16 +36,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let fetchRequest: NSFetchRequest<Scenario> = Scenario.fetchRequest()
-        do {
-            let scenarios = try CoreDataStack.shared.mainContext.fetch(fetchRequest)
-            guard let scenario = scenarios.first,
-                  scenario.active != nil else { return }
-            activeScenario = scenario
-            self.performSegue(withIdentifier: "activeScenarioSegue", sender: self)
-        } catch {
-            NSLog("No active scenario")
-        }
+        checkStatus()
     }
   
     // MARK: - Navigation
@@ -64,6 +55,9 @@ class HomeViewController: UIViewController {
         } else if segue.identifier == "aboutSegue" {
             let aboutVC = segue.destination as! AboutViewController
             aboutVC.controller = controller
+        } else if segue.identifier == "tutorialSegue" {
+            let tutorialVC = segue.destination as! TutorialViewController
+            tutorialVC.controller = controller
         }
     }
     
@@ -77,6 +71,25 @@ class HomeViewController: UIViewController {
         titleView.bringSubviewToFront(titleLabel)
         roundView.roundCorners(cornerRadius: 25)
         roundView.bringSubviewToFront(stackView)
+    }
+    
+    private func checkStatus() {
+        if UserDefaults.standard.bool(forKey: "hasSeenTutorial") {
+            let fetchRequest: NSFetchRequest<Scenario> = Scenario.fetchRequest()
+            do {
+                let scenarios = try CoreDataStack.shared.mainContext.fetch(fetchRequest)
+                guard let scenario = scenarios.first,
+                      scenario.active != nil else { return }
+                activeScenario = scenario
+                self.performSegue(withIdentifier: "activeScenarioSegue", sender: self)
+            } catch {
+                NSLog("No active scenario")
+                return
+            }
+        } else {
+            UserDefaults.standard.setValue(true, forKey: "hasSeenTutorial")
+            self.performSegue(withIdentifier: "tutorialSegue", sender: self)
+        }
     }
     
     lazy var gradient1: CAGradientLayer = {

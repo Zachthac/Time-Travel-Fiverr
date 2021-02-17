@@ -14,6 +14,8 @@
 		1A07373225AE77970072217A /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07373125AE77970072217A /* Event+Convenience.swift */; };
 		1A28293325B8D093005961D6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28293225B8D093005961D6 /* UIColorExtension.swift */; };
 		1A28293A25C3527D005961D6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28293925C3527D005961D6 /* AboutViewController.swift */; };
+		1A49602925DD7A24006332A9 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49602825DD7A24006332A9 /* Tutorial.swift */; };
+		1A49602C25DD7D24006332A9 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49602B25DD7D24006332A9 /* TutorialViewController.swift */; };
 		1AA265FC25B0AB8D0000F874 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA265FB25B0AB8D0000F874 /* Summary.swift */; };
 		1AA265FF25B0B1130000F874 /* Active+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA265FE25B0B1130000F874 /* Active+Convenience.swift */; };
 		1AA2660225B0C7840000F874 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2660125B0C7840000F874 /* ModelController.swift */; };
@@ -45,6 +47,8 @@
 		1A07373125AE77970072217A /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
 		1A28293225B8D093005961D6 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1A28293925C3527D005961D6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		1A49602825DD7A24006332A9 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		1A49602B25DD7D24006332A9 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		1AA265FB25B0AB8D0000F874 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		1AA265FE25B0B1130000F874 /* Active+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Active+Convenience.swift"; sourceTree = "<group>"; };
 		1AA2660125B0C7840000F874 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				1AA265FE25B0B1130000F874 /* Active+Convenience.swift */,
 				1AA265FB25B0AB8D0000F874 /* Summary.swift */,
 				1AB8F68E25B222EE0070A14C /* Cache.swift */,
+				1A49602825DD7A24006332A9 /* Tutorial.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */,
 				1AB8F69B25B2B9440070A14C /* OptionsViewController.swift */,
 				1A28293925C3527D005961D6 /* AboutViewController.swift */,
+				1A49602B25DD7D24006332A9 /* TutorialViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				469CEF542589773400827BB0 /* AllScenariosViewController.swift in Sources */,
 				4678CE5425A179AA0010D625 /* CustomNavController.swift in Sources */,
 				1AB8F68F25B222EE0070A14C /* Cache.swift in Sources */,
+				1A49602C25DD7D24006332A9 /* TutorialViewController.swift in Sources */,
 				469207EA257EC205001781E5 /* ApiController.swift in Sources */,
 				1A07372F25AE77830072217A /* Scenario+Convenience.swift in Sources */,
 				1A28293325B8D093005961D6 /* UIColorExtension.swift in Sources */,
@@ -273,6 +280,7 @@
 				1AA2660225B0C7840000F874 /* ModelController.swift in Sources */,
 				469207C7257933D5001781E5 /* SceneDelegate.swift in Sources */,
 				1AA265FC25B0AB8D0000F874 /* Summary.swift in Sources */,
+				1A49602925DD7A24006332A9 /* Tutorial.swift in Sources */,
 				464CACC925B29E9900F37F79 /* ScenarioTableViewCell.swift in Sources */,
 				1A07372125AE0BB20072217A /* GermanTimeTravel.xcdatamodeld in Sources */,
 				1A07373225AE77970072217A /* Event+Convenience.swift in Sources */,
