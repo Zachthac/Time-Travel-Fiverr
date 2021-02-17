@@ -76,24 +76,21 @@ struct ScenarioRepresentation: Decodable {
 
         let unitString = try container.decode(String.self, forKey: .unit)
         unit = unitString
-        if (unitString == "datetime" || unitString == "date") {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-            if let startString = try? container.decode(String.self, forKey: .startTime) {
-                startDate = formatter.date(from: startString)
-                startDouble = startDate?.timeIntervalSince1970 ?? 0
-            } else {
-                startDouble = 0
-            }
-            if let endString = try? container.decode(String.self, forKey: .endTime) {
-                endDate = formatter.date(from: endString)
-                endDouble = endDate?.timeIntervalSince1970 ?? 0
-            } else {
-                endDouble = 0
-            }
-        } else {
-            startDouble = try container.decode(Double.self, forKey: .startTime)
-            endDouble = try container.decode(Double.self, forKey: .endTime)
+        
+        let unitHelper = UnitHelper(unitType: unit)
+        
+        if let doubleStart = try? container.decode(Double.self, forKey: .startTime) {
+            startDouble = doubleStart
+        } else if let stringStart = try? container.decode(String.self, forKey: .startTime) {
+            startDate = unitHelper.dateFromString(string: stringStart)
+            startDouble = startDate?.timeIntervalSince1970 ?? 0
+        }
+        
+        if let doubleEnd = try? container.decode(Double.self, forKey: .endTime) {
+            endDouble = doubleEnd
+        } else if let stringEnd = try? container.decode(String.self, forKey: .endTime) {
+            endDate = unitHelper.dateFromString(string: stringEnd)
+            endDouble = endDate?.timeIntervalSince1970 ?? 0
         }
         
         totalEvents = try container.decode(Int.self, forKey: .totalEvents)
