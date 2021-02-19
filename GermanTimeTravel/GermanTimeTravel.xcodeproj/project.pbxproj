@@ -26,12 +26,17 @@
 		464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */; };
 		464CACC925B29E9900F37F79 /* ScenarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */; };
 		464CACCC25B2A04B00F37F79 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */; };
+		4676B57425DED6830041BCA2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4676B57325DED6830041BCA2 /* UIImageExtension.swift */; };
+		4676B58225DF5B8C0041BCA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4676B58125DF5B8C0041BCA2 /* Assets.xcassets */; };
+		4676B58F25DF66CE0041BCA2 /* tut1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4676B58E25DF66CE0041BCA2 /* tut1.gif */; };
+		4676B59325DF66EF0041BCA2 /* tut2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4676B59225DF66EF0041BCA2 /* tut2.gif */; };
+		4676B59B25DF8BF00041BCA2 /* tut4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4676B59A25DF8BF00041BCA2 /* tut4.gif */; };
+		4676B5B825DF97DC0041BCA2 /* tut3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4676B5B725DF97DC0041BCA2 /* tut3.gif */; };
 		4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678CE4C25A173B20010D625 /* RunTimeViewController.swift */; };
 		4678CE5425A179AA0010D625 /* CustomNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678CE5325A179AA0010D625 /* CustomNavController.swift */; };
 		469207C5257933D5001781E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207C4257933D5001781E5 /* AppDelegate.swift */; };
 		469207C7257933D5001781E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207C6257933D5001781E5 /* SceneDelegate.swift */; };
 		469207CC257933D5001781E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469207CA257933D5001781E5 /* Main.storyboard */; };
-		469207CE257933D8001781E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469207CD257933D8001781E5 /* Assets.xcassets */; };
 		469207D1257933D8001781E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469207CF257933D8001781E5 /* LaunchScreen.storyboard */; };
 		469207E025797BEC001781E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207DF25797BEC001781E5 /* HomeViewController.swift */; };
 		469207EA257EC205001781E5 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469207E9257EC205001781E5 /* ApiController.swift */; };
@@ -60,13 +65,18 @@
 		464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunScenarioViewController.swift; sourceTree = "<group>"; };
 		464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewCell.swift; sourceTree = "<group>"; };
 		464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		4676B57325DED6830041BCA2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		4676B58125DF5B8C0041BCA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4676B58E25DF66CE0041BCA2 /* tut1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tut1.gif; sourceTree = "<group>"; };
+		4676B59225DF66EF0041BCA2 /* tut2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tut2.gif; sourceTree = "<group>"; };
+		4676B59A25DF8BF00041BCA2 /* tut4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tut4.gif; sourceTree = "<group>"; };
+		4676B5B725DF97DC0041BCA2 /* tut3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tut3.gif; path = ../../../../../../Downloads/tut3.gif; sourceTree = "<group>"; };
 		4678CE4C25A173B20010D625 /* RunTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunTimeViewController.swift; sourceTree = "<group>"; };
 		4678CE5325A179AA0010D625 /* CustomNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavController.swift; sourceTree = "<group>"; };
 		469207C1257933D5001781E5 /* GermanTimeTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GermanTimeTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469207C4257933D5001781E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		469207C6257933D5001781E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		469207CB257933D5001781E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		469207CD257933D8001781E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		469207D0257933D8001781E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		469207D2257933D8001781E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		469207DF25797BEC001781E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +106,17 @@
 				464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4676B58825DF5CA60041BCA2 /* GIFs */ = {
+			isa = PBXGroup;
+			children = (
+				4676B58E25DF66CE0041BCA2 /* tut1.gif */,
+				4676B59225DF66EF0041BCA2 /* tut2.gif */,
+				4676B5B725DF97DC0041BCA2 /* tut3.gif */,
+				4676B59A25DF8BF00041BCA2 /* tut4.gif */,
+			);
+			path = GIFs;
 			sourceTree = "<group>";
 		};
 		469207B8257933D5001781E5 = {
@@ -173,12 +194,14 @@
 		469207DD25797B5D001781E5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4676B58825DF5CA60041BCA2 /* GIFs */,
+				4676B58125DF5B8C0041BCA2 /* Assets.xcassets */,
 				469207C6257933D5001781E5 /* SceneDelegate.swift */,
 				469207C4257933D5001781E5 /* AppDelegate.swift */,
-				469207CD257933D8001781E5 /* Assets.xcassets */,
 				1A28293225B8D093005961D6 /* UIColorExtension.swift */,
 				469D6BEE25BAB2750043FE91 /* NotificationPublisher.swift */,
 				1A49602E25DDADA7006332A9 /* UnitHelper.swift */,
+				4676B57325DED6830041BCA2 /* UIImageExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -250,8 +273,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4676B59325DF66EF0041BCA2 /* tut2.gif in Resources */,
+				4676B58F25DF66CE0041BCA2 /* tut1.gif in Resources */,
+				4676B5B825DF97DC0041BCA2 /* tut3.gif in Resources */,
 				469207D1257933D8001781E5 /* LaunchScreen.storyboard in Resources */,
-				469207CE257933D8001781E5 /* Assets.xcassets in Resources */,
+				4676B58225DF5B8C0041BCA2 /* Assets.xcassets in Resources */,
+				4676B59B25DF8BF00041BCA2 /* tut4.gif in Resources */,
 				469207CC257933D5001781E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +313,7 @@
 				1A49602925DD7A24006332A9 /* Tutorial.swift in Sources */,
 				464CACC925B29E9900F37F79 /* ScenarioTableViewCell.swift in Sources */,
 				1A07372125AE0BB20072217A /* GermanTimeTravel.xcdatamodeld in Sources */,
+				4676B57425DED6830041BCA2 /* UIImageExtension.swift in Sources */,
 				1A07373225AE77970072217A /* Event+Convenience.swift in Sources */,
 				464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */,
 				1A28293A25C3527D005961D6 /* AboutViewController.swift in Sources */,

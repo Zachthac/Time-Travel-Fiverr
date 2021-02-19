@@ -24,29 +24,32 @@ class TutorialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        previousButton.isHidden = true
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        previousButton.isEnabled = false
+        previousButton.backgroundColor = .clear
         updateViews()
     }
     
     // MARK: - Actions
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        if currentPage < tutorial.count {
+        if currentPage == tutorial.count - 1   {
+                    alertWhenDone()
+                }
+        if currentPage < tutorial.count - 1  {
             currentPage += 1
+            previousButton.isEnabled = true
+            previousButton.backgroundColor = .darkYellow
+            animateAndUpdateViews()
         }
-        if currentPage >= 1 {
-            previousButton.isHidden = false
-        }
-        if tutorial.count == currentPage {
-            alertWhenDone()
-        }
-        animateAndUpdateViews()
+        
     }
     
     @IBAction func previousButtonTapped(_ sender: Any) {
         currentPage -= 1
         if currentPage == 0 {
-            previousButton.isHidden = true
+            previousButton.backgroundColor = .clear
+            previousButton.isEnabled = false
         }
         animateAndUpdateViews()
     }
