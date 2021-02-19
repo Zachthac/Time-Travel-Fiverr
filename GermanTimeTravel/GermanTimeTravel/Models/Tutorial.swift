@@ -14,22 +14,22 @@ struct TutorialPage {
 }
 
 let tutorial: [TutorialPage] = [
-    TutorialPage(image: UIImage(named: "Icon")!,
+    TutorialPage(image: UIImage(named: "Logo")!,
                  textEn: "Welcome to TimeTranslator!\nThis app allows you to experience various scenarios in a pace of your choice.",
                  textDe: "Willkommen bei TimeTranslator!\nMit dieser App kannst du verschiedene Szenarien in einer Geschwindigkeit deiner Wahl erleben."),
-    TutorialPage(image: UIImage(named: "")!,
+    TutorialPage(image: UIImage.gifImageWithName("tut1")!,
                  textEn: "First, you pick a scenario...",
                  textDe: "Wähle zuerst ein Szenario..."),
-    TutorialPage(image: UIImage(named: "")!,
+    TutorialPage(image: UIImage.gifImageWithName("tut2")!,
                  textEn: "...then, decide how long you want it to run.",
                  textDe: "...und anschließend die Echtzeit, in der du es erleben willst."),
-    TutorialPage(image: UIImage(named: "")!,
+    TutorialPage(image: UIImage.gifImageWithName("tut3")!,
                  textEn: "While time is passing by, the scenario proceeds and you experience all the scenario’s events.",
                  textDe: "Während die Zeit verstreicht, schreitet das Szenario voran und du erlebst nach und nach die Events, die das Szenario enthält."),
-    TutorialPage(image: UIImage(named: "")!,
+    TutorialPage(image: UIImage.gifImageWithName("tut4")!,
                  textEn: "If the app is minimized, the scenario continues and TimeTranslator notifies you when something important happens.",
                  textDe: "Wenn du die App minimierst läuft das Szenario weiter und TimeTranslator benachrichtigt dich, sobald etwas Wichtiges passiert."),
-    TutorialPage(image: UIImage(named: "Icon")!,
+    TutorialPage(image: UIImage(named: "Logo")!,
                  textEn: "Just pick a scenario and go! Have a good time exploring!",
                  textDe: "Wähle gleich ein Szenario aus und leg los, viel Spaß beim Entdecken!")
 ]
