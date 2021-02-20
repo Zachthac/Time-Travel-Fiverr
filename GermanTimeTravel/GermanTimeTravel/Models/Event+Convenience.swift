@@ -10,7 +10,8 @@ import CoreData
 
 extension Event {
     
-    @discardableResult convenience init(textEn: String,
+    @discardableResult convenience init(index: Int,
+                                        textEn: String,
                                         textDe: String,
                                         startDate: Date? = nil,
                                         startDouble: Double = 0,
@@ -22,6 +23,7 @@ extension Event {
                                         image: String? = nil,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
+        self.index = Int16(index)
         self.textEn = textEn
         self.textDe = textDe
         self.startDate = startDate
@@ -34,8 +36,9 @@ extension Event {
         self.image = image
     }
     
-    @discardableResult convenience init(eventRepresentation: EventRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        self.init(textEn: eventRepresentation.textEn,
+    @discardableResult convenience init(eventRepresentation: EventRepresentation, index: Int, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        self.init(index: index,
+                  textEn: eventRepresentation.textEn,
                   textDe: eventRepresentation.textDe,
                   startDate: eventRepresentation.startDate,
                   startDouble: eventRepresentation.startDouble,
