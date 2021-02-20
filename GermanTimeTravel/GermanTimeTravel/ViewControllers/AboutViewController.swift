@@ -12,7 +12,7 @@ class AboutViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet private var aboutLabel: UILabel!
-    @IBOutlet weak var imprintButton: UIButton!
+    @IBOutlet private var imprintButton: UIButton!
     
     // MARK: - Properties
     

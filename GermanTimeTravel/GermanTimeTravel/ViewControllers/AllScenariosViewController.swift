@@ -13,10 +13,10 @@ class AllScenariosViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var titleView: UIView!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var titleView: UIView!
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet weak var roundView: UIView!
+    @IBOutlet private var roundView: UIView!
     
     // MARK: - Properties
     

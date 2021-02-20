@@ -12,14 +12,15 @@ class RunScenarioViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var eventImage: UIImageView!
-    @IBOutlet weak var eventsTableView: UITableView!
-    @IBOutlet weak var timePassedLabel: UILabel!
-    @IBOutlet weak var currentEventDateLabel: UILabel!
-    @IBOutlet weak var photoImageView: UIView!
-    @IBOutlet weak var noPhotoLabel: UILabel!
-    @IBOutlet weak var imageInfoButton: UIButton!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var eventImage: UIImageView!
+    @IBOutlet private var eventsTableView: UITableView!
+    @IBOutlet private var timePassedLabel: UILabel!
+    @IBOutlet private var currentEventDateLabel: UILabel!
+    @IBOutlet private var photoImageView: UIView!
+    @IBOutlet private var noPhotoLabel: UILabel!
+    @IBOutlet private var imageInfoButton: UIButton!
+    @IBOutlet private var cancelButton: UIButton!
     
     // MARK: - Properties
     
@@ -68,7 +69,7 @@ class RunScenarioViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func cancelScenario(_ sender: UIBarButtonItem) {
+    @IBAction func cancelScenario(_ sender: UIButton) {
         guard let scenario = scenario else { return }
         controller?.endScenario(scenario: scenario, completion: { result in
             switch result {
@@ -109,6 +110,7 @@ class RunScenarioViewController: UIViewController {
         photoImageView.bringSubviewToFront(noPhotoLabel)
         photoImageView.bringSubviewToFront(eventImage)
         photoImageView.bringSubviewToFront(imageInfoButton)
+        photoImageView.bringSubviewToFront(cancelButton)
     }
     private func setUpViews() {
         timePassedLabel.text = ""

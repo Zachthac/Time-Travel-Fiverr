@@ -11,10 +11,10 @@ class EventTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var currentUnitLabel: UILabel!
-    @IBOutlet weak var eventDetailsLabel: UILabel!
+    @IBOutlet private var currentUnitLabel: UILabel!
+    @IBOutlet private var eventDetailsLabel: UILabel!
     @IBOutlet weak var roundView: UIView!
-    @IBOutlet weak var cameraImageView: UIImageView!
+    @IBOutlet private var cameraImageView: UIImageView!
     
     // MARK: - Properties
     

@@ -14,6 +14,7 @@ class TutorialViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textLabel: UILabel!
     @IBOutlet private var previousButton: UIButton!
+    @IBOutlet private var roundView: UIView!
     
     // MARK: - Properties
     
@@ -62,13 +63,12 @@ class TutorialViewController: UIViewController {
     
     private func animateAndUpdateViews() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.imageView.alpha = 0
-            self.textLabel.alpha = 0
+            self.roundView.alpha = 0
         }) { (_) in
             self.updateViews()
             UIView.animate(withDuration: 0.5) {
-                self.imageView.alpha = 1
-                self.textLabel.alpha = 1
+                self.roundView.alpha = 1
+
             }
         }
     }
