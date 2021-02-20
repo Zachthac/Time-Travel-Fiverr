@@ -149,10 +149,15 @@ class RunScenarioViewController: UIViewController {
     }
     
     private func initFetchedResultsController() {
-        guard let scenario = scenario else { return }
+        guard let scenario = scenario,
+              let startTime = scenario.active?.startTime else { return }
         let fetchRequest: NSFetchRequest<Event> = Event.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startDouble", ascending: false)]
-        fetchRequest.predicate = NSPredicate(format: "scenario == %@ AND displayed == %d", scenario, true)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "index", ascending: false)]
+        if startTime.timeIntervalSince1970 > Date().timeIntervalSince1970 {
+            fetchRequest.predicate = NSPredicate(format: "scenario == %@ AND index == %i", scenario, 0)
+        } else {
+            fetchRequest.predicate = NSPredicate(format: "scenario == %@ AND displayed == %d", scenario, true)
+        }
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         do {
@@ -196,10 +201,7 @@ class RunScenarioViewController: UIViewController {
                     self.controller?.loadImage(summary: nil, scenario: scenario, event: nil, completion: { image in
                         DispatchQueue.main.async {
                             self.eventImage.image = image
-                            self.selectedEvent = nil
-//                            self.selectedEvent = self.fetchedResultsController.fetchedObjects?.last
-//                            replace self.selectedEvent = nil with the line above
-//                            after event ordering issue is resolved
+                            self.selectedEvent = self.fetchedResultsController.fetchedObjects?.last
                         }
                     })
                     if self.controller?.language == .english {
@@ -336,6 +338,7 @@ class RunScenarioViewController: UIViewController {
                         countdown.alpha = 0
                     } completion: { (_) in
                         countdown.removeFromSuperview()
+                        self.initFetchedResultsController()
                     }
                 }
             }

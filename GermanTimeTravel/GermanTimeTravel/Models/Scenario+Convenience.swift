@@ -62,8 +62,9 @@ extension Scenario {
                   image: scenarioRepresentation.image,
                   context: context)
         
-        for event in scenarioRepresentation.events {
-            let newEvent = Event(eventRepresentation: event, context: context)
+        for index in 0..<scenarioRepresentation.events.count {
+            let event = scenarioRepresentation.events[index]
+            let newEvent = Event(eventRepresentation: event, index: index, context: context)
             addToEvents(newEvent)
         }
     }
