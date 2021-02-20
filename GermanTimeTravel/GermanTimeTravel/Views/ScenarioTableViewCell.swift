@@ -15,10 +15,10 @@ class ScenarioTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var totalEventsLabel: UILabel!
-    @IBOutlet weak var unitsLabel: UILabel!
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var totalEventsLabel: UILabel!
+    @IBOutlet private var unitsLabel: UILabel!
     @IBOutlet weak var roundView: UIView!
     
     // MARK: Properties

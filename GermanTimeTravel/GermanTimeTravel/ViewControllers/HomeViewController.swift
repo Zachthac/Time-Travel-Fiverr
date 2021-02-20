@@ -12,10 +12,10 @@ class HomeViewController: UIViewController {
     
     // MARK: - Outlets
 
-    @IBOutlet weak var titleView: UIView!
-    @IBOutlet weak var roundView: UIView!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private var titleView: UIView!
+    @IBOutlet private var roundView: UIView!
+    @IBOutlet private var stackView: UIStackView!
+    @IBOutlet private var titleLabel: UILabel!
     
     // MARK: - Properties
     

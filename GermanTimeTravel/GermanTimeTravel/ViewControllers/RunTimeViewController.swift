@@ -11,13 +11,13 @@ class RunTimeViewController: UIViewController {
     
     // MARK: - Outlets
 
-    @IBOutlet weak var scenarioTitleLabel: UILabel!
-    @IBOutlet weak var scenarioImage: UIImageView!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var roundView: UIView!
-    @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var suggestedRTLabel: UILabel!
+    @IBOutlet private var scenarioTitleLabel: UILabel!
+    @IBOutlet private var scenarioImage: UIImageView!
+    @IBOutlet private var pickerView: UIPickerView!
+    @IBOutlet private var roundView: UIView!
+    @IBOutlet private var startButton: UIButton!
+    @IBOutlet private var stackView: UIStackView!
+    @IBOutlet private var suggestedRTLabel: UILabel!
     
     // MARK: - Properties
     
