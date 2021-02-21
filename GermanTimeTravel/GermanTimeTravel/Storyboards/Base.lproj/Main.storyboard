@@ -567,10 +567,10 @@
             </objects>
             <point key="canvasLocation" x="4052.1739130434785" y="-18.080357142857142"/>
         </scene>
-        <!--More View Controller-->
+        <!--View Controller-->
         <scene sceneID="gV4-v7-w5u">
             <objects>
-                <viewController id="gqQ-Tl-eFs" customClass="MoreViewController" customModule="GermanTimeTravel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gqQ-Tl-eFs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tNL-55-Za4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -972,7 +972,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-7t-izX">
                                         <rect key="frame" x="23" y="18" width="328" height="503"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHx-ef-VKX">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Translator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHx-ef-VKX">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="45.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

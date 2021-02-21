@@ -21,7 +21,7 @@ class RunScenarioViewController: UIViewController {
     @IBOutlet private var noPhotoLabel: UILabel!
     @IBOutlet private var imageInfoButton: UIButton!
     @IBOutlet private var cancelButton: UIButton!
-    
+        
     // MARK: - Properties
     
     weak var controller: ModelController?
@@ -104,6 +104,7 @@ class RunScenarioViewController: UIViewController {
     }
     
     // MARK: - Private Functions
+    
     private func setUpGradient() {
         gradient.frame = photoImageView.bounds
         photoImageView.layer.addSublayer(gradient)
@@ -112,7 +113,9 @@ class RunScenarioViewController: UIViewController {
         photoImageView.bringSubviewToFront(imageInfoButton)
         photoImageView.bringSubviewToFront(cancelButton)
     }
+    
     private func setUpViews() {
+        cancelButton.tintAdjustmentMode = .normal
         timePassedLabel.text = ""
         currentEventDateLabel.text = ""
         timePassedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timePassedLabel.font.pointSize, weight: .medium)
@@ -206,14 +209,23 @@ class RunScenarioViewController: UIViewController {
                             self.selectedEvent = self.fetchedResultsController.fetchedObjects?.last
                         }
                     })
+                    self.cancelButtonAnimation()
                     if self.controller?.language == .english {
                         let alert = UIAlertController(title: "Finished!", message: "Use the cancel button to clear this scenario.", preferredStyle: .alert)
-                        let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        let button = UIAlertAction(title: "OK", style: .cancel) { _ in
+                            UIView.animate(withDuration: 1) {
+                                self.cancelButton.tintColor = .systemRed
+                            }
+                        }
                         alert.addAction(button)
                         self.present(alert, animated: true)
                     } else {
                         let alert = UIAlertController(title: "Fertig!", message: "Nutze den Abbrechen-Button, um das Szenario zu beenden.", preferredStyle: .alert)
-                        let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        let button = UIAlertAction(title: "OK", style: .cancel) { _ in
+                            UIView.animate(withDuration: 1) {
+                                self.cancelButton.tintColor = .systemRed
+                            }
+                        }
                         alert.addAction(button)
                         self.present(alert, animated: true)
                     }
@@ -345,6 +357,14 @@ class RunScenarioViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func cancelButtonAnimation() {
+        let image = UIImage(systemName: "xmark.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 22, weight: .regular))
+        cancelButton.setImage(image, for: .normal)
+        UIView.animate(withDuration: 1.5, delay: 0, options: [.repeat, .autoreverse]) {
+            self.cancelButton.tintColor = .darkYellow
+        } completion: { _ in }
     }
     
     deinit {
