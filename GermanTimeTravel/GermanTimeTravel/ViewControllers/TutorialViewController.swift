@@ -39,8 +39,6 @@ class TutorialViewController: UIViewController {
                 }
         if currentPage < tutorial.count - 1  {
             currentPage += 1
-            previousButton.isEnabled = true
-            previousButton.backgroundColor = .darkYellow
             animateAndUpdateViews()
         }
         
@@ -48,10 +46,6 @@ class TutorialViewController: UIViewController {
     
     @IBAction func previousButtonTapped(_ sender: Any) {
         currentPage -= 1
-        if currentPage == 0 {
-            previousButton.backgroundColor = .clear
-            previousButton.isEnabled = false
-        }
         animateAndUpdateViews()
     }
     
@@ -74,6 +68,13 @@ class TutorialViewController: UIViewController {
     }
     
     private func updateViews() {
+        if currentPage > 0 {
+            previousButton.isEnabled = true
+            previousButton.backgroundColor = .darkYellow
+        } else {
+            previousButton.isEnabled = false
+            previousButton.backgroundColor = .clear
+        }
         imageView.image = tutorial[currentPage].image
         if controller?.language == .english {
             textLabel.text = tutorial[currentPage].textEn
