@@ -11,6 +11,7 @@ enum UnitType: String {
     case time = "datetime"
     case date = "date"
     case astronomical = "ae, miokm, miomiles"
+    case distance = "km"
     case other
 }
 
@@ -20,6 +21,10 @@ class UnitHelper {
     var language: Language
     var unit: Unit
     var formatter = DateFormatter()
+    
+    let kmToMiles = 0.621371192
+    let astroToMMiles = 92.955807
+    let astroToMKm = 149.597871
     
     init(unitType: String, language: Language = .english, unit: Unit = .imperial) {
         self.unitType = UnitType(rawValue: unitType) ?? .other
@@ -48,15 +53,29 @@ class UnitHelper {
         case .astronomical:
             if unit == .imperial {
                 if language == .english {
-                    return String("\(Int(double * 92.955807)) Million Miles")
+                    return String("\(Int(double * astroToMMiles)) Million Miles")
                 } else {
-                    return String("\(Int(double * 92.955807)) Millionen Meilen")
+                    return String("\(Int(double * astroToMMiles)) Millionen Meilen")
                 }
             } else {
                 if language == .english {
-                    return String("\(Int(double * 149.597871)) Million Kilometers")
+                    return String("\(Int(double * astroToMKm)) Million Kilometers")
                 } else {
-                    return String("\(Int(double * 149.597871)) Millionen Kilometer")
+                    return String("\(Int(double * astroToMKm)) Millionen Kilometer")
+                }
+            }
+        case .distance:
+            if unit == .imperial {
+                if language == .english {
+                    return String("\(Int(double * kmToMiles)) Miles")
+                } else {
+                    return String("\(Int(double * kmToMiles)) Meilen")
+                }
+            } else {
+                if language == .english {
+                    return String("\(Int(double)) Kilometers")
+                } else {
+                    return String("\(Int(double)) Kilometer")
                 }
             }
         case .other:
@@ -77,9 +96,15 @@ class UnitHelper {
             return formatter.string(from: Date(timeIntervalSince1970: double))
         case .astronomical:
             if unit == .imperial {
-                return String("\(Int(double * 92.955807)) M m")
+                return String("\(Int(double * astroToMMiles)) M mi")
             } else {
-                return String("\(Int(double * 149.597871)) M km")
+                return String("\(Int(double * astroToMKm)) M km")
+            }
+        case .distance:
+            if unit == .imperial {
+                return String("\(Int(double * kmToMiles)) mi")
+            } else {
+                return String("\(Int(double)) km")
             }
         case .other:
             return String(Int(double))

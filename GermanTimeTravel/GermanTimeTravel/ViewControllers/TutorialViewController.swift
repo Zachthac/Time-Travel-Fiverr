@@ -96,7 +96,7 @@ class TutorialViewController: UIViewController {
             alert.addAction(doneButton)
             self.present(alert, animated: true)
         } else {
-            let alert = UIAlertController(title: "Tutorial Fertig!", message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Tutorial beendet!", message: nil, preferredStyle: .alert)
             let backButton = UIAlertAction(title: "Zurück", style: .cancel, handler: nil)
             let doneButton = UIAlertAction(title: "OK", style: .destructive) { _ in
                 self.navigationController?.popViewController(animated: true)
