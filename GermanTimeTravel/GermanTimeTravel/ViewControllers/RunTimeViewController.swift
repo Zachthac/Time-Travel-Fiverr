@@ -29,11 +29,11 @@ class RunTimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
-        setUpPickerView()
+        setUpView()
     }
     
     override func viewDidLayoutSubviews() {
-        setUpViews()
+        setUpSubViews()
     }
     
     // MARK: - Actions
@@ -66,7 +66,7 @@ class RunTimeViewController: UIViewController {
     
     // MARK: - Private Functions
     
-    private func setUpViews() {
+    private func setUpSubViews() {
         scenarioTitleLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
         scenarioTitleLabel.layer.shadowOpacity = 1
         scenarioTitleLabel.layer.shadowRadius = 2.4
@@ -78,21 +78,9 @@ class RunTimeViewController: UIViewController {
         roundView.roundCorners(cornerRadius: 25)
         roundView.bringSubviewToFront(stackView)
         roundView.bringSubviewToFront(startButton)
-        
-        guard let scenario = scenario else { return }
-        if controller?.language == .english {
-            scenarioTitleLabel.text = scenario.nameEn
-        } else {
-            scenarioTitleLabel.text = scenario.nameDe
-        }
-        controller?.loadImage(summary: scenario, scenario: nil, event: nil, completion: { image in
-            DispatchQueue.main.async {
-                self.scenarioImage.image = image
-            }
-        })
     }
     
-    private func setUpPickerView() {
+    private func setUpView() {
         pickerView.setValue(UIColor.white, forKeyPath: "textColor")
         if let runtime = scenario?.runtime {
             setSuggestionOnPicker(runtime: runtime)
@@ -108,6 +96,18 @@ class RunTimeViewController: UIViewController {
                 suggestedRTLabel.text = "Keine empfohlene Laufzeit für dieses Szenario."
             }
         }
+        
+        guard let scenario = scenario else { return }
+        if controller?.language == .english {
+            scenarioTitleLabel.text = scenario.nameEn
+        } else {
+            scenarioTitleLabel.text = scenario.nameDe
+        }
+        controller?.loadImage(summary: scenario, scenario: nil, event: nil, completion: { image in
+            DispatchQueue.main.async {
+                self.scenarioImage.image = image
+            }
+        })
     }
     
     private func setSuggestionOnPicker(runtime: Double) {
