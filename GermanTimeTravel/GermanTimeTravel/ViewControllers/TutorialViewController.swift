@@ -40,6 +40,7 @@ class TutorialViewController: UIViewController {
         if currentPage < tutorial.count - 1  {
             currentPage += 1
             animateAndUpdateViews()
+            
         }
         
     }

@@ -17,6 +17,7 @@ class AllScenariosViewController: UIViewController {
     @IBOutlet private var titleView: UIView!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var roundView: UIView!
+    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
@@ -29,6 +30,12 @@ class AllScenariosViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         controller?.delegate = self
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if tableView.visibleCells.count == 0 {
+            activityIndicator.startAnimating()
+        }
     }
     override func viewDidLayoutSubviews() {
         setUpViews()
@@ -117,6 +124,7 @@ extension AllScenariosViewController: ScenarioDelegate {
     func summariesUpdated() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
         }
     }
 }
