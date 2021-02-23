@@ -1,99 +1,84 @@
 
 /* Class = "UILabel"; text = "Choose Scenario"; ObjectID = "1bh-SZ-mV4"; */
-"1bh-SZ-mV4.text" = "Choose Scenario";
+"1bh-SZ-mV4.text" = "Szenariowahl";
 
-/* Class = "UILabel"; text = "We’ll update\nTimeTranslator continuously with new scenarios and features!"; ObjectID = "1hQ-NP-9xS"; */
-"1hQ-NP-9xS.text" = "We’ll update\nTimeTranslator continuously with new scenarios and features!";
+/* Class = "UILabel"; text = "Coming Soon!"; ObjectID = "1hQ-NP-9xS"; */
+"1hQ-NP-9xS.text" = "Demnächst...";
 
 /* Class = "UISegmentedControl"; 2ym-JS-RQ8.segmentTitles[0] = "English"; ObjectID = "2ym-JS-RQ8"; */
 "2ym-JS-RQ8.segmentTitles[0]" = "English";
 
-/* Class = "UISegmentedControl"; 2ym-JS-RQ8.segmentTitles[1] = "Deutsch"; ObjectID = "2ym-JS-RQ8"; */
+/* Class = "UISegmentedControl"; 2ym-JS-RQ8.segmentTitles[1] = "German"; ObjectID = "2ym-JS-RQ8"; */
 "2ym-JS-RQ8.segmentTitles[1]" = "Deutsch";
 
 /* Class = "UILabel"; text = "SEC"; ObjectID = "4kS-Cc-iO2"; */
-"4kS-Cc-iO2.text" = "SEC";
+"4kS-Cc-iO2.text" = "SEK";
 
 /* Class = "UILabel"; text = "Measurement"; ObjectID = "ASt-Sf-tWv"; */
-"ASt-Sf-tWv.text" = "Measurement";
+"ASt-Sf-tWv.text" = "Einheiten";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "Eo5-eG-kwi"; */
+"Eo5-eG-kwi.title" = "Item";
 
 /* Class = "UILabel"; text = "The recommended run time for this event is for this event because the speed of light is 122322 and that is why blah blah blah"; ObjectID = "G9F-mh-Dxv"; */
 "G9F-mh-Dxv.text" = "The recommended run time for this event is for this event because the speed of light is 122322 and that is why blah blah blah";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "GQG-jY-gE1"; */
-"GQG-jY-gE1.text" = "About";
+"GQG-jY-gE1.text" = "Über";
 
 /* Class = "UILabel"; text = "Free Conversion"; ObjectID = "GT1-o4-66D"; */
-"GT1-o4-66D.text" = "Free Conversion";
-
-/* Class = "UIButton"; normalTitle = "TUTORIAL"; ObjectID = "H9S-CG-jzr"; */
-"H9S-CG-jzr.normalTitle" = "TUTORIAL";
-
-/* Class = "UIButton"; normalTitle = "IMPRINT"; ObjectID = "HTU-bj-o6z"; */
-"HTU-bj-o6z.normalTitle" = "IMPRINT";
+"GT1-o4-66D.text" = "Individuell";
 
 /* Class = "UILabel"; text = "1940-06-14"; ObjectID = "IkD-XX-Nfn"; */
 "IkD-XX-Nfn.text" = "1940-06-14";
 
-/* Class = "UIButton"; normalTitle = "SKIP TUTORIAL"; ObjectID = "K85-E0-rCu"; */
-"K85-E0-rCu.normalTitle" = "SKIP TUTORIAL";
-
-/* Class = "UILabel"; text = "TimeTranslator"; ObjectID = "KHx-ef-VKX"; */
-"KHx-ef-VKX.text" = "TimeTranslator";
-
 /* Class = "UILabel"; text = "Suggested Run-Time"; ObjectID = "LI8-eh-sXH"; */
-"LI8-eh-sXH.text" = "Suggested Run-Time";
+"LI8-eh-sXH.text" = "Empfohlene Dauer";
 
 /* Class = "UILabel"; text = "TimeTranslator"; ObjectID = "LU7-TO-l0K"; */
 "LU7-TO-l0K.text" = "TimeTranslator";
 
 /* Class = "UILabel"; text = "Enter Run-Time"; ObjectID = "Pks-aw-vTT"; */
-"Pks-aw-vTT.text" = "Enter Run-Time";
+"Pks-aw-vTT.text" = "Laufzeit";
 
 /* Class = "UILabel"; text = "  HR"; ObjectID = "Q8c-IJ-M4R"; */
-"Q8c-IJ-M4R.text" = "  HR";
+"Q8c-IJ-M4R.text" = "  STD";
 
 /* Class = "UILabel"; text = "History: WW2"; ObjectID = "Q9L-PB-Vjn"; */
 "Q9L-PB-Vjn.text" = "History: WW2";
 
 /* Class = "UILabel"; text = "Options"; ObjectID = "TO1-3v-YC9"; */
-"TO1-3v-YC9.text" = "Options";
+"TO1-3v-YC9.text" = "Optionen";
 
 /* Class = "UILabel"; text = "No photo for this event"; ObjectID = "TXY-XL-btj"; */
-"TXY-XL-btj.text" = "No photo for this event";
+"TXY-XL-btj.text" = "Kein Bild für dieses Event vorhanden";
 
 /* Class = "UILabel"; text = "Language"; ObjectID = "Unw-0v-4B0"; */
-"Unw-0v-4B0.text" = "Language";
+"Unw-0v-4B0.text" = "Sprache";
 
 /* Class = "UILabel"; text = "1993-03-10"; ObjectID = "WMh-RE-wzg"; */
 "WMh-RE-wzg.text" = "1993-03-10";
 
-/* Class = "UILabel"; text = "With TimeTranslator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. \n\nNew scenarios and features will be added in spring/summer 2021!"; ObjectID = "bCr-Fo-BRT"; */
-"bCr-Fo-BRT.text" = "With TimeTranslator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. \n\nNew scenarios and features will be added in spring/summer 2021!";
+/* Class = "UILabel"; text = "Impressum Nikos SauerMeinekestraße 210719 BerlinE-Mail: timetranslator-info@gmx.deImprintNikos SauerMeinekestraße 210719 Berlin, GermanyContact: timetranslator-info@gmx.de"; ObjectID = "bCr-Fo-BRT"; */
+"bCr-Fo-BRT.text" = "Impressum Nikos SauerMeinekestraße 210719 BerlinE-Mail: timetranslator-info@gmx.deImprintNikos SauerMeinekestraße 210719 Berlin, GermanyContact: timetranslator-info@gmx.de";
 
 /* Class = "UILabel"; text = "More"; ObjectID = "dJV-cC-8aF"; */
-"dJV-cC-8aF.text" = "More";
+"dJV-cC-8aF.text" = "Mehr";
 
 /* Class = "UIButton"; normalTitle = "START"; ObjectID = "dod-JU-et4"; */
 "dod-JU-et4.normalTitle" = "START";
 
 /* Class = "UILabel"; text = "DAYS"; ObjectID = "eqa-2r-3AL"; */
-"eqa-2r-3AL.text" = "DAYS";
+"eqa-2r-3AL.text" = "TAGE";
 
 /* Class = "UILabel"; text = "Choose Scenario"; ObjectID = "g1y-R3-kqr"; */
-"g1y-R3-kqr.text" = "Choose Scenario";
-
-/* Class = "UIButton"; normalTitle = "BACK"; ObjectID = "g2H-fT-AYV"; */
-"g2H-fT-AYV.normalTitle" = "BACK";
+"g1y-R3-kqr.text" = "Szenariowahl";
 
 /* Class = "UILabel"; text = "TOTAL EVENTS:"; ObjectID = "gR6-7m-ahC"; */
 "gR6-7m-ahC.text" = "TOTAL EVENTS:";
 
-/* Class = "UILabel"; text = "Thisi is text and here it iskj kj kh j k k  g iu hubv oudhbid dod fb f dbfj du f dfh vh fh vdfjhv dfh vd dfv djfv v v "; ObjectID = "gqh-0D-al9"; */
-"gqh-0D-al9.text" = "Thisi is text and here it iskj kj kh j k k  g iu hubv oudhbid dod fb f dbfj du f dfh vh fh vdfjhv dfh vd dfv djfv v v ";
-
 /* Class = "UILabel"; text = "Point in Scenario"; ObjectID = "gva-oV-DPc"; */
-"gva-oV-DPc.text" = "Point in Scenario";
+"gva-oV-DPc.text" = "Im Szenario";
 
 /* Class = "UILabel"; text = "UNITS:"; ObjectID = "iqO-hc-mBv"; */
 "iqO-hc-mBv.text" = "UNITS:";
@@ -102,13 +87,10 @@
 "lfL-Eh-s7B.text" = "57:03";
 
 /* Class = "UILabel"; text = "Time Passed"; ObjectID = "mBk-WW-6d7"; */
-"mBk-WW-6d7.text" = "Time Passed";
+"mBk-WW-6d7.text" = "Zeit";
 
 /* Class = "UILabel"; text = "Immense yourself into exciting and thrilling world war 2 events that lead to one of the biggest and scariest incident of all time."; ObjectID = "pX9-sb-cpr"; */
 "pX9-sb-cpr.text" = "Immense yourself into exciting and thrilling world war 2 events that lead to one of the biggest and scariest incident of all time.";
-
-/* Class = "UIButton"; normalTitle = "NEXT"; ObjectID = "pjZ-1B-Qqm"; */
-"pjZ-1B-Qqm.normalTitle" = "NEXT";
 
 /* Class = "UILabel"; text = "MIN"; ObjectID = "tb4-yf-RoY"; */
 "tb4-yf-RoY.text" = "MIN";
@@ -120,4 +102,22 @@
 "z8e-bZ-xkr.segmentTitles[0]" = "Imperial";
 
 /* Class = "UISegmentedControl"; z8e-bZ-xkr.segmentTitles[1] = "Metric"; ObjectID = "z8e-bZ-xkr"; */
-"z8e-bZ-xkr.segmentTitles[1]" = "Metric";
+"z8e-bZ-xkr.segmentTitles[1]" = "Metrisch";
+
+/* Class = "UILabel"; text = "We’ll update TimeTranslator continuously with new scenarios and features!"; ObjectID = "1hQ-NP-9xS"; */
+"1hQ-NP-9xS.text" = "Wir werden\nTimeTranslator kontinuierlich um weitere Szenarien und Features erweitern!";
+
+/* Class = "UILabel"; text = "With TimeTranslator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. New scenarios and features will be added in spring/summer 2021!"; ObjectID = "bCr-Fo-BRT"; */
+"bCr-Fo-BRT.text" = "Mit TimeTranslator kannst du Echtzeit in andere zeitliche oder räumliche Periodenkonvertieren. Wähle ein Szenario und den Zeitraum, in den es konvertiert werdensoll. So kannst du Szenarien, ihre spannenden Events und die relativen Abstände zwischen ihnen in der Dauer erleben, die dir gefällt.\n\nWeitere Szenarien und Features folgen im Frühjahr/Sommer 2021!";
+
+/* Class = "UIButton"; normalTitle = "IMPRINT"; ObjectID = "HTU-bj-o6z"; */
+"HTU-bj-o6z.normalTitle" = "IMPRESSUM";
+
+/* Class = "UIButton"; normalTitle = "NEXT"; ObjectID = "pjZ-1B-Qqm"; */
+"pjZ-1B-Qqm.normalTitle" = "WEITER";
+
+/* Class = "UIButton"; normalTitle = "BACK"; ObjectID = "g2H-fT-AYV"; */
+"g2H-fT-AYV.normalTitle" = "ZURÜCK";
+
+/* Class = "UIButton"; normalTitle = "SKIP TUTORIAL"; ObjectID = "K85-E0-rCu"; */
+"K85-E0-rCu.normalTitle" = "     TUTORIAL ÜBERSPRINGEN";

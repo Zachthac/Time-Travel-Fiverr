@@ -24,6 +24,14 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "aboutTutorialSegue" {
+            let tutorialVC = segue.destination as! TutorialViewController
+            tutorialVC.controller = controller
+        }
+    }
     //MARK: - IBActions
     
     @IBAction func imprintButtonTapped(_ sender: Any) {
