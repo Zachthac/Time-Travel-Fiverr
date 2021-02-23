@@ -14,7 +14,6 @@
 		1A07373225AE77970072217A /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07373125AE77970072217A /* Event+Convenience.swift */; };
 		1A28293325B8D093005961D6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28293225B8D093005961D6 /* UIColorExtension.swift */; };
 		1A28293A25C3527D005961D6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28293925C3527D005961D6 /* AboutViewController.swift */; };
-		1A2C660425E1A54F00C243DE /* tut3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C660325E1A54F00C243DE /* tut3.gif */; };
 		1A49602925DD7A24006332A9 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49602825DD7A24006332A9 /* Tutorial.swift */; };
 		1A49602C25DD7D24006332A9 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49602B25DD7D24006332A9 /* TutorialViewController.swift */; };
 		1A49602F25DDADA7006332A9 /* UnitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49602E25DDADA7006332A9 /* UnitHelper.swift */; };
@@ -24,6 +23,7 @@
 		1AB8F68F25B222EE0070A14C /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F68E25B222EE0070A14C /* Cache.swift */; };
 		1AB8F69225B22B3D0070A14C /* ScenarioRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */; };
 		1AB8F69C25B2B9440070A14C /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB8F69B25B2B9440070A14C /* OptionsViewController.swift */; };
+		4607175A25E479400046E735 /* tut3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4607175925E479400046E735 /* tut3.gif */; };
 		464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */; };
 		464CACC925B29E9900F37F79 /* ScenarioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */; };
 		464CACCC25B2A04B00F37F79 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */; };
@@ -53,7 +53,6 @@
 		1A07373125AE77970072217A /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
 		1A28293225B8D093005961D6 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1A28293925C3527D005961D6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		1A2C660325E1A54F00C243DE /* tut3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tut3.gif; sourceTree = "<group>"; };
 		1A49602825DD7A24006332A9 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		1A49602B25DD7D24006332A9 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		1A49602E25DDADA7006332A9 /* UnitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHelper.swift; sourceTree = "<group>"; };
@@ -63,6 +62,9 @@
 		1AB8F68E25B222EE0070A14C /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		1AB8F69125B22B3D0070A14C /* ScenarioRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioRepresentation.swift; sourceTree = "<group>"; };
 		1AB8F69B25B2B9440070A14C /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		4607175925E479400046E735 /* tut3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tut3.gif; sourceTree = "<group>"; };
+		4607175C25E57B3B0046E735 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4607175D25E57B3B0046E735 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		464CACBA25B25C7F00F37F79 /* RunScenarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunScenarioViewController.swift; sourceTree = "<group>"; };
 		464CACC825B29E9900F37F79 /* ScenarioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioTableViewCell.swift; sourceTree = "<group>"; };
 		464CACCB25B2A04B00F37F79 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,8 +86,6 @@
 		469207F3257EE0AD001781E5 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		469CEF532589773400827BB0 /* AllScenariosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllScenariosViewController.swift; sourceTree = "<group>"; };
 		469D6BEE25BAB2750043FE91 /* NotificationPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPublisher.swift; sourceTree = "<group>"; };
-		46C917A225D34AF3003ED167 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		46C917A325D34AF3003ED167 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 			children = (
 				4676B58E25DF66CE0041BCA2 /* tut1.gif */,
 				4676B59225DF66EF0041BCA2 /* tut2.gif */,
-				1A2C660325E1A54F00C243DE /* tut3.gif */,
+				4607175925E479400046E735 /* tut3.gif */,
 				4676B59A25DF8BF00041BCA2 /* tut4.gif */,
 			);
 			path = GIFs;
@@ -273,9 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2C660425E1A54F00C243DE /* tut3.gif in Resources */,
 				4676B59325DF66EF0041BCA2 /* tut2.gif in Resources */,
 				4676B58F25DF66CE0041BCA2 /* tut1.gif in Resources */,
+				4607175A25E479400046E735 /* tut3.gif in Resources */,
 				469207D1257933D8001781E5 /* LaunchScreen.storyboard in Resources */,
 				4676B58225DF5B8C0041BCA2 /* Assets.xcassets in Resources */,
 				4676B59B25DF8BF00041BCA2 /* tut4.gif in Resources */,
@@ -329,7 +329,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				469207CB257933D5001781E5 /* Base */,
-				46C917A325D34AF3003ED167 /* de */,
+				4607175D25E57B3B0046E735 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -338,7 +338,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				469207D0257933D8001781E5 /* Base */,
-				46C917A225D34AF3003ED167 /* de */,
+				4607175C25E57B3B0046E735 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

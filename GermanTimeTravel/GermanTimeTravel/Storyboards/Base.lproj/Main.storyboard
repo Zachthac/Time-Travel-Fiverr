@@ -21,8 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHT-0k-dhU">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Translator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LU7-TO-l0K">
-                                        <rect key="frame" x="84.5" y="136" width="245" height="42"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeTranslator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LU7-TO-l0K">
+                                        <rect key="frame" x="90" y="136" width="234" height="42"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -538,7 +538,7 @@
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="R4w-qB-3F8">
                                 <rect key="frame" x="188.5" y="551.5" width="37" height="37"/>
-                                <color key="color" name="YellowColor"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xfh-A0-8ef"/>
@@ -585,7 +585,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hQ-NP-9xS">
                                 <rect key="frame" x="33" y="334.5" width="348" height="227"/>
                                 <string key="text">We’ll update
-Time Translator continuously with new scenarios and features!</string>
+TimeTranslator continuously with new scenarios and features!</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -613,44 +613,65 @@ Time Translator continuously with new scenarios and features!</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-Fo-BRT">
-                                <rect key="frame" x="23" y="111" width="368" height="677"/>
-                                <string key="text">With Time Translator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. 
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-sq-JrP">
+                                <rect key="frame" x="23" y="111" width="368" height="728"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-Fo-BRT">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="599.5"/>
+                                        <string key="text">With TimeTranslator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. 
 
 New scenarios and features will be added in spring/summer 2021!</string>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTU-bj-o6z">
-                                <rect key="frame" x="33" y="798" width="348" height="47.5"/>
-                                <color key="backgroundColor" red="0.87133896349999995" green="0.63226991889999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="IMPRINT">
-                                    <color key="titleColor" red="0.052426226440000001" green="0.073071263730000002" blue="0.24617102739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="imprintButtonTapped:" destination="7rV-h2-0ju" eventType="touchUpInside" id="4Fm-1G-hO9"/>
-                                    <action selector="startScenario:" destination="0w3-2I-u1s" eventType="touchUpInside" id="kWH-E0-djF"/>
-                                </connections>
-                            </button>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9S-CG-jzr">
+                                        <rect key="frame" x="0.0" y="617.5" width="368" height="47.5"/>
+                                        <color key="backgroundColor" red="0.87133896349999995" green="0.63226991889999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="TUTORIAL">
+                                            <color key="titleColor" red="0.052426226440000001" green="0.073071263730000002" blue="0.24617102739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="UYH-nb-M3F" kind="show" identifier="aboutTutorialSegue" id="uWr-5B-gNG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTU-bj-o6z">
+                                        <rect key="frame" x="0.0" y="683" width="368" height="45"/>
+                                        <color key="backgroundColor" red="0.87133896349999995" green="0.63226991889999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="IMPRINT">
+                                            <color key="titleColor" red="0.052426226440000001" green="0.073071263730000002" blue="0.24617102739999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="imprintButtonTapped:" destination="7rV-h2-0ju" eventType="touchUpInside" id="4Fm-1G-hO9"/>
+                                            <action selector="startScenario:" destination="0w3-2I-u1s" eventType="touchUpInside" id="kWH-E0-djF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HTU-bj-o6z" firstAttribute="height" secondItem="4Uo-sq-JrP" secondAttribute="height" multiplier="0.053" constant="6.4515000000000029" id="DF8-4Z-r29"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ouQ-bP-pso"/>
                         <color key="backgroundColor" red="0.050432264800000001" green="0.089510612190000005" blue="0.30170556900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ouQ-bP-pso" firstAttribute="trailing" secondItem="bCr-Fo-BRT" secondAttribute="trailing" constant="23" id="COo-9G-HoX"/>
-                            <constraint firstItem="bCr-Fo-BRT" firstAttribute="top" secondItem="ouQ-bP-pso" secondAttribute="top" constant="23" id="YBN-Qm-sCb"/>
-                            <constraint firstItem="HTU-bj-o6z" firstAttribute="leading" secondItem="ouQ-bP-pso" secondAttribute="leading" constant="33" id="cTK-gK-vvf"/>
-                            <constraint firstItem="bCr-Fo-BRT" firstAttribute="leading" secondItem="ouQ-bP-pso" secondAttribute="leading" constant="23" id="gfD-Xs-RV4"/>
-                            <constraint firstItem="ouQ-bP-pso" firstAttribute="bottom" secondItem="HTU-bj-o6z" secondAttribute="bottom" constant="16.5" id="nnI-2l-mdU"/>
-                            <constraint firstItem="HTU-bj-o6z" firstAttribute="top" secondItem="bCr-Fo-BRT" secondAttribute="bottom" constant="10" id="tee-pb-WiU"/>
-                            <constraint firstItem="ouQ-bP-pso" firstAttribute="trailing" secondItem="HTU-bj-o6z" secondAttribute="trailing" constant="33" id="ulS-Fd-j0O"/>
-                            <constraint firstItem="HTU-bj-o6z" firstAttribute="height" secondItem="spc-At-DOo" secondAttribute="height" multiplier="0.053" id="zei-oC-Esu"/>
+                            <constraint firstAttribute="trailing" secondItem="4Uo-sq-JrP" secondAttribute="trailing" constant="23" id="BOb-HQ-7f5"/>
+                            <constraint firstItem="4Uo-sq-JrP" firstAttribute="top" secondItem="ouQ-bP-pso" secondAttribute="top" constant="23" id="c9r-SY-zcb"/>
+                            <constraint firstItem="4Uo-sq-JrP" firstAttribute="leading" secondItem="ouQ-bP-pso" secondAttribute="leading" constant="23" id="dPy-Mf-kIu"/>
+                            <constraint firstItem="H9S-CG-jzr" firstAttribute="height" secondItem="spc-At-DOo" secondAttribute="height" multiplier="0.053" id="t50-GP-thc"/>
+                            <constraint firstItem="ouQ-bP-pso" firstAttribute="bottom" secondItem="4Uo-sq-JrP" secondAttribute="bottom" constant="23" id="z14-bb-vcx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="chx-0h-B6i"/>
@@ -976,28 +997,28 @@ New scenarios and features will be added in spring/summer 2021!</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3G-WU-olW">
                                 <rect key="frame" x="20" y="131" width="374" height="634"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-7t-izX">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-7t-izX">
                                         <rect key="frame" x="23" y="18" width="328" height="593"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Translator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHx-ef-VKX">
-                                                <rect key="frame" x="0.0" y="0.0" width="328" height="45.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeTranslator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHx-ef-VKX">
+                                                <rect key="frame" x="0.0" y="0.0" width="328" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-Ik-7Uc">
-                                                <rect key="frame" x="0.0" y="59" width="328" height="189.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-Ik-7Uc">
+                                                <rect key="frame" x="0.0" y="71" width="328" height="153.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aod-JN-2x4">
                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="1"/>
-                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.80031560262044266" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="4R8-AQ-ipp"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thisi is text and here it iskj kj kh j k k  g iu hubv oudhbid dod fb f dbfj du f dfh vh fh vdfjhv dfh vd dfv djfv v v " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-0D-al9">
-                                                        <rect key="frame" x="0.0" y="14" width="328" height="161.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="4" width="328" height="145.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                                         <color key="textColor" white="1" alpha="0.88625551859999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1007,16 +1028,20 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGJ-aF-NCb">
-                                                        <rect key="frame" x="0.0" y="188.5" width="328" height="1"/>
-                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.80031560260000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="152.5" width="328" height="1"/>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="vuo-eM-Z8O"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="AGJ-aF-NCb" firstAttribute="top" secondItem="gqh-0D-al9" secondAttribute="bottom" constant="3" id="TGi-9t-kYh"/>
+                                                    <constraint firstItem="gqh-0D-al9" firstAttribute="top" secondItem="Aod-JN-2x4" secondAttribute="bottom" constant="3" id="Xj5-5G-pD8"/>
+                                                </constraints>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBT-W1-eIR">
-                                                <rect key="frame" x="0.0" y="261.5" width="328" height="275.5"/>
+                                                <rect key="frame" x="0.0" y="249.5" width="328" height="275.5"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-ws-Iul">
                                                 <rect key="frame" x="0.0" y="550" width="328" height="43"/>
@@ -1037,12 +1062,12 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                             <action selector="previousButtonTapped:" destination="UYH-nb-M3F" eventType="touchUpInside" id="Tfz-w7-d7M"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K85-E0-rCu">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="K85-E0-rCu">
                                                         <rect key="frame" x="102" y="0.0" width="124" height="43"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="SKIP TUTORIAL">
-                                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="0.50431098937988283" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="skipButtonTapped:" destination="UYH-nb-M3F" eventType="touchUpInside" id="f4E-kT-p4z"/>
@@ -1068,9 +1093,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="lBT-W1-eIR" firstAttribute="top" secondItem="Kkh-Ik-7Uc" secondAttribute="bottom" constant="13" id="5Ei-ZL-q9J"/>
                                             <constraint firstItem="lBT-W1-eIR" firstAttribute="centerX" secondItem="X3g-7t-izX" secondAttribute="centerX" id="6iQ-Ey-csD"/>
-                                            <constraint firstItem="SP1-ws-Iul" firstAttribute="top" secondItem="lBT-W1-eIR" secondAttribute="bottom" constant="13" id="qR5-W4-WWe"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -1431,6 +1454,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="W0I-LV-CF8"/>
         <segue reference="gJv-um-yH4"/>
     </inferredMetricsTieBreakers>
     <resources>

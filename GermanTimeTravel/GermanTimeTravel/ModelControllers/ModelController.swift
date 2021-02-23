@@ -267,7 +267,7 @@ class ModelController {
             subtitleText = scenario.nameDe!
             bodyText = event.textDe!
         }
-        notificationPublisher.sendNotification(title: "Time Translator",
+        notificationPublisher.sendNotification(title: "TimeTranslator",
                                                subtitle: subtitleText,
                                                body: bodyText,
                                                delayInterval: event.displayTiming)

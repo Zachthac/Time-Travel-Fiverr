@@ -40,7 +40,6 @@ class TutorialViewController: UIViewController {
         if currentPage < tutorial.count - 1  {
             currentPage += 1
             animateAndUpdateViews()
-            
         }
         
     }
@@ -58,11 +57,13 @@ class TutorialViewController: UIViewController {
     
     private func animateAndUpdateViews() {
         UIView.animate(withDuration: 0.5, animations: {
-            self.roundView.alpha = 0
+            self.textLabel.alpha = 0
+            self.imageView.alpha = 0
         }) { (_) in
             self.updateViews()
             UIView.animate(withDuration: 0.5) {
-                self.roundView.alpha = 1
+                self.textLabel.alpha = 1
+                self.imageView.alpha = 1
 
             }
         }
