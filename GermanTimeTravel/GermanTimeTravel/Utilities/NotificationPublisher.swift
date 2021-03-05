@@ -49,7 +49,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
         
         print("Notification is about to be presented")
-        completionHandler([.sound, .banner])
+        if #available(iOS 14.0, *) {
+            completionHandler([.sound, .banner])
+        } else {
+            // Fallback on earlier versions
+            completionHandler([.sound, .alert])
+        }
     }
         
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
