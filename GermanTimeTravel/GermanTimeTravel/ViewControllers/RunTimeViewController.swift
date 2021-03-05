@@ -40,6 +40,7 @@ class RunTimeViewController: UIViewController {
     
     @IBAction func startScenario(_ sender: UIButton) {
         guard let scenario = scenario else { return }
+        startButton.isEnabled = false
         controller?.startScenario(nameId: scenario.nameId, totalTime: runTime(), completion: { result in
             switch result {
             case true:
@@ -81,6 +82,7 @@ class RunTimeViewController: UIViewController {
     }
     
     private func setUpView() {
+        startButton.isEnabled = true
         pickerView.setValue(UIColor.white, forKeyPath: "textColor")
         if let runtime = scenario?.runtime {
             setSuggestionOnPicker(runtime: runtime)
