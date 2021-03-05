@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UIl-wB-RWV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -583,11 +582,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="1hQ-NP-9xS">
-                                <rect key="frame" x="33" y="334.5" width="348" height="227"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="1hQ-NP-9xS">
+                                <rect key="frame" x="33" y="346.5" width="348" height="203"/>
                                 <string key="text">We’ll update
 TimeTranslator continuously with new scenarios and features!</string>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -617,7 +616,7 @@ TimeTranslator continuously with new scenarios and features!</string>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-sq-JrP">
                                 <rect key="frame" x="23" y="111" width="368" height="728"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-Fo-BRT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-Fo-BRT">
                                         <rect key="frame" x="0.0" y="0.0" width="368" height="599.5"/>
                                         <string key="text">With TimeTranslator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. 
 
@@ -793,7 +792,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPs-fO-NMG">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="358.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="fUP-Oq-bv3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fUP-Oq-bv3">
                                                 <rect key="frame" x="41.5" y="157" width="331" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -823,8 +822,8 @@ New scenarios and features will be added in spring/summer 2021!</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ds5-FG-HvO">
                                 <rect key="frame" x="0.0" y="313.5" width="414" height="582.5"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="ITs-cF-tYB">
-                                        <rect key="frame" x="33" y="29" width="348" height="478"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ITs-cF-tYB">
+                                        <rect key="frame" x="33" y="29" width="348" height="441"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Run-Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="Pks-aw-vTT">
                                                 <rect key="frame" x="46.5" y="0.0" width="255" height="39.5"/>
@@ -833,7 +832,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="gk7-gf-OYb">
-                                                <rect key="frame" x="21" y="62.5" width="306" height="20.5"/>
+                                                <rect key="frame" x="21" y="59.5" width="306" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAYS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-2r-3AL">
                                                         <rect key="frame" x="0.0" y="0.0" width="58.5" height="20.5"/>
@@ -870,22 +869,22 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                 </constraints>
                                             </stackView>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHe-0s-pXe">
-                                                <rect key="frame" x="4" y="106" width="340" height="134"/>
+                                                <rect key="frame" x="4" y="100" width="340" height="112"/>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Run-Time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LI8-eh-sXH">
-                                                <rect key="frame" x="12" y="263" width="324" height="32"/>
+                                                <rect key="frame" x="12" y="232" width="324" height="32"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The recommended run time for this event is for this event because the speed of light is 122322 and that is why blah blah blah" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9F-mh-Dxv">
-                                                <rect key="frame" x="12" y="318" width="324" height="89.5"/>
+                                                <rect key="frame" x="12" y="284" width="324" height="89.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="0.46608581542968752" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dod-JU-et4">
-                                                <rect key="frame" x="0.0" y="430.5" width="348" height="47.5"/>
+                                                <rect key="frame" x="0.0" y="393.5" width="348" height="47.5"/>
                                                 <color key="backgroundColor" red="0.87133896349999995" green="0.63226991889999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <state key="normal" title="START">
@@ -943,7 +942,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                             <constraint firstItem="dod-JU-et4" firstAttribute="height" secondItem="6Br-53-bkS" secondAttribute="height" multiplier="0.053" id="cZT-Zx-pOo"/>
                             <constraint firstItem="wPs-fO-NMG" firstAttribute="height" secondItem="6Br-53-bkS" secondAttribute="height" multiplier="0.4" id="f6N-jo-XvC"/>
                             <constraint firstItem="fUP-Oq-bv3" firstAttribute="width" secondItem="6Br-53-bkS" secondAttribute="width" multiplier="0.8" id="iTt-UP-6jk"/>
-                            <constraint firstItem="tHe-0s-pXe" firstAttribute="height" secondItem="6Br-53-bkS" secondAttribute="height" multiplier="0.149598" id="jiU-ff-lni"/>
+                            <constraint firstItem="tHe-0s-pXe" firstAttribute="height" secondItem="6Br-53-bkS" secondAttribute="height" multiplier="0.125" id="jiU-ff-lni"/>
                             <constraint firstItem="AXk-w0-ebK" firstAttribute="leading" secondItem="0PF-eZ-aVm" secondAttribute="leading" id="ljm-F4-Nxw"/>
                             <constraint firstItem="Ds5-FG-HvO" firstAttribute="trailing" secondItem="0PF-eZ-aVm" secondAttribute="trailing" id="qk2-OM-5Xd"/>
                             <constraint firstItem="AXk-w0-ebK" firstAttribute="leading" secondItem="0PF-eZ-aVm" secondAttribute="leading" id="r9a-9X-TcU"/>
@@ -1199,7 +1198,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                 <rect key="frame" x="0.0" y="313.5" width="414" height="582.5"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lo9-Vz-HQR">
-                                        <rect key="frame" x="0.0" y="131.5" width="414" height="451"/>
+                                        <rect key="frame" x="0.0" y="135" width="414" height="447.5"/>
                                         <color key="backgroundColor" red="0.0080417972059999999" green="0.053528003390000002" blue="0.2105675638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="separatorColor" red="0.0080417972059999999" green="0.053528003390000002" blue="0.2105675638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="sectionIndexBackgroundColor" red="0.0080417972059999999" green="0.053528003390000002" blue="0.2105675638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1282,10 +1281,10 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                         </prototypes>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ap-2B-i1i">
-                                        <rect key="frame" x="20" y="52" width="165.5" height="71.5"/>
+                                        <rect key="frame" x="20" y="55.5" width="165.5" height="71.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-zl-MNI">
-                                                <rect key="frame" x="8" y="8" width="149.5" height="21.5"/>
+                                                <rect key="frame" x="8" y="5" width="149.5" height="21.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dXC-AG-r1z">
                                                         <rect key="frame" x="0.0" y="0.5" width="21.5" height="20.5"/>
@@ -1294,7 +1293,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                             <constraint firstAttribute="width" secondItem="dXC-AG-r1z" secondAttribute="height" multiplier="1:1" id="u9q-eR-4WW"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Passed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBk-WW-6d7">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Passed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mBk-WW-6d7">
                                                         <rect key="frame" x="29.5" y="0.0" width="120" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.70397216080000002" green="0.73172634839999995" blue="0.96380132439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1308,7 +1307,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57:03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lfL-Eh-s7B">
-                                                <rect key="frame" x="50" y="32.5" width="65.5" height="31"/>
+                                                <rect key="frame" x="50" y="29.5" width="65.5" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1317,11 +1316,11 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                         <color key="backgroundColor" red="0.075151838360000001" green="0.13829618690000001" blue="0.34666448830000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="lfL-Eh-s7B" firstAttribute="top" secondItem="z2u-zl-MNI" secondAttribute="bottom" constant="3" id="A75-dJ-k2D"/>
-                                            <constraint firstItem="z2u-zl-MNI" firstAttribute="top" secondItem="1ap-2B-i1i" secondAttribute="top" constant="8" id="E4a-nD-PEK"/>
+                                            <constraint firstItem="z2u-zl-MNI" firstAttribute="top" secondItem="1ap-2B-i1i" secondAttribute="top" constant="5" id="E4a-nD-PEK"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lfL-Eh-s7B" secondAttribute="trailing" id="JDM-EL-mVj"/>
                                             <constraint firstItem="mBk-WW-6d7" firstAttribute="height" secondItem="1ap-2B-i1i" secondAttribute="height" multiplier="0.3" id="RCV-fa-c2f"/>
                                             <constraint firstItem="z2u-zl-MNI" firstAttribute="leading" secondItem="1ap-2B-i1i" secondAttribute="leading" constant="8" id="WIZ-zO-4UG"/>
-                                            <constraint firstAttribute="bottom" secondItem="lfL-Eh-s7B" secondAttribute="bottom" constant="8" id="YGM-oI-PK3"/>
+                                            <constraint firstAttribute="bottom" secondItem="lfL-Eh-s7B" secondAttribute="bottom" constant="5" id="YGM-oI-PK3"/>
                                             <constraint firstItem="lfL-Eh-s7B" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1ap-2B-i1i" secondAttribute="leading" id="ZbY-n1-dYq"/>
                                             <constraint firstItem="lfL-Eh-s7B" firstAttribute="centerX" secondItem="1ap-2B-i1i" secondAttribute="centerX" id="fhh-wC-lKr"/>
                                             <constraint firstAttribute="trailing" secondItem="z2u-zl-MNI" secondAttribute="trailing" constant="8" id="oY5-g9-DY6"/>
@@ -1333,10 +1332,10 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gc4-Af-ljx">
-                                        <rect key="frame" x="230.5" y="52" width="165.5" height="71.5"/>
+                                        <rect key="frame" x="230.5" y="55.5" width="165.5" height="71.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rEW-EY-QaM">
-                                                <rect key="frame" x="8" y="8" width="149.5" height="21.5"/>
+                                                <rect key="frame" x="8" y="5" width="149.5" height="21.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-1J-Kn3">
                                                         <rect key="frame" x="0.0" y="1" width="21.5" height="19"/>
@@ -1345,7 +1344,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                             <constraint firstAttribute="width" secondItem="Nhc-1J-Kn3" secondAttribute="height" multiplier="1:1" id="QQt-ms-wpg"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point in Scenario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gva-oV-DPc">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Point in Scenario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gva-oV-DPc">
                                                         <rect key="frame" x="29.5" y="0.0" width="120" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.70397216080000002" green="0.73172634839999995" blue="0.96380132439999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1359,7 +1358,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1940-06-14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IkD-XX-Nfn">
-                                                <rect key="frame" x="14.5" y="32.5" width="136" height="31"/>
+                                                <rect key="frame" x="14.5" y="29.5" width="136" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1370,10 +1369,10 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                             <constraint firstItem="rEW-EY-QaM" firstAttribute="leading" secondItem="Gc4-Af-ljx" secondAttribute="leading" constant="8" id="29i-1Y-KEk"/>
                                             <constraint firstItem="IkD-XX-Nfn" firstAttribute="centerX" secondItem="Gc4-Af-ljx" secondAttribute="centerX" id="5vh-0N-ta6"/>
                                             <constraint firstItem="rEW-EY-QaM" firstAttribute="height" secondItem="Gc4-Af-ljx" secondAttribute="height" multiplier="0.3" id="KB7-SZ-Wjy"/>
-                                            <constraint firstItem="rEW-EY-QaM" firstAttribute="top" secondItem="Gc4-Af-ljx" secondAttribute="top" constant="8" id="Qll-V4-3Tt"/>
+                                            <constraint firstItem="rEW-EY-QaM" firstAttribute="top" secondItem="Gc4-Af-ljx" secondAttribute="top" constant="5" id="Qll-V4-3Tt"/>
                                             <constraint firstAttribute="trailing" secondItem="rEW-EY-QaM" secondAttribute="trailing" constant="8" id="cIf-an-Qf5"/>
                                             <constraint firstItem="IkD-XX-Nfn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Gc4-Af-ljx" secondAttribute="leading" id="eBZ-aA-X4N"/>
-                                            <constraint firstAttribute="bottom" secondItem="IkD-XX-Nfn" secondAttribute="bottom" constant="8" id="ibD-GZ-fVp"/>
+                                            <constraint firstAttribute="bottom" secondItem="IkD-XX-Nfn" secondAttribute="bottom" constant="5" id="ibD-GZ-fVp"/>
                                             <constraint firstItem="IkD-XX-Nfn" firstAttribute="top" secondItem="rEW-EY-QaM" secondAttribute="bottom" constant="3" id="mbn-hE-VNe"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IkD-XX-Nfn" secondAttribute="trailing" id="v8x-On-GZz"/>
                                         </constraints>
@@ -1384,7 +1383,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-d2-MDG">
-                                        <rect key="frame" x="20" y="8" width="374" height="36"/>
+                                        <rect key="frame" x="20" y="8" width="374" height="39.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1424,7 +1423,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                             <constraint firstItem="skJ-jR-6KB" firstAttribute="trailing" secondItem="SEA-dn-0bD" secondAttribute="trailing" id="NtT-5l-1v3"/>
                             <constraint firstItem="Gc4-Af-ljx" firstAttribute="height" secondItem="hut-X2-r6D" secondAttribute="height" multiplier="0.08" id="Ter-EB-PnO"/>
                             <constraint firstItem="skJ-jR-6KB" firstAttribute="leading" secondItem="SEA-dn-0bD" secondAttribute="leading" id="WBf-a2-Xcr"/>
-                            <constraint firstItem="WKv-d2-MDG" firstAttribute="height" secondItem="hut-X2-r6D" secondAttribute="height" multiplier="0.04" id="cYa-9h-eRo"/>
+                            <constraint firstItem="WKv-d2-MDG" firstAttribute="height" secondItem="hut-X2-r6D" secondAttribute="height" multiplier="0.044" id="cYa-9h-eRo"/>
                             <constraint firstItem="skJ-jR-6KB" firstAttribute="leading" secondItem="SEA-dn-0bD" secondAttribute="leading" id="gWZ-QP-UXc"/>
                             <constraint firstItem="zdu-tT-c2N" firstAttribute="height" secondItem="hut-X2-r6D" secondAttribute="height" multiplier="0.35" id="iTe-MD-5XQ"/>
                             <constraint firstItem="MWX-eb-kMs" firstAttribute="trailing" secondItem="SEA-dn-0bD" secondAttribute="trailing" id="lwG-q0-P1s"/>

@@ -327,7 +327,7 @@ class RunScenarioViewController: UIViewController {
         let countdown = UILabel()
         countdown.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(countdown)
-        countdown.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(view.bounds.height * 0.20)).isActive = true
+        countdown.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(view.bounds.height * 0.18)).isActive = true
         countdown.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         countdown.font = UIFont.monospacedDigitSystemFont(ofSize: 80, weight: .bold)
         countdown.textColor = UIColor.darkYellow
