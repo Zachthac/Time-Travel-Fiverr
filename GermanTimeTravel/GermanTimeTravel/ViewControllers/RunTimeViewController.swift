@@ -49,6 +49,7 @@ class RunTimeViewController: UIViewController {
                 }
             case false:
                 DispatchQueue.main.async {
+                    self.startButton.isEnabled = true
                     if self.controller?.language == .english {
                         let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
                         let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)

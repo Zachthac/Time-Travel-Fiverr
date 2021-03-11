@@ -834,28 +834,28 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="gk7-gf-OYb">
                                                 <rect key="frame" x="21" y="59.5" width="306" height="20.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAYS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-2r-3AL">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DAYS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-2r-3AL">
                                                         <rect key="frame" x="0.0" y="0.0" width="58.5" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  HR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8c-IJ-M4R">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  HR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Q8c-IJ-M4R">
                                                         <rect key="frame" x="82.5" y="0.0" width="58.5" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb4-yf-RoY">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="tb4-yf-RoY">
                                                         <rect key="frame" x="165" y="0.0" width="58.5" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kS-Cc-iO2">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="4kS-Cc-iO2">
                                                         <rect key="frame" x="247.5" y="0.0" width="58.5" height="20.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -995,10 +995,10 @@ New scenarios and features will be added in spring/summer 2021!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3G-WU-olW">
-                                <rect key="frame" x="20" y="131" width="374" height="634"/>
+                                <rect key="frame" x="20" y="89.5" width="374" height="717"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-7t-izX">
-                                        <rect key="frame" x="23" y="18" width="328" height="593"/>
+                                        <rect key="frame" x="23" y="18" width="328" height="676"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeTranslator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHx-ef-VKX">
                                                 <rect key="frame" x="0.0" y="0.0" width="328" height="46"/>
@@ -1007,7 +1007,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-Ik-7Uc">
-                                                <rect key="frame" x="0.0" y="71" width="328" height="153.5"/>
+                                                <rect key="frame" x="0.0" y="71" width="328" height="236.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aod-JN-2x4">
                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="1"/>
@@ -1016,8 +1016,8 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                             <constraint firstAttribute="height" constant="1" id="4R8-AQ-ipp"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thisi is text and here it iskj kj kh j k k  g iu hubv oudhbid dod fb f dbfj du f dfh vh fh vdfjhv dfh vd dfv djfv v v " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="16" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-0D-al9">
-                                                        <rect key="frame" x="0.0" y="4" width="328" height="145.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thisi is text and here it iskj kj kh j k k  g iu hubv oudhbid dod fb f dbfj du f dfh vh fh vdfjhv dfh vd dfv djfv v v " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-0D-al9">
+                                                        <rect key="frame" x="0.0" y="4" width="328" height="228.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                                         <color key="textColor" white="1" alpha="0.88625551859999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1028,7 +1028,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGJ-aF-NCb">
-                                                        <rect key="frame" x="0.0" y="152.5" width="328" height="1"/>
+                                                        <rect key="frame" x="0.0" y="235.5" width="328" height="1"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="vuo-eM-Z8O"/>
@@ -1041,10 +1041,10 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                 </constraints>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lBT-W1-eIR">
-                                                <rect key="frame" x="0.0" y="249.5" width="328" height="275.5"/>
+                                                <rect key="frame" x="0.0" y="332.5" width="328" height="275.5"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-ws-Iul">
-                                                <rect key="frame" x="0.0" y="550" width="328" height="43"/>
+                                                <rect key="frame" x="0.0" y="633" width="328" height="43"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2H-fT-AYV">
                                                         <rect key="frame" x="0.0" y="0.0" width="83" height="43"/>
@@ -1064,7 +1064,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="K85-E0-rCu">
                                                         <rect key="frame" x="102" y="0.0" width="124" height="43"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <state key="normal" title="SKIP TUTORIAL">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1118,7 +1118,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                             <constraint firstItem="O3G-WU-olW" firstAttribute="centerY" secondItem="PED-If-uuI" secondAttribute="centerY" id="9HA-Ng-N1K"/>
                             <constraint firstItem="SP1-ws-Iul" firstAttribute="height" secondItem="PED-If-uuI" secondAttribute="height" multiplier="0.0479169" id="9di-LF-LgP"/>
                             <constraint firstItem="lBT-W1-eIR" firstAttribute="height" secondItem="PED-If-uuI" secondAttribute="height" multiplier="0.307366" id="LU6-mZ-weA"/>
-                            <constraint firstItem="O3G-WU-olW" firstAttribute="height" secondItem="PED-If-uuI" secondAttribute="height" multiplier="0.707143" id="PXS-wC-HbS"/>
+                            <constraint firstItem="O3G-WU-olW" firstAttribute="height" secondItem="PED-If-uuI" secondAttribute="height" multiplier="0.8" id="PXS-wC-HbS"/>
                             <constraint firstItem="g2H-fT-AYV" firstAttribute="width" secondItem="PED-If-uuI" secondAttribute="width" multiplier="0.2" id="YD1-m9-dmr"/>
                             <constraint firstItem="2tg-RG-hLs" firstAttribute="trailing" secondItem="O3G-WU-olW" secondAttribute="trailing" constant="20" id="ctI-67-Rag"/>
                             <constraint firstItem="O3G-WU-olW" firstAttribute="leading" secondItem="2tg-RG-hLs" secondAttribute="leading" constant="20" id="exj-Kz-2ZX"/>
@@ -1219,7 +1219,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="epP-BL-7gK">
                                                                             <rect key="frame" x="0.0" y="0.0" width="354" height="22"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1993-03-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-RE-wzg">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1993-03-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-RE-wzg">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="329" height="22"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="22" id="2xN-K9-vkE"/>
@@ -1382,7 +1382,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-d2-MDG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-d2-MDG">
                                         <rect key="frame" x="20" y="8" width="374" height="39.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
