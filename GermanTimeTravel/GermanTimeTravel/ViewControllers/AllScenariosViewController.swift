@@ -31,12 +31,14 @@ class AllScenariosViewController: UIViewController {
         tableView.delegate = self
         controller?.delegate = self
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if tableView.visibleCells.count == 0 {
             activityIndicator.startAnimating()
         }
     }
+    
     override func viewDidLayoutSubviews() {
         setUpViews()
     }

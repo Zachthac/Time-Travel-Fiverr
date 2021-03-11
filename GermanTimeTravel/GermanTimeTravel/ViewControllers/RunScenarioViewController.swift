@@ -70,27 +70,25 @@ class RunScenarioViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func cancelScenario(_ sender: UIButton) {
-        guard let scenario = scenario else { return }
-        controller?.endScenario(scenario: scenario, completion: { result in
-            switch result {
-            case true:
-                self.timer?.invalidate()
-                self.eventTimer?.invalidate()
-                self.navigationController?.popViewController(animated: true)
-            case false:
-                if self.controller?.language == .english {
-                    let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
-                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alert.addAction(button)
-                    self.present(alert, animated: true)
-                } else {
-                    let alert = UIAlertController(title: "Fehler", message: "Es ist etwas schief gegangen - Bitte versuche es erneut.", preferredStyle: .alert)
-                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alert.addAction(button)
-                    self.present(alert, animated: true)
-                }
+        if self.controller?.language == .english {
+            let alert = UIAlertController(title: "Quit Scenario?", message: nil, preferredStyle: .alert)
+            let noButton = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alert.addAction(noButton)
+            let yesButton = UIAlertAction(title: "Yes", style: .destructive) { _ in
+                self.quitScenario()
             }
-        })
+            alert.addAction(yesButton)
+            self.present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Szenario beenden?", message: nil, preferredStyle: .alert)
+            let noButton = UIAlertAction(title: "Abbrechen", style: .cancel, handler: nil)
+            alert.addAction(noButton)
+            let yesButton = UIAlertAction(title: "Beenden", style: .destructive) { _ in
+                self.quitScenario()
+            }
+            alert.addAction(yesButton)
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func infoButtonTapped(_ sender: Any) {
@@ -365,6 +363,30 @@ class RunScenarioViewController: UIViewController {
         UIView.animate(withDuration: 1.5, delay: 0, options: [.repeat, .autoreverse]) {
             self.cancelButton.tintColor = .darkYellow
         } completion: { _ in }
+    }
+    
+    private func quitScenario() {
+        guard let scenario = scenario else { return }
+        controller?.endScenario(scenario: scenario, completion: { result in
+            switch result {
+            case true:
+                self.timer?.invalidate()
+                self.eventTimer?.invalidate()
+                self.navigationController?.popViewController(animated: true)
+            case false:
+                if self.controller?.language == .english {
+                    let alert = UIAlertController(title: "Error", message: "Something went wrong - please try again.", preferredStyle: .alert)
+                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(button)
+                    self.present(alert, animated: true)
+                } else {
+                    let alert = UIAlertController(title: "Fehler", message: "Es ist etwas schief gegangen - Bitte versuche es erneut.", preferredStyle: .alert)
+                    let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(button)
+                    self.present(alert, animated: true)
+                }
+            }
+        })
     }
     
     deinit {
