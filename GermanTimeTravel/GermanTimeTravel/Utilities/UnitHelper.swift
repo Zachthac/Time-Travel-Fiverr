@@ -33,7 +33,7 @@ class UnitHelper {
     }
     
     func dateFromString(string: String) -> Date? {
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         return formatter.date(from: string)
     }
     

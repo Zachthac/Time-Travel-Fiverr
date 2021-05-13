@@ -11,6 +11,7 @@ class AboutViewController: UIViewController {
     
     // MARK: - Outlets
     
+    @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var aboutLabel: UILabel!
     @IBOutlet private var imprintButton: UIButton!
     
@@ -22,6 +23,7 @@ class AboutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
     
     // MARK: - Navigation
@@ -32,6 +34,7 @@ class AboutViewController: UIViewController {
             tutorialVC.controller = controller
         }
     }
+    
     //MARK: - IBActions
     
     @IBAction func imprintButtonTapped(_ sender: Any) {
@@ -45,6 +48,18 @@ class AboutViewController: UIViewController {
             let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(button)
             self.present(alert, animated: true)
+        }
+    }
+    
+    // MARK: - Private Functions
+    
+    private func updateViews() {
+        guard let about = controller?.about else { return }
+        titleLabel.text = about.title
+        if controller?.language == .english {
+            aboutLabel.text = about.textEn
+        } else {
+            aboutLabel.text = about.textDe
         }
     }
 }

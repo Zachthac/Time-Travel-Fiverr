@@ -14,6 +14,7 @@
 		1A07373225AE77970072217A /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A07373125AE77970072217A /* Event+Convenience.swift */; };
 		1A28293325B8D093005961D6 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28293225B8D093005961D6 /* UIColorExtension.swift */; };
 		1A28293A25C3527D005961D6 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28293925C3527D005961D6 /* AboutViewController.swift */; };
+		1A40AB8026288D3E00D2DDEC /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A40AB7F26288D3D00D2DDEC /* About.swift */; };
 		1A49602925DD7A24006332A9 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49602825DD7A24006332A9 /* Tutorial.swift */; };
 		1A49602C25DD7D24006332A9 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49602B25DD7D24006332A9 /* TutorialViewController.swift */; };
 		1A49602F25DDADA7006332A9 /* UnitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A49602E25DDADA7006332A9 /* UnitHelper.swift */; };
@@ -53,6 +54,7 @@
 		1A07373125AE77970072217A /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
 		1A28293225B8D093005961D6 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1A28293925C3527D005961D6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		1A40AB7F26288D3D00D2DDEC /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		1A49602825DD7A24006332A9 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		1A49602B25DD7D24006332A9 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		1A49602E25DDADA7006332A9 /* UnitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitHelper.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				1AA265FB25B0AB8D0000F874 /* Summary.swift */,
 				1AB8F68E25B222EE0070A14C /* Cache.swift */,
 				1A49602825DD7A24006332A9 /* Tutorial.swift */,
+				1A40AB7F26288D3D00D2DDEC /* About.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				1A07372125AE0BB20072217A /* GermanTimeTravel.xcdatamodeld in Sources */,
 				4676B57425DED6830041BCA2 /* UIImageExtension.swift in Sources */,
 				1A07373225AE77970072217A /* Event+Convenience.swift in Sources */,
+				1A40AB8026288D3E00D2DDEC /* About.swift in Sources */,
 				464CACBB25B25C7F00F37F79 /* RunScenarioViewController.swift in Sources */,
 				1A28293A25C3527D005961D6 /* AboutViewController.swift in Sources */,
 				4678CE4D25A173B20010D625 /* RunTimeViewController.swift in Sources */,
