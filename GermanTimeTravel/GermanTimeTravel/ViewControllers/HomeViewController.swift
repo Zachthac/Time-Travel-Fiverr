@@ -27,7 +27,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         controller.setPreferences()
-        controller.signInAndGetScenarioList()
+        controller.signInAndGetScenarioList { result in
+            if result == true && UserDefaults.standard.bool(forKey: "hasSeenTutorial") {
+                DispatchQueue.main.async {
+                    self.newScenarioAlert()
+                }
+            }
+            self.controller.api.fetchAbout { result in
+                switch result {
+                case .success(let about):
+                    self.controller.about = about
+                default:
+                    NSLog("Failed to fetch info for About page")
+                }
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -77,7 +91,13 @@ class HomeViewController: UIViewController {
         if let tokenDate = controller.api.bearer?.date.timeIntervalSince1970 {
             let currentDate = Date().timeIntervalSince1970
             if currentDate - tokenDate > 518400.0 {
-                controller.signInAndGetScenarioList()
+                controller.signInAndGetScenarioList { result in
+                    if result == true && UserDefaults.standard.bool(forKey: "hasSeenTutorial") {
+                        DispatchQueue.main.async {
+                            self.newScenarioAlert()
+                        }
+                    }
+                }
             }
         }
         if UserDefaults.standard.bool(forKey: "hasSeenTutorial") {
@@ -95,6 +115,20 @@ class HomeViewController: UIViewController {
         } else {
             UserDefaults.standard.setValue(true, forKey: "hasSeenTutorial")
             self.performSegue(withIdentifier: "tutorialSegue", sender: self)
+        }
+    }
+    
+    private func newScenarioAlert() {
+        if self.controller.language == .english {
+            let alert = UIAlertController(title: "New Content!", message: "Please check the scenario list to see what we've added.", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(button)
+            self.present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Neuer Inhalt verfügbar!", message: "Geh in die Szenariowahl und entdecke, was wir hinzugefügt haben.", preferredStyle: .alert)
+            let button = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(button)
+            self.present(alert, animated: true)
         }
     }
     

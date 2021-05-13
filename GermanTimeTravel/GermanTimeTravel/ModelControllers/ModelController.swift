@@ -34,6 +34,7 @@ class ModelController {
             delegate?.summariesUpdated()
         }
     }
+    var about: About?
     var language: Language = .english
     var unit: Unit = .imperial
     let cache = Cache<String, UIImage>()
@@ -60,7 +61,7 @@ class ModelController {
     
     /// uses api.signIn to get a bearer token, then uses api.fetchSummaries to populate self.summaries
     /// to be called in AllScenariosViewController to populate tableView
-    func signInAndGetScenarioList() {
+    func signInAndGetScenarioList(completion: @escaping (Bool) -> Void) {
         api.signIn { result in
             switch result {
             case .success:
@@ -68,12 +69,19 @@ class ModelController {
                     switch summaryResult {
                     case .success(let summaries):
                         self.summaries = summaries
+                        let oldCount = UserDefaults.standard.integer(forKey: "SummaryCount")
+                        if summaries.count > oldCount {
+                            UserDefaults.standard.setValue(summaries.count, forKey: "SummaryCount")
+                            completion(true)
+                        } else {
+                            completion(false)
+                        }
                     default:
-                        break
+                        completion(false)
                     }
                 }
             default:
-                break
+                completion(false)
             }
         }
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UIl-wB-RWV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UIl-wB-RWV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -413,7 +413,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scenarioCell" rowHeight="203" id="ZWz-aN-9Oh" customClass="ScenarioTableViewCell" customModule="GermanTimeTravel" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="203"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="203"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZWz-aN-9Oh" id="Sb6-Bu-hrT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="203"/>
@@ -616,8 +616,17 @@ TimeTranslator continuously with new scenarios and features!</string>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-sq-JrP">
                                 <rect key="frame" x="23" y="111" width="368" height="728"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfH-Wm-RoU">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Hwx-df-ja9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="41"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-Fo-BRT">
-                                        <rect key="frame" x="0.0" y="0.0" width="368" height="599.5"/>
+                                        <rect key="frame" x="0.0" y="98" width="368" height="501.5"/>
                                         <string key="text">With TimeTranslator you can convert real time to other temporally or spatial periods. Choose a scenario and the period into which it shall be converted. That way, you can experience scenarios, their exciting events and the relative distances between them over a period of your choice. 
 
 New scenarios and features will be added in spring/summer 2021!</string>
@@ -678,6 +687,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                     <connections>
                         <outlet property="aboutLabel" destination="bCr-Fo-BRT" id="dsc-MM-YTd"/>
                         <outlet property="imprintButton" destination="HTU-bj-o6z" id="o3V-OP-m41"/>
+                        <outlet property="titleLabel" destination="VfH-Wm-RoU" id="bS5-rD-g14"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdR-PE-tsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1204,7 +1214,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                         <color key="sectionIndexBackgroundColor" red="0.0080417972059999999" green="0.053528003390000002" blue="0.2105675638" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" rowHeight="103" id="6bO-cC-eWf" customClass="EventTableViewCell" customModule="GermanTimeTravel" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="103"/>
+                                                <rect key="frame" x="0.0" y="24.5" width="414" height="103"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6bO-cC-eWf" id="awA-ND-3AF">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>

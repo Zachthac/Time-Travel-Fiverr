@@ -22,10 +22,11 @@ final class ApiController {
     
     var bearer: Bearer?
 
-    private let baseURL = URL(string: "https://development-290808.ew.r.appspot.com")!
+    private let baseURL = URL(string: "https://time-translator.nordquint.de")!
     private lazy var tokenURL = baseURL.appendingPathComponent("/token")
     private lazy var scenarioURL = baseURL.appendingPathComponent("/scenario/")
-    private lazy var imageURL = baseURL.appendingPathComponent("/image/bytes/")
+    private lazy var imageURL = baseURL.appendingPathComponent("/image/jpg/")
+    private lazy var aboutURL = baseURL.appendingPathComponent("/about")
     
     // MARK: - Public Functions
     
@@ -33,7 +34,7 @@ final class ApiController {
     /// submits the api username and password to receive a bearer token
     /// - Parameter completion: completion is used in modelController to control app flow
     func signIn(completion: @escaping (Result<Bool, NetworkError>) -> Void) {
-        let parameters = "username=Zach&password=EYy6fb3E@wE9ZADBf8UKK42E"
+        let parameters = "username=Cora&password=WYqEzBgjMBXyVNMYkZDgDeNwMmG"
         let postData =  parameters.data(using: .utf8)
         var request = URLRequest(url: tokenURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -80,6 +81,36 @@ final class ApiController {
                         completion(.success(summaries))
                     } catch {
                         NSLog("Error decoding summary data: \(error)")
+                        completion(.failure(.failedDecode))
+                    }
+                default:
+                    completion(.failure(.failedResponse))
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    /// called in HomeVC to fetch current text for display on About page
+    /// - Parameter completion: completion is used in modelController to control app flow
+    func fetchAbout(completion: @escaping (Result<About, NetworkError>) -> Void) {
+        guard let bearer = bearer else {
+            completion(.failure(.noToken))
+            return
+        }
+        var request = URLRequest(url: aboutURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(bearer.access_token)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            self.checkResponse(for: "fetchAbout", data, response, error) { result in
+                switch result {
+                case .success(let data):
+                    do {
+                        let aboutText = try JSONDecoder().decode(About.self, from: data)
+                        completion(.success(aboutText))
+                    } catch {
+                        NSLog("Error decoding About text: \(error)")
                         completion(.failure(.failedDecode))
                     }
                 default:
@@ -139,21 +170,16 @@ final class ApiController {
             return
         }
         var imageString = ""
-        if let summary = summary,
-           let image = summary.image {
-            imageString = "\(summary.nameId)_\(image)"
+        if let summary = summary {
+            guard let image = summary.image else { return }
+            imageString = image
         }
-        if let scenario = scenario,
-           let nameId = scenario.nameId {
-            imageString = "\(nameId)_"
-        }
-        if let event = event {
+        else if let event = event {
             guard let image = event.image else { return }
-            imageString.append(image)
+            imageString = image
         } else {
-            if let image = scenario?.image {
-                imageString.append(image)
-            }
+            guard let image = scenario?.image else { return }
+            imageString = image
         }
         let url = imageURL.appendingPathComponent(imageString)
         var request = URLRequest(url: url)
