@@ -1159,6 +1159,9 @@ New scenarios and features will be added in spring/summer 2021!</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skJ-jR-6KB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="313.5"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4P-4Z-CzP" userLabel="No Image">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="313.5"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No photo for this event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXY-XL-btj">
                                         <rect key="frame" x="107.5" y="145" width="199.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1196,10 +1199,14 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                     <constraint firstItem="TXY-XL-btj" firstAttribute="centerY" secondItem="skJ-jR-6KB" secondAttribute="centerY" id="5Fs-H6-RR3"/>
                                     <constraint firstAttribute="bottom" secondItem="zdu-tT-c2N" secondAttribute="bottom" id="5gb-7h-Sgz"/>
                                     <constraint firstItem="zdu-tT-c2N" firstAttribute="leading" secondItem="skJ-jR-6KB" secondAttribute="leading" id="6TR-ki-lXO"/>
+                                    <constraint firstItem="h4P-4Z-CzP" firstAttribute="bottom" secondItem="zdu-tT-c2N" secondAttribute="bottom" id="8Vm-HH-quj"/>
                                     <constraint firstItem="e8d-Ka-wsy" firstAttribute="leading" secondItem="skJ-jR-6KB" secondAttribute="leading" constant="8" id="DX9-Wc-jSa"/>
                                     <constraint firstItem="TXY-XL-btj" firstAttribute="centerX" secondItem="skJ-jR-6KB" secondAttribute="centerX" id="KNP-Oo-bUE"/>
+                                    <constraint firstItem="h4P-4Z-CzP" firstAttribute="trailing" secondItem="zdu-tT-c2N" secondAttribute="trailing" id="OM1-KA-ait"/>
                                     <constraint firstAttribute="bottom" secondItem="vMh-Tj-dIm" secondAttribute="bottom" constant="8" id="Ovy-wi-mgG"/>
                                     <constraint firstAttribute="trailing" secondItem="vMh-Tj-dIm" secondAttribute="trailing" constant="8" id="SzB-kT-yeT"/>
+                                    <constraint firstItem="h4P-4Z-CzP" firstAttribute="leading" secondItem="zdu-tT-c2N" secondAttribute="leading" id="U6i-Ta-cia"/>
+                                    <constraint firstItem="h4P-4Z-CzP" firstAttribute="top" secondItem="zdu-tT-c2N" secondAttribute="top" id="VJY-ar-ZJE"/>
                                     <constraint firstAttribute="trailing" secondItem="zdu-tT-c2N" secondAttribute="trailing" id="nZ6-jv-5Uc"/>
                                     <constraint firstAttribute="bottom" secondItem="e8d-Ka-wsy" secondAttribute="bottom" constant="8" id="v5G-Sm-spk"/>
                                 </constraints>
@@ -1423,6 +1430,14 @@ New scenarios and features will be added in spring/summer 2021!</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zBv-Nu-ea4">
+                                <rect key="frame" x="-14" y="313.5" width="442" height="4"/>
+                                <color key="tintColor" name="YellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="dk9-wm-ozi"/>
+                                </constraints>
+                                <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SEA-dn-0bD"/>
                         <color key="backgroundColor" red="0.0088477386160000001" green="0.059148065749999999" blue="0.2197631598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1433,7 +1448,9 @@ New scenarios and features will be added in spring/summer 2021!</string>
                             <constraint firstItem="skJ-jR-6KB" firstAttribute="trailing" secondItem="SEA-dn-0bD" secondAttribute="trailing" id="NtT-5l-1v3"/>
                             <constraint firstItem="Gc4-Af-ljx" firstAttribute="height" secondItem="hut-X2-r6D" secondAttribute="height" multiplier="0.08" id="Ter-EB-PnO"/>
                             <constraint firstItem="skJ-jR-6KB" firstAttribute="leading" secondItem="SEA-dn-0bD" secondAttribute="leading" id="WBf-a2-Xcr"/>
+                            <constraint firstItem="zBv-Nu-ea4" firstAttribute="top" secondItem="MWX-eb-kMs" secondAttribute="top" id="YQX-9g-VXM"/>
                             <constraint firstItem="WKv-d2-MDG" firstAttribute="height" secondItem="hut-X2-r6D" secondAttribute="height" multiplier="0.044" id="cYa-9h-eRo"/>
+                            <constraint firstItem="zBv-Nu-ea4" firstAttribute="leading" secondItem="SEA-dn-0bD" secondAttribute="leading" constant="-12" id="fml-do-9M3"/>
                             <constraint firstItem="skJ-jR-6KB" firstAttribute="leading" secondItem="SEA-dn-0bD" secondAttribute="leading" id="gWZ-QP-UXc"/>
                             <constraint firstItem="zdu-tT-c2N" firstAttribute="height" secondItem="hut-X2-r6D" secondAttribute="height" multiplier="0.35" id="iTe-MD-5XQ"/>
                             <constraint firstItem="MWX-eb-kMs" firstAttribute="trailing" secondItem="SEA-dn-0bD" secondAttribute="trailing" id="lwG-q0-P1s"/>
@@ -1443,6 +1460,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
                             <constraint firstItem="MWX-eb-kMs" firstAttribute="height" secondItem="hut-X2-r6D" secondAttribute="height" multiplier="0.65" id="sCL-E3-2e3"/>
                             <constraint firstItem="MWX-eb-kMs" firstAttribute="leading" secondItem="SEA-dn-0bD" secondAttribute="leading" id="uey-BH-5mB"/>
                             <constraint firstItem="1ap-2B-i1i" firstAttribute="width" secondItem="hut-X2-r6D" secondAttribute="width" multiplier="0.4" id="vaw-iu-ZNn"/>
+                            <constraint firstItem="zBv-Nu-ea4" firstAttribute="trailing" secondItem="SEA-dn-0bD" secondAttribute="trailing" constant="12" id="zJe-nC-eox"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Scn-a2-GND"/>
@@ -1452,8 +1470,10 @@ New scenarios and features will be added in spring/summer 2021!</string>
                         <outlet property="eventImage" destination="zdu-tT-c2N" id="A82-3c-3yL"/>
                         <outlet property="eventsTableView" destination="lo9-Vz-HQR" id="ZI4-iC-1CD"/>
                         <outlet property="imageInfoButton" destination="e8d-Ka-wsy" id="gOT-xu-Lc9"/>
+                        <outlet property="noImageView" destination="h4P-4Z-CzP" id="L6l-JH-BZ0"/>
                         <outlet property="noPhotoLabel" destination="TXY-XL-btj" id="u3q-F5-Uaw"/>
                         <outlet property="photoImageView" destination="skJ-jR-6KB" id="4Qp-WY-lw1"/>
+                        <outlet property="progressSlider" destination="zBv-Nu-ea4" id="VSr-VO-yao"/>
                         <outlet property="timePassedLabel" destination="lfL-Eh-s7B" id="fmt-to-Jxx"/>
                         <outlet property="titleLabel" destination="WKv-d2-MDG" id="nWd-4N-NLs"/>
                     </connections>
@@ -1464,7 +1484,7 @@ New scenarios and features will be added in spring/summer 2021!</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uWr-5B-gNG"/>
+        <segue reference="W0I-LV-CF8"/>
         <segue reference="gJv-um-yH4"/>
     </inferredMetricsTieBreakers>
     <resources>

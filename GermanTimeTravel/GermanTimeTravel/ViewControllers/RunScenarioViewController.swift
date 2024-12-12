@@ -21,7 +21,9 @@ class RunScenarioViewController: UIViewController {
     @IBOutlet private var noPhotoLabel: UILabel!
     @IBOutlet private var imageInfoButton: UIButton!
     @IBOutlet private var cancelButton: UIButton!
-        
+    @IBOutlet private var noImageView: UIImageView!
+    @IBOutlet private var progressSlider: UISlider!
+    
     // MARK: - Properties
     
     weak var controller: ModelController?
@@ -47,11 +49,9 @@ class RunScenarioViewController: UIViewController {
         initFetchedResultsController()
         setUpTimer()
         setUpEventTimer()
+        progressSlider.setValue(0, animated: false)
     }
     
-    override func viewDidLayoutSubviews() {
-        setUpGradient()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -103,15 +103,6 @@ class RunScenarioViewController: UIViewController {
     
     // MARK: - Private Functions
     
-    private func setUpGradient() {
-        gradient.frame = photoImageView.bounds
-        photoImageView.layer.addSublayer(gradient)
-        photoImageView.bringSubviewToFront(noPhotoLabel)
-        photoImageView.bringSubviewToFront(eventImage)
-        photoImageView.bringSubviewToFront(imageInfoButton)
-        photoImageView.bringSubviewToFront(cancelButton)
-    }
-    
     private func setUpViews() {
         cancelButton.tintAdjustmentMode = .normal
         timePassedLabel.text = ""
@@ -133,6 +124,12 @@ class RunScenarioViewController: UIViewController {
               let language = controller?.language,
               let unit = controller?.unit else { return }
         unitHelper = UnitHelper(unitType: unitType, language: language, unit: unit)
+        
+        self.controller?.loadImage(summary: nil, scenario: self.scenario, event: nil, completion: { image in
+            DispatchQueue.main.async {
+                self.noImageView.image = image
+            }
+        })
     }
     
     private func configureDatasource() {
@@ -179,11 +176,14 @@ class RunScenarioViewController: UIViewController {
                     start < Date().timeIntervalSince1970 else { return }
                 if let time = result[true] {
                     let timeString = self.timeString(timeElapsed: time)
+                    let timeProgress = Float(time/(scenario.active?.totalTime ?? 0))
+                    self.progressSlider.setValue(timeProgress, animated: true)
                     self.timePassedLabel.text = timeString
                     self.currentEventDateLabel.text = self.currentDateString(timeElapsed: time)
                 } else if let time = result[false] {
                     self.timer?.invalidate()
                     let timeString = self.timeString(timeElapsed: time)
+                    self.progressSlider.setValue(1.0, animated: false)
                     self.timePassedLabel.text = timeString
                     self.currentEventDateLabel.text = self.endDateString()
                 }
